@@ -1,26 +1,25 @@
 {
     "schemaVersion": 1,
-    "id": "examplemod",
+    "id": "customscoreboard",
     "version": "${version}",
-    "name": "examplemod",
+    "name": "Custom Scoreboard",
     "description": "",
     "authors": [ ],
     "contact": { },
-    "license": "All-Rights-Reserved",
     "environment": "client",
     "entrypoints": {
         "client": [
             {
                 "adapter": "kotlin",
-                "value": "com.example.template.ExampleMod"
+                "value": "gay.j10a1n15.customscoreboard.Main"
             }
         ],
         "modmenu": [
-            "com.example.template.ModMenuCompat"
+            "gay.j10a1n15.customscoreboard.config.ModMenuCompat"
         ]
     },
     "mixins": [
-        "template.mixins.json"
+        "customscoreboard.mixins.json"
     ],
     "depends": {
         "fabricloader": ">=${loader_version}",

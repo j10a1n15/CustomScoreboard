@@ -1,4 +1,4 @@
-package com.example.template
+package gay.j10a1n15.customscoreboard.config
 
 import com.teamresourceful.resourcefulconfig.api.annotations.Comment
 import com.teamresourceful.resourcefulconfig.api.annotations.Config
