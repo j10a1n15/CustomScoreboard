@@ -1,14 +1,12 @@
 {
-  "required": true,
-  "minVersion": "0.8",
-  "package": "gay.j10a1n15.customscoreboard.mixins",
-  "compatibilityLevel": "JAVA_21",
-  "mixins": [
-  ],
-  "client": [
-    "MinecraftMixin"
-  ],
-  "injectors": {
-    "defaultRequire": 1
-  }
+    "required": true,
+    "minVersion": "0.8",
+    "package": "gay.j10a1n15.customscoreboard.mixins",
+    "compatibilityLevel": "JAVA_21",
+    "mixins": [
+    ],
+    "client": [ "GuiMixin"],
+    "injectors": {
+        "defaultRequire": 1
+    }
 }
