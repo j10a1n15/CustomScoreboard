@@ -13,7 +13,7 @@ class ModMenuCompat : ModMenuApi {
             ResourcefulConfigScreen.get(
                 t,
                 Main.configurator,
-                ExampleConfig::class.java
+                Config::class.java
             )
         }
     }
