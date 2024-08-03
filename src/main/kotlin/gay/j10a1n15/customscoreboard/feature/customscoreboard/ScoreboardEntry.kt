@@ -1,10 +1,13 @@
 package gay.j10a1n15.customscoreboard.feature.customscoreboard
 
-enum class ScoreboardEntry(val display: String) {
-    A("b"),
-    B("c"),
-    C("d"),
+import gay.j10a1n15.customscoreboard.feature.customscoreboard.elements.Footer
+import gay.j10a1n15.customscoreboard.feature.customscoreboard.elements.ScoreboardElement
+import gay.j10a1n15.customscoreboard.feature.customscoreboard.elements.Title
+
+enum class ScoreboardEntry(private val element: ScoreboardElement) {
+    TITLE(Title),
+    FOOTER(Footer),
     ;
 
-    override fun toString() = display
+    override fun toString() = element.configLine
 }

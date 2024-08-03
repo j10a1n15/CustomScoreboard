@@ -17,6 +17,15 @@ object RenderUtils {
         drawString(font, text, x + alignment.align(textWidth, width), y, -1)
     }
 
+    fun GuiGraphics.drawAlignedTexts(texts: List<AlignedText>, x: Int, y: Int) {
+        var currentY = y
+        val maxWidth = texts.maxOf { font.width(it.first) }
+        texts.forEach { text ->
+            drawAlignedText(text.first, x, currentY, maxWidth, text.second)
+            currentY += font.lineHeight
+        }
+    }
+
     fun GuiGraphics.drawAlignedTexts(texts: List<AlignedText>, x: Int, y: Int, width: Int) {
         var currentY = y
         texts.forEach { text ->
