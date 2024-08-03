@@ -18,6 +18,6 @@ object Config {
     )
     @Draggable
     @Comment("This is another example config entry.")
-    var appearance: Array<ScoreboardEntry> = arrayOf(ScoreboardEntry.A)
+    var appearance: Array<ScoreboardEntry> = arrayOf(ScoreboardEntry.TITLE)
 
 }

@@ -1,11 +1,15 @@
 package gay.j10a1n15.customscoreboard.feature.customscoreboard
 
+import gay.j10a1n15.customscoreboard.utils.Text.toComponent
+import gay.j10a1n15.customscoreboard.utils.rendering.AlignedText
 import gay.j10a1n15.customscoreboard.utils.rendering.Alignment
 
 data class ScoreboardLine(
     val display: String,
     val alignment: Alignment = DEFAULT_ALIGNMENT,
 ) {
+
+    fun toAlignedText(): AlignedText = display.toComponent() to alignment
 
     companion object {
         private val DEFAULT_ALIGNMENT get() = Alignment.START//displayConfig.textAlignment
