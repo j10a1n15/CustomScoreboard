@@ -6,5 +6,5 @@ import tech.thatgravyboat.skyblockapi.api.profile.CurrencyAPI
 object Bits : ScoreboardElement() {
     override fun getDisplay() = "Bits: §b${CurrencyAPI.bits.addSeparator()}"
 
-    override val configLine: String = "Purse"
+    override val configLine: String = "Bits"
 }
