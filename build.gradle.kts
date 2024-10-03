@@ -3,16 +3,18 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 plugins {
     java
     kotlin("jvm") version "2.0.0"
-    alias(libs.plugins.loom)
+    id("fabric-loom") version "1.7.1"
 }
 
 repositories {
     maven("https://maven.teamresourceful.com/repository/maven-public/")
     maven("https://pkgs.dev.azure.com/djtheredstoner/DevAuth/_packaging/public/maven/v1")
+    maven("https://repo.hypixel.net/repository/Hypixel/")
+    maven("https://api.modrinth.com/maven")
 }
 
 dependencies {
-    minecraft("com.mojang:minecraft:1.21")
+    minecraft("com.mojang:minecraft:1.21.1")
     mappings(loom.officialMojangMappings())
 
     modImplementation(libs.fabricLoader)
@@ -24,6 +26,9 @@ dependencies {
     modImplementation(libs.resourcefulconfig)
     modImplementation(libs.resourcefulconfigkt)
     include(libs.resourcefulconfigkt)
+
+    modImplementation("maven.modrinth:hypixel-mod-api:1.0.1+build.1+mc1.21")
+    modImplementation("tech.thatgravyboat:skyblock-api-1.21.1:1.0.0-beta.30")
 }
 
 loom {
