@@ -3,7 +3,7 @@ package gay.j10a1n15.customscoreboard
 import com.mojang.brigadier.CommandDispatcher
 import com.teamresourceful.resourcefulconfig.api.client.ResourcefulConfigScreen
 import com.teamresourceful.resourcefulconfig.api.loader.Configurator
-import gay.j10a1n15.customscoreboard.config.Config
+import gay.j10a1n15.customscoreboard.config.MainConfig
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.CustomScoreboardRenderer
 import net.fabricmc.api.ClientModInitializer
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandManager
@@ -17,10 +17,9 @@ object Main : ClientModInitializer {
     const val VERSION = "0.0.1"
 
     val configurator = Configurator("customscoreboard")
-    val config get() = Config
 
     override fun onInitializeClient() {
-        configurator.register(Config::class.java)
+        configurator.register(MainConfig::class.java)
         ClientCommandRegistrationCallback.EVENT.register(::onRegisterCommands)
         CustomScoreboardRenderer.init()
     }
@@ -33,7 +32,7 @@ object Main : ClientModInitializer {
             ClientCommandManager.literal("cs").executes { context ->
                 Minecraft.getInstance().tell {
                     Minecraft.getInstance().let {
-                        it.setScreen(ResourcefulConfigScreen.get(it.screen, configurator, Config::class.java))
+                        it.setScreen(ResourcefulConfigScreen.get(it.screen, configurator, MainConfig::class.java))
                     }
                 }
                 1
