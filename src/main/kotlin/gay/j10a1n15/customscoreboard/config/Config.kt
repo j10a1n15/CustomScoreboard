@@ -17,7 +17,7 @@ object Config {
         type = EntryType.ENUM,
     )
     @Draggable
-    @Comment("This is another example config entry.")
-    var appearance: Array<ScoreboardEntry> = arrayOf(ScoreboardEntry.TITLE)
+    @Comment("Edit this list to change the order of appearance of the scoreboard.")
+    var appearance: Array<ScoreboardEntry> = ScoreboardEntry.entries.toTypedArray()
 
 }

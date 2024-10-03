@@ -1,11 +1,43 @@
 package gay.j10a1n15.customscoreboard.feature.customscoreboard
 
-import gay.j10a1n15.customscoreboard.feature.customscoreboard.elements.Footer
-import gay.j10a1n15.customscoreboard.feature.customscoreboard.elements.ScoreboardElement
-import gay.j10a1n15.customscoreboard.feature.customscoreboard.elements.Title
+import gay.j10a1n15.customscoreboard.feature.customscoreboard.elements.*
 
 enum class ScoreboardEntry(val element: ScoreboardElement) {
     TITLE(Title),
+    PURSE(Purse),
+//    MOTES(Motes),
+//    BANK(Bank),
+    BITS(Bits),
+//    COPPER(Copper),
+//    GEMS(Gems),
+//    HEAT(Heat),
+//    COLD(Cold),
+//    NORTH_STARS(NorthStars),
+//    ISLAND(Island),
+//    LOCATION(Location),
+//    VISITING(Visiting),
+//    DATE(Date),
+//    TIME(Time),
+//    LOBBY_CODE(LobbyCode),
+//    OBJECTIVE(Objective),
+//    SLAYER(Slayer),
+//    EVENTS(Events),
+//    EXTRA(Extra),
+//    EMPTY_LINE(EmptyLine),
+
+
+    //    PROFILE(Profile),
+    //    POWER(Power),
+    //    TUNING(Tuning),
+    //    COOKIE(Cookie),
+    //    CHUNKED_STATS(ChunkedStats),
+    //    SOULFLOW(Soulflow),
+    //    PLAYER_AMOUNT(PlayerAmount),
+    //    QUIVER(Quiver),
+    //    POWDER(Powder),
+    //    MAYOR(Mayor),
+    //    PARTY(Party),
+
     FOOTER(Footer),
     ;
 
