@@ -8,8 +8,8 @@ fabricKt = "1.11.0+kotlin.2.0.0"
 loom = "1.6-SNAPSHOT"
 
 # Dependencies
-resourcefulConfig = "3.0.2"
-resourcefulConfigKt = "3.0.2"
+resourcefulConfig = "3.0.5"
+resourcefulConfigKt = "3.0.5"
 
 # Dev Dependencies
 devauth = "1.2.1"
