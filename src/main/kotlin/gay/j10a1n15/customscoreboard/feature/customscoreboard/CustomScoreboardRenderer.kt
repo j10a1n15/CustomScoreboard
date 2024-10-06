@@ -12,8 +12,6 @@ import tech.thatgravyboat.skyblockapi.api.location.LocationAPI
 object CustomScoreboardRenderer {
 
     private var display: List<AlignedText>? = null
-
-    // TODO: Fix this being empty on skyblock join
     private var currentIslandElements = emptyList<ScoreboardEntry>()
 
     init {
