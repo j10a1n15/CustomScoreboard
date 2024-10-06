@@ -4,21 +4,19 @@ import gay.j10a1n15.customscoreboard.config.MainConfig
 import gay.j10a1n15.customscoreboard.utils.rendering.AlignedText
 import gay.j10a1n15.customscoreboard.utils.rendering.RenderUtils.drawAlignedTexts
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents
-import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback
-import net.minecraft.client.DeltaTracker
-import net.minecraft.client.gui.GuiGraphics
 import tech.thatgravyboat.skyblockapi.api.events.base.Subscription
 import tech.thatgravyboat.skyblockapi.api.events.location.IslandChangeEvent
+import tech.thatgravyboat.skyblockapi.api.events.render.RenderHudEvent
 import tech.thatgravyboat.skyblockapi.api.location.LocationAPI
 
 object CustomScoreboardRenderer {
 
     private var display: List<AlignedText>? = null
+
     // TODO: Fix this being empty on skyblock join
     private var currentIslandElements = emptyList<ScoreboardEntry>()
 
-    fun init() {
-        HudRenderCallback.EVENT.register(::onRender)
+    init {
         ClientTickEvents.START_CLIENT_TICK.register { updateDisplay() }
 
         MainConfig.appearance.addListener { old, new ->
@@ -32,12 +30,13 @@ object CustomScoreboardRenderer {
         updateIslandCache()
     }
 
-    private fun onRender(graphics: GuiGraphics, partialTicks: DeltaTracker) {
+    @Subscription
+    fun onRender(event: RenderHudEvent) {
         if (!isEnabled()) return
         val display = display ?: return
         if (display.isEmpty()) return
 
-        graphics.drawAlignedTexts(
+        event.graphics.drawAlignedTexts(
             display,
             100,
             100,

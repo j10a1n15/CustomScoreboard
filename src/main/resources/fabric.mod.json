@@ -8,7 +8,7 @@
     "contact": { },
     "environment": "client",
     "entrypoints": {
-        "client": [
+        "main": [
             {
                 "adapter": "kotlin",
                 "value": "gay.j10a1n15.customscoreboard.Main"

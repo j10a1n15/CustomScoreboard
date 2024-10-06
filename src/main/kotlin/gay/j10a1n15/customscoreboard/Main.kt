@@ -5,28 +5,30 @@ import com.teamresourceful.resourcefulconfig.api.client.ResourcefulConfigScreen
 import com.teamresourceful.resourcefulconfig.api.loader.Configurator
 import gay.j10a1n15.customscoreboard.config.MainConfig
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.CustomScoreboardRenderer
-import net.fabricmc.api.ClientModInitializer
+import net.fabricmc.api.ModInitializer
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandManager
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandRegistrationCallback
 import net.fabricmc.fabric.api.client.command.v2.FabricClientCommandSource
 import net.minecraft.client.Minecraft
 import net.minecraft.commands.CommandBuildContext
+import tech.thatgravyboat.skyblockapi.api.SkyBlockAPI
 
-object Main : ClientModInitializer {
+object Main : ModInitializer {
 
     const val VERSION = "0.0.1"
 
     val configurator = Configurator("customscoreboard")
 
-    override fun onInitializeClient() {
+    override fun onInitialize() {
         configurator.register(MainConfig::class.java)
         ClientCommandRegistrationCallback.EVENT.register(::onRegisterCommands)
-        CustomScoreboardRenderer.init()
+
+        SkyBlockAPI.eventBus.register(CustomScoreboardRenderer)
     }
 
     private fun onRegisterCommands(
         dispatcher: CommandDispatcher<FabricClientCommandSource>,
-        buildContext: CommandBuildContext
+        buildContext: CommandBuildContext,
     ) {
         dispatcher.register(
             ClientCommandManager.literal("cs").executes { context ->
@@ -36,6 +38,7 @@ object Main : ClientModInitializer {
                     }
                 }
                 1
-            })
+            },
+        )
     }
 }
