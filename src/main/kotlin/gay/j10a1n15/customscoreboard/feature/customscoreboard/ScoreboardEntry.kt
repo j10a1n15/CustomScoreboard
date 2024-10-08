@@ -4,8 +4,7 @@ import gay.j10a1n15.customscoreboard.feature.customscoreboard.elements.*
 
 enum class ScoreboardEntry(val element: ScoreboardElement) {
     TITLE(ScoreboardElementTitle),
-
-    //    ISLAND(Island),
+    ISLAND(ScoreboardElementIsland),
 //    LOCATION(Location),
 //    VISITING(Visiting),
 //    DATE(Date),
@@ -24,7 +23,6 @@ enum class ScoreboardEntry(val element: ScoreboardElement) {
 //    OBJECTIVE(Objective),
 //    SLAYER(Slayer),
 //    EVENTS(Events),
-//    EXTRA(Extra),
 EMPTY(ScoreboardElementEmpty),
 
 //    PROFILE(Profile),
@@ -38,6 +36,7 @@ EMPTY(ScoreboardElementEmpty),
 //    POWDER(Powder),
 //    MAYOR(Mayor),
 //    PARTY(Party),
+//    Unknown(Unknown),
 
     FOOTER(ScoreboardElementFooter),
     ;
