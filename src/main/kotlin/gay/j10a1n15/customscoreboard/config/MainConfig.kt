@@ -4,6 +4,7 @@ import com.teamresourceful.resourcefulconfig.api.annotations.*
 import com.teamresourceful.resourcefulconfig.api.types.entries.Observable
 import gay.j10a1n15.customscoreboard.config.objects.TitleOrFooterObject
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.ScoreboardEntry
+import gay.j10a1n15.customscoreboard.utils.NumberFormatType
 
 @ConfigInfo.Provider(InfoProvider::class)
 @Config(
@@ -28,4 +29,8 @@ object MainConfig {
     @ConfigEntry(id = "footer_options")
     @Comment("Edit the footer of the scoreboard.")
     val footer: TitleOrFooterObject = TitleOrFooterObject()
+
+    @ConfigEntry(id = "number_format")
+    @Comment("Edit the number format of the scoreboard.")
+    var numberFormat: NumberFormatType = NumberFormatType.LONG
 }
