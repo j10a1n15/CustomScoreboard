@@ -5,6 +5,8 @@ enum class Alignment {
     CENTER,
     END;
 
+    override fun toString() = name.lowercase().replaceFirstChar { it.uppercase() }
+
     fun align(value: Int, length: Int): Int = when (this) {
         START -> 0
         CENTER -> (length - value) / 2
