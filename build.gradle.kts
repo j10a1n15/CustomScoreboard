@@ -28,7 +28,7 @@ dependencies {
     include(libs.resourcefulconfigkt)
 
     modImplementation("maven.modrinth:hypixel-mod-api:1.0.1+build.1+mc1.21")
-    modImplementation("tech.thatgravyboat:skyblock-api-1.21.1:1.0.0-beta.40")
+    modImplementation("tech.thatgravyboat:skyblock-api-1.21.1:1.0.0-beta.42")
 }
 
 loom {
