@@ -18,7 +18,7 @@ object MainConfig {
     var enabled: Boolean = true
 
     @ConfigEntry(id = "appearance", translation = "config.cs.appearance")
-    @ConfigOption.Draggable
+    @ConfigOption.Draggable(value = ["EMPTY"])
     @Comment("", translation = "config.cs.appearance.desc")
     val appearance: Observable<Array<ScoreboardEntry>> = Observable.of(ScoreboardEntry.entries.toTypedArray())
 

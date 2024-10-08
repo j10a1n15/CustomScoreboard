@@ -20,11 +20,12 @@ enum class ScoreboardEntry(val element: ScoreboardElement) {
     HEAT(ScoreboardElementHeat),
     COLD(ScoreboardElementCold),
     NORTH_STARS(ScoreboardElementNorthStars),
+
 //    OBJECTIVE(Objective),
 //    SLAYER(Slayer),
 //    EVENTS(Events),
 //    EXTRA(Extra),
-//    EMPTY_LINE(EmptyLine),
+EMPTY(ScoreboardElementEmpty),
 
 //    PROFILE(Profile),
 //    POWER(Power),
