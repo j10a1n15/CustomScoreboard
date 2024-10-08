@@ -5,6 +5,7 @@ import com.teamresourceful.resourcefulconfig.api.client.ResourcefulConfigScreen
 import com.teamresourceful.resourcefulconfig.api.loader.Configurator
 import gay.j10a1n15.customscoreboard.config.MainConfig
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.CustomScoreboardRenderer
+import gay.j10a1n15.customscoreboard.feature.customscoreboard.elements.ScoreboardElementArea
 import net.fabricmc.api.ModInitializer
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandManager
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandRegistrationCallback
@@ -24,6 +25,7 @@ object Main : ModInitializer {
         ClientCommandRegistrationCallback.EVENT.register(::onRegisterCommands)
 
         SkyBlockAPI.eventBus.register(CustomScoreboardRenderer)
+        SkyBlockAPI.eventBus.register(ScoreboardElementArea)
     }
 
     private fun onRegisterCommands(

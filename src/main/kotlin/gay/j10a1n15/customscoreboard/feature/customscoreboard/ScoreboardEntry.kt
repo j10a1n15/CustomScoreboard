@@ -5,7 +5,7 @@ import gay.j10a1n15.customscoreboard.feature.customscoreboard.elements.*
 enum class ScoreboardEntry(val element: ScoreboardElement) {
     TITLE(ScoreboardElementTitle),
     ISLAND(ScoreboardElementIsland),
-//    LOCATION(Location),
+    LOCATION(ScoreboardElementArea),
 //    VISITING(Visiting),
 //    DATE(Date),
 //    TIME(Time),

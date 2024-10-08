@@ -8,8 +8,9 @@ abstract class ScoreboardElement {
      * Must be specified as one of the following:
      * - `String`
      * - `List<String>`
-     * - `ScoreboardLine` (`String align HorizontalAlignment`)
+     * - `ScoreboardLine` (`String align Alignment`)
      * - `List<ScoreboardLine>`
+     * - `Component`
      *
      * `null` values will be treated as empty lines/lists.
      */
