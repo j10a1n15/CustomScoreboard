@@ -13,24 +13,24 @@ import gay.j10a1n15.customscoreboard.utils.NumberFormatType
 )
 object MainConfig {
 
-    @ConfigEntry(id = "enabled")
-    @Comment("Enable or disable the custom scoreboard.")
+    @ConfigEntry(id = "enabled", translation = "config.cs.enabled")
+    @Comment("", translation = "config.cs.enabled.desc")
     var enabled: Boolean = true
 
-    @ConfigEntry(id = "appearance")
+    @ConfigEntry(id = "appearance", translation = "config.cs.appearance")
     @ConfigOption.Draggable
-    @Comment("Edit this list to change the order of appearance of the scoreboard.")
+    @Comment("", translation = "config.cs.appearance.desc")
     val appearance: Observable<Array<ScoreboardEntry>> = Observable.of(ScoreboardEntry.entries.toTypedArray())
 
-    @ConfigEntry(id = "title_options")
-    @Comment("Edit the title of the scoreboard.")
+    @ConfigEntry(id = "title_options", translation = "config.cs.title_options")
+    @Comment("", translation = "config.cs.title_options.desc")
     val title: TitleOrFooterObject = TitleOrFooterObject()
 
-    @ConfigEntry(id = "footer_options")
-    @Comment("Edit the footer of the scoreboard.")
+    @ConfigEntry(id = "footer_options", translation = "config.cs.footer_options")
+    @Comment("", translation = "config.cs.footer_options.desc")
     val footer: TitleOrFooterObject = TitleOrFooterObject()
 
-    @ConfigEntry(id = "number_format")
-    @Comment("Edit the number format of the scoreboard.")
+    @ConfigEntry(id = "number_format", translation = "config.cs.number_format")
+    @Comment("", translation = "config.cs.number_format.desc")
     var numberFormat: NumberFormatType = NumberFormatType.LONG
 }
