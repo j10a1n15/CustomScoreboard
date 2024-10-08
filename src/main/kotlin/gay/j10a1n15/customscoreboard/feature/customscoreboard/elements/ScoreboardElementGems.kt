@@ -4,10 +4,10 @@ import gay.j10a1n15.customscoreboard.utils.NumberUtils.format
 import tech.thatgravyboat.skyblockapi.api.location.SkyblockIsland
 import tech.thatgravyboat.skyblockapi.api.profile.CurrencyAPI
 
-object Copper : ScoreboardElement() {
-    override fun getDisplay() = "Copper: §c${CurrencyAPI.copper.format()}"
+object ScoreboardElementGems : ScoreboardElement() {
+    override fun getDisplay() = "Gems: §a${CurrencyAPI.gems.format()}"
 
-    override fun showIsland() = SkyblockIsland.inAnyIsland(SkyblockIsland.GARDEN)
+    override fun showIsland() = !SkyblockIsland.inAnyIsland(SkyblockIsland.THE_RIFT)
 
-    override val configLine = "Copper"
+    override val configLine = "Gems"
 }

@@ -3,7 +3,7 @@ package gay.j10a1n15.customscoreboard.feature.customscoreboard
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.elements.*
 
 enum class ScoreboardEntry(val element: ScoreboardElement) {
-    TITLE(Title),
+    TITLE(ScoreboardElementTitle),
 
     //    ISLAND(Island),
 //    LOCATION(Location),
@@ -11,15 +11,15 @@ enum class ScoreboardEntry(val element: ScoreboardElement) {
 //    DATE(Date),
 //    TIME(Time),
 //    LOBBY_CODE(LobbyCode),
-    PURSE(Purse),
-    MOTES(Motes),
-    BANK(Bank),
-    BITS(Bits),
-    COPPER(Copper),
-    GEMS(Gems),
-    HEAT(Heat),
-    COLD(Cold),
-    NORTH_STARS(NorthStars),
+    PURSE(ScoreboardElementPurse),
+    MOTES(ScoreboardElementMotes),
+    BANK(ScoreboardElementBank),
+    BITS(ScoreboardElementBits),
+    COPPER(ScoreboardElementCopper),
+    GEMS(ScoreboardElementGems),
+    HEAT(ScoreboardElementHeat),
+    COLD(ScoreboardElementCold),
+    NORTH_STARS(ScoreboardElementNorthStars),
 //    OBJECTIVE(Objective),
 //    SLAYER(Slayer),
 //    EVENTS(Events),
@@ -38,7 +38,7 @@ enum class ScoreboardEntry(val element: ScoreboardElement) {
 //    MAYOR(Mayor),
 //    PARTY(Party),
 
-    FOOTER(Footer),
+    FOOTER(ScoreboardElementFooter),
     ;
 
     override fun toString() = element.configLine

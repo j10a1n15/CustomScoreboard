@@ -2,7 +2,7 @@ package gay.j10a1n15.customscoreboard.feature.customscoreboard.elements
 
 import tech.thatgravyboat.skyblockapi.api.location.SkyblockIsland
 
-object Heat : ScoreboardElement() {
+object ScoreboardElementHeat : ScoreboardElement() {
     // todo: hollows api
     override fun getDisplay() = "Heat: 0"
 

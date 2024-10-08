@@ -5,7 +5,7 @@ import tech.thatgravyboat.skyblockapi.api.location.SkyblockIsland
 import tech.thatgravyboat.skyblockapi.api.profile.CurrencyAPI
 import tech.thatgravyboat.skyblockapi.api.profile.community.CommunityCenterAPI
 
-object Bits : ScoreboardElement() {
+object ScoreboardElementBits : ScoreboardElement() {
     override fun getDisplay() = "Bits: §b${CurrencyAPI.bits.format()}§7/§b${CommunityCenterAPI.bitsAvailable.format()}"
 
     override fun showIsland() = !SkyblockIsland.inAnyIsland(SkyblockIsland.THE_RIFT, SkyblockIsland.THE_CATACOMBS)

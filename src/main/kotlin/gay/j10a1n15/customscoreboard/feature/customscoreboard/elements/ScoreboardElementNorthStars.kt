@@ -4,7 +4,7 @@ import gay.j10a1n15.customscoreboard.utils.NumberUtils.format
 import tech.thatgravyboat.skyblockapi.api.location.SkyblockIsland
 import tech.thatgravyboat.skyblockapi.api.profile.CurrencyAPI
 
-object NorthStars : ScoreboardElement() {
+object ScoreboardElementNorthStars : ScoreboardElement() {
     override fun getDisplay() = "North Stars: §d${CurrencyAPI.northStars.format()}"
 
     override fun showIsland() = SkyblockIsland.inAnyIsland(SkyblockIsland.JERRYS_WORKSHOP)
