@@ -23,7 +23,6 @@ object ScoreboardElementArea : ScoreboardElement() {
         if (!LocationAPI.isOnSkyblock) return
         locationRegex.anyMatch(event.addedComponents) {
             this.formattedLocation = it.component
-            println("a " + it.component)
         }
     }
 }
