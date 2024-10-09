@@ -43,4 +43,8 @@ object MainConfig {
     @ConfigEntry(id = "horizontal_alignment", translation = "config.cs.horizontal_alignment")
     @Comment("", translation = "config.cs.horizontal_alignment.desc")
     var horizontalAlignment: HorizontalAlignment = HorizontalAlignment.RIGHT
+
+    @ConfigEntry(id = "hide_hypixel", translation = "config.cs.hide_hypixel")
+    @Comment("", translation = "config.cs.hide_hypixel.desc")
+    var hideHypixelScoreboard: Boolean = true
 }

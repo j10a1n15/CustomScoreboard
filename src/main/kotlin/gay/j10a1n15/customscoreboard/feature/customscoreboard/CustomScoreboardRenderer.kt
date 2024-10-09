@@ -6,6 +6,8 @@ import gay.j10a1n15.customscoreboard.utils.rendering.RenderUtils.drawAlignedText
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents
 import tech.thatgravyboat.skyblockapi.api.events.base.Subscription
 import tech.thatgravyboat.skyblockapi.api.events.location.IslandChangeEvent
+import tech.thatgravyboat.skyblockapi.api.events.render.HudElement
+import tech.thatgravyboat.skyblockapi.api.events.render.RenderHudElementEvent
 import tech.thatgravyboat.skyblockapi.api.events.render.RenderHudEvent
 import tech.thatgravyboat.skyblockapi.api.location.LocationAPI
 import tech.thatgravyboat.skyblockapi.helpers.McClient
@@ -67,6 +69,14 @@ object CustomScoreboardRenderer {
         }
     }
 
+    @Subscription
+    fun onRenderHudElement(event: RenderHudElementEvent) {
+        if (event.element == HudElement.SCOREBOARD && hideHypixelScoreboard()) {
+            event.cancel()
+        }
+    }
+
     private fun isEnabled() = LocationAPI.isOnSkyblock && MainConfig.enabled
+    private fun hideHypixelScoreboard() = isEnabled() && MainConfig.hideHypixelScoreboard
 
 }
