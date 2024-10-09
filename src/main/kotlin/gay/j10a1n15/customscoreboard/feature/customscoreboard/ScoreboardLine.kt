@@ -1,6 +1,6 @@
 package gay.j10a1n15.customscoreboard.feature.customscoreboard
 
-import gay.j10a1n15.customscoreboard.utils.Text.toComponent
+import gay.j10a1n15.customscoreboard.utils.TextUtils.toComponent
 import gay.j10a1n15.customscoreboard.utils.rendering.AlignedText
 import gay.j10a1n15.customscoreboard.utils.rendering.TextAlignment
 import net.minecraft.network.chat.Component
