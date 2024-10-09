@@ -2,7 +2,9 @@ package gay.j10a1n15.customscoreboard.feature.customscoreboard
 
 import gay.j10a1n15.customscoreboard.config.MainConfig
 import gay.j10a1n15.customscoreboard.utils.rendering.AlignedText
+import gay.j10a1n15.customscoreboard.utils.rendering.HorizontalAlignment
 import gay.j10a1n15.customscoreboard.utils.rendering.RenderUtils.drawAlignedTexts
+import gay.j10a1n15.customscoreboard.utils.rendering.VerticalAlignment
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents
 import tech.thatgravyboat.skyblockapi.api.events.base.Subscription
 import tech.thatgravyboat.skyblockapi.api.events.location.IslandChangeEvent
@@ -33,14 +35,19 @@ object CustomScoreboardRenderer {
     }
 
     private fun updatePosition() {
-        val newX = MainConfig.horizontalAlignment.align(dimensions.first, screenWidth)
-        val newY = MainConfig.verticalAlignment.align(dimensions.second, screenHeight)
-        position = newX to newY
-    }
-
-    @Subscription
-    fun onIslandChange(event: IslandChangeEvent) {
-        updateIslandCache()
+        with(MainConfig) {
+            val newX = when (horizontalAlignment) {
+                HorizontalAlignment.LEFT -> padding
+                HorizontalAlignment.CENTER -> (screenWidth - dimensions.second) / 2
+                HorizontalAlignment.RIGHT -> screenWidth - dimensions.second - padding
+            }
+            val newY = when (verticalAlignment) {
+                VerticalAlignment.TOP -> padding
+                VerticalAlignment.CENTER -> (screenHeight - dimensions.first) / 2
+                VerticalAlignment.BOTTOM -> screenHeight - dimensions.first - padding
+            }
+            position = newX to newY
+        }
     }
 
     @Subscription
@@ -74,6 +81,11 @@ object CustomScoreboardRenderer {
         if (event.element == HudElement.SCOREBOARD && hideHypixelScoreboard()) {
             event.cancel()
         }
+    }
+
+    @Subscription
+    fun onIslandChange(event: IslandChangeEvent) {
+        updateIslandCache()
     }
 
     private fun isEnabled() = LocationAPI.isOnSkyblock && MainConfig.enabled
