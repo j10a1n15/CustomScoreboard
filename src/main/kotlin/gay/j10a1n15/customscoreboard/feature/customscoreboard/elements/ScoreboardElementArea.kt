@@ -11,7 +11,7 @@ import tech.thatgravyboat.skyblockapi.utils.text.CommonText
 
 object ScoreboardElementArea : ScoreboardElement() {
     override fun getDisplay() =
-        listOf(formattedLocation, formattedGardenPlot, formattedVisiting).map { it.trim() }.filter { it != CommonText.EMPTY }
+        listOf(formattedLocation, formattedGardenPlot, formattedVisiting).filter { it != CommonText.EMPTY }
 
     override val configLine = "Area"
 
@@ -27,14 +27,21 @@ object ScoreboardElementArea : ScoreboardElement() {
     @Subscription
     fun onScoreboardChange(event: ScoreboardUpdateEvent) {
         if (!LocationAPI.isOnSkyblock) return
-        locationRegex.anyMatch(event.addedComponents) {
-            this.formattedLocation = it.component
+
+        if (!locationRegex.anyMatch(event.addedComponents) {
+                this.formattedLocation = it.component.trim()
+            }) {
+            formattedLocation = CommonText.EMPTY
         }
-        gardenPlotRegex.anyMatch(event.addedComponents) {
-            this.formattedGardenPlot = it.component
+        if (!gardenPlotRegex.anyMatch(event.addedComponents) {
+                this.formattedGardenPlot = it.component
+            }) {
+            formattedGardenPlot = CommonText.EMPTY
         }
-        visitingRegex.anyMatch(event.addedComponents) {
-            this.formattedVisiting = it.component
+        if (!visitingRegex.anyMatch(event.addedComponents) {
+                this.formattedVisiting = it.component.trim()
+            }) {
+            formattedVisiting = CommonText.EMPTY
         }
     }
 }

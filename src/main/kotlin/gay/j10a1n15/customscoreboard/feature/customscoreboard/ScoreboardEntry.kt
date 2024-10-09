@@ -6,7 +6,6 @@ enum class ScoreboardEntry(val element: ScoreboardElement) {
     TITLE(ScoreboardElementTitle),
     ISLAND(ScoreboardElementIsland),
     LOCATION(ScoreboardElementArea),
-//    VISITING(Visiting),
 //    DATE(Date),
 //    TIME(Time),
 //    LOBBY_CODE(LobbyCode),
