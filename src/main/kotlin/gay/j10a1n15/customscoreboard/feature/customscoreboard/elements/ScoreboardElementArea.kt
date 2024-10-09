@@ -17,12 +17,12 @@ object ScoreboardElementArea : ScoreboardElement() {
 
 
     private val locationRegex = ComponentRegex("\\s*[⏣ф] .+")
-    private val gardenPlotRegex = ComponentRegex("\\s*Plot -.*")
+    private val gardenPlotRegex = ComponentRegex("\\s*Plot -.+")
     private val visitingRegex = ComponentRegex("\\s*✌ \\(\\d+/\\d+\\)")
 
-    var formattedLocation: Component = CommonText.EMPTY
-    var formattedGardenPlot: Component = CommonText.EMPTY
-    var formattedVisiting: Component = CommonText.EMPTY
+    private var formattedLocation: Component = CommonText.EMPTY
+    private var formattedGardenPlot: Component = CommonText.EMPTY
+    private var formattedVisiting: Component = CommonText.EMPTY
 
     @Subscription
     fun onScoreboardChange(event: ScoreboardUpdateEvent) {
