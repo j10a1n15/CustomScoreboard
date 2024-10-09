@@ -6,4 +6,12 @@ enum class HorizontalAlignment {
     RIGHT;
 
     override fun toString() = name.lowercase().replaceFirstChar { it.uppercase() }
+
+    fun align(width: Int, screenWidth: Int): Int {
+        return when (this) {
+            LEFT -> 0
+            CENTER -> (screenWidth - width) / 2
+            RIGHT -> screenWidth - width
+        }
+    }
 }

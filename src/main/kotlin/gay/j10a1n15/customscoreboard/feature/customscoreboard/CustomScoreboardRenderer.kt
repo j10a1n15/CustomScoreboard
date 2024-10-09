@@ -2,9 +2,7 @@ package gay.j10a1n15.customscoreboard.feature.customscoreboard
 
 import gay.j10a1n15.customscoreboard.config.MainConfig
 import gay.j10a1n15.customscoreboard.utils.rendering.AlignedText
-import gay.j10a1n15.customscoreboard.utils.rendering.HorizontalAlignment
 import gay.j10a1n15.customscoreboard.utils.rendering.RenderUtils.drawAlignedTexts
-import gay.j10a1n15.customscoreboard.utils.rendering.VerticalAlignment
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents
 import tech.thatgravyboat.skyblockapi.api.events.base.Subscription
 import tech.thatgravyboat.skyblockapi.api.events.location.IslandChangeEvent
@@ -33,17 +31,8 @@ object CustomScoreboardRenderer {
     }
 
     private fun updatePosition() {
-        val newX = when (MainConfig.horizontalAlignment) {
-            HorizontalAlignment.LEFT -> 0
-            HorizontalAlignment.CENTER -> (screenWidth - dimensions.first) / 2
-            HorizontalAlignment.RIGHT -> screenWidth - dimensions.first
-        }
-        val newY = when (MainConfig.verticalAlignment) {
-            VerticalAlignment.TOP -> 0
-            VerticalAlignment.CENTER -> (screenHeight - dimensions.second) / 2
-            VerticalAlignment.BOTTOM -> screenHeight - dimensions.second
-        }
-
+        val newX = MainConfig.horizontalAlignment.align(dimensions.first, screenWidth)
+        val newY = MainConfig.verticalAlignment.align(dimensions.second, screenHeight)
         position = newX to newY
     }
 

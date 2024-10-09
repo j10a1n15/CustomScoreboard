@@ -6,4 +6,12 @@ enum class VerticalAlignment {
     BOTTOM;
 
     override fun toString() = name.lowercase().replaceFirstChar { it.uppercase() }
+
+    fun align(height: Int, screenHeight: Int): Int {
+        return when (this) {
+            TOP -> 0
+            CENTER -> (screenHeight - height) / 2
+            BOTTOM -> screenHeight - height
+        }
+    }
 }
