@@ -4,6 +4,7 @@ import com.mojang.brigadier.CommandDispatcher
 import com.teamresourceful.resourcefulconfig.api.client.ResourcefulConfigScreen
 import com.teamresourceful.resourcefulconfig.api.loader.Configurator
 import gay.j10a1n15.customscoreboard.config.MainConfig
+import gay.j10a1n15.customscoreboard.config.position.Overlays
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.CustomScoreboardRenderer
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.elements.ScoreboardElementArea
 import net.fabricmc.api.ModInitializer
@@ -20,12 +21,17 @@ object Main : ModInitializer {
 
     val configurator = Configurator("customscoreboard")
 
+    fun saveConfig() {
+        configurator.saveConfig(MainConfig::class.java)
+    }
+
     override fun onInitialize() {
         configurator.register(MainConfig::class.java)
         ClientCommandRegistrationCallback.EVENT.register(::onRegisterCommands)
 
         SkyBlockAPI.eventBus.register(CustomScoreboardRenderer)
         SkyBlockAPI.eventBus.register(ScoreboardElementArea)
+        SkyBlockAPI.eventBus.register(Overlays)
     }
 
     private fun onRegisterCommands(

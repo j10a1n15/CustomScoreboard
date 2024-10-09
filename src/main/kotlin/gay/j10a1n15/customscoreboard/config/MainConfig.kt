@@ -2,6 +2,7 @@ package gay.j10a1n15.customscoreboard.config
 
 import com.teamresourceful.resourcefulconfig.api.annotations.*
 import com.teamresourceful.resourcefulconfig.api.types.entries.Observable
+import gay.j10a1n15.customscoreboard.config.objects.Position
 import gay.j10a1n15.customscoreboard.config.objects.TitleOrFooterObject
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.ScoreboardEntry
 import gay.j10a1n15.customscoreboard.utils.NumberFormatType
@@ -33,4 +34,8 @@ object MainConfig {
     @ConfigEntry(id = "number_format", translation = "config.cs.number_format")
     @Comment("", translation = "config.cs.number_format.desc")
     var numberFormat: NumberFormatType = NumberFormatType.LONG
+
+    @ConfigOption.Hidden
+    @ConfigEntry(id = "position")
+    val position = Position(100, 100)
 }

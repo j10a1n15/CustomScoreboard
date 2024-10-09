@@ -2,16 +2,14 @@ package gay.j10a1n15.customscoreboard.feature.customscoreboard
 
 import gay.j10a1n15.customscoreboard.config.MainConfig
 import gay.j10a1n15.customscoreboard.utils.rendering.AlignedText
-import gay.j10a1n15.customscoreboard.utils.rendering.RenderUtils.drawAlignedTexts
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents
 import tech.thatgravyboat.skyblockapi.api.events.base.Subscription
 import tech.thatgravyboat.skyblockapi.api.events.location.IslandChangeEvent
-import tech.thatgravyboat.skyblockapi.api.events.render.RenderHudEvent
 import tech.thatgravyboat.skyblockapi.api.location.LocationAPI
 
 object CustomScoreboardRenderer {
 
-    private var display: List<AlignedText>? = null
+    var display: List<AlignedText>? = null
     private var currentIslandElements = emptyList<ScoreboardEntry>()
 
     init {
@@ -26,19 +24,6 @@ object CustomScoreboardRenderer {
     @Subscription
     fun onIslandChange(event: IslandChangeEvent) {
         updateIslandCache()
-    }
-
-    @Subscription
-    fun onRender(event: RenderHudEvent) {
-        if (!isEnabled()) return
-        val display = display ?: return
-        if (display.isEmpty()) return
-
-        event.graphics.drawAlignedTexts(
-            display,
-            100,
-            100,
-        )
     }
 
     private fun updateIslandCache() {
@@ -56,6 +41,6 @@ object CustomScoreboardRenderer {
         }
     }
 
-    private fun isEnabled() = LocationAPI.isOnSkyblock && MainConfig.enabled
+    fun isEnabled() = LocationAPI.isOnSkyblock && MainConfig.enabled
 
 }
