@@ -39,12 +39,12 @@ object CustomScoreboardRenderer {
             val newX = when (horizontalAlignment) {
                 HorizontalAlignment.LEFT -> padding
                 HorizontalAlignment.CENTER -> (screenWidth - dimensions.second) / 2
-                HorizontalAlignment.RIGHT -> screenWidth - dimensions.second - padding
+                HorizontalAlignment.RIGHT -> screenWidth - dimensions.second - padding * 2
             }
             val newY = when (verticalAlignment) {
                 VerticalAlignment.TOP -> padding
                 VerticalAlignment.CENTER -> (screenHeight - dimensions.first) / 2
-                VerticalAlignment.BOTTOM -> screenHeight - dimensions.first - padding
+                VerticalAlignment.BOTTOM -> screenHeight - dimensions.first - padding * 2
             }
             position = newX to newY
         }
