@@ -6,8 +6,9 @@ import tech.thatgravyboat.skyblockapi.api.location.SkyblockIsland
 object ScoreboardElementCold : ScoreboardElement() {
     override fun getDisplay() = "Cold: §b${GlaciteAPI.cold}❄"
 
-    // todo: mineshaft
-    override fun showIsland() = SkyblockIsland.inAnyIsland(SkyblockIsland.DWARVEN_MINES /*SkyblockIsland.MINESHAFT*/)
+    override fun showWhen() = GlaciteAPI.inGlaciteTunnels()
+
+    override fun showIsland() = SkyblockIsland.inAnyIsland(SkyblockIsland.DWARVEN_MINES, SkyblockIsland.MINESHAFT)
 
     override val configLine = "cold"
 }
