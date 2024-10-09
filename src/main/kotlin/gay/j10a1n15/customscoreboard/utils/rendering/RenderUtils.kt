@@ -5,14 +5,14 @@ import net.minecraft.client.gui.Font
 import net.minecraft.client.gui.GuiGraphics
 import net.minecraft.network.chat.Component
 
-typealias AlignedText = Pair<Component, Alignment>
+typealias AlignedText = Pair<Component, TextAlignment>
 
 object RenderUtils {
 
     private val font: Font
         get() = Minecraft.getInstance().font
 
-    fun GuiGraphics.drawAlignedText(text: Component, x: Int, y: Int, width: Int, alignment: Alignment) {
+    fun GuiGraphics.drawAlignedText(text: Component, x: Int, y: Int, width: Int, alignment: TextAlignment) {
         val textWidth = font.width(text)
         drawString(font, text, x + alignment.align(textWidth, width), y, -1)
     }

@@ -2,10 +2,11 @@ package gay.j10a1n15.customscoreboard.config
 
 import com.teamresourceful.resourcefulconfig.api.annotations.*
 import com.teamresourceful.resourcefulconfig.api.types.entries.Observable
-import gay.j10a1n15.customscoreboard.config.objects.Position
 import gay.j10a1n15.customscoreboard.config.objects.TitleOrFooterObject
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.ScoreboardEntry
 import gay.j10a1n15.customscoreboard.utils.NumberFormatType
+import gay.j10a1n15.customscoreboard.utils.rendering.HorizontalAlignment
+import gay.j10a1n15.customscoreboard.utils.rendering.VerticalAlignment
 
 @ConfigInfo.Provider(InfoProvider::class)
 @Config(
@@ -35,7 +36,11 @@ object MainConfig {
     @Comment("", translation = "config.cs.number_format.desc")
     var numberFormat: NumberFormatType = NumberFormatType.LONG
 
-    @ConfigOption.Hidden
-    @ConfigEntry(id = "position")
-    val position = Position(100, 100)
+    @ConfigEntry(id = "vertical_alignment", translation = "config.cs.vertical_alignment")
+    @Comment("", translation = "config.cs.vertical_alignment.desc")
+    var verticalAlignment: VerticalAlignment = VerticalAlignment.CENTER
+
+    @ConfigEntry(id = "horizontal_alignment", translation = "config.cs.horizontal_alignment")
+    @Comment("", translation = "config.cs.horizontal_alignment.desc")
+    var horizontalAlignment: HorizontalAlignment = HorizontalAlignment.RIGHT
 }

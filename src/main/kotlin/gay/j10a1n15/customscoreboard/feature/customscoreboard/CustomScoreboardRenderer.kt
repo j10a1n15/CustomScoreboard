@@ -2,15 +2,26 @@ package gay.j10a1n15.customscoreboard.feature.customscoreboard
 
 import gay.j10a1n15.customscoreboard.config.MainConfig
 import gay.j10a1n15.customscoreboard.utils.rendering.AlignedText
+import gay.j10a1n15.customscoreboard.utils.rendering.HorizontalAlignment
+import gay.j10a1n15.customscoreboard.utils.rendering.RenderUtils.drawAlignedTexts
+import gay.j10a1n15.customscoreboard.utils.rendering.VerticalAlignment
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents
 import tech.thatgravyboat.skyblockapi.api.events.base.Subscription
 import tech.thatgravyboat.skyblockapi.api.events.location.IslandChangeEvent
+import tech.thatgravyboat.skyblockapi.api.events.render.RenderHudEvent
 import tech.thatgravyboat.skyblockapi.api.location.LocationAPI
+import tech.thatgravyboat.skyblockapi.helpers.McClient
 
 object CustomScoreboardRenderer {
 
-    var display: List<AlignedText>? = null
+    private var display: List<AlignedText>? = null
     private var currentIslandElements = emptyList<ScoreboardEntry>()
+
+    private var position: Pair<Int, Int> = 0 to 0
+    private var dimensions: Pair<Int, Int> = 0 to 0
+
+    private val screenWidth get() = McClient.window.guiScaledWidth
+    private val screenHeight get() = McClient.window.guiScaledHeight
 
     init {
         ClientTickEvents.START_CLIENT_TICK.register { updateDisplay() }
@@ -21,9 +32,35 @@ object CustomScoreboardRenderer {
         }
     }
 
+    private fun updatePosition() {
+        val newX = when (MainConfig.horizontalAlignment) {
+            HorizontalAlignment.LEFT -> 0
+            HorizontalAlignment.CENTER -> (screenWidth - dimensions.first) / 2
+            HorizontalAlignment.RIGHT -> screenWidth - dimensions.first
+        }
+        val newY = when (MainConfig.verticalAlignment) {
+            VerticalAlignment.TOP -> 0
+            VerticalAlignment.CENTER -> (screenHeight - dimensions.second) / 2
+            VerticalAlignment.BOTTOM -> screenHeight - dimensions.second
+        }
+
+        position = newX to newY
+    }
+
     @Subscription
     fun onIslandChange(event: IslandChangeEvent) {
         updateIslandCache()
+    }
+
+    @Subscription
+    fun onRender(event: RenderHudEvent) {
+        if (!isEnabled()) return
+        val display = display ?: return
+        if (display.isEmpty()) return
+
+        updatePosition()
+
+        dimensions = event.graphics.drawAlignedTexts(display, position.first, position.second)
     }
 
     private fun updateIslandCache() {
@@ -41,6 +78,6 @@ object CustomScoreboardRenderer {
         }
     }
 
-    fun isEnabled() = LocationAPI.isOnSkyblock && MainConfig.enabled
+    private fun isEnabled() = LocationAPI.isOnSkyblock && MainConfig.enabled
 
 }

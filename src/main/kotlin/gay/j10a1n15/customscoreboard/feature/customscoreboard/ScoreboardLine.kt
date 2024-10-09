@@ -2,26 +2,26 @@ package gay.j10a1n15.customscoreboard.feature.customscoreboard
 
 import gay.j10a1n15.customscoreboard.utils.Text.toComponent
 import gay.j10a1n15.customscoreboard.utils.rendering.AlignedText
-import gay.j10a1n15.customscoreboard.utils.rendering.Alignment
+import gay.j10a1n15.customscoreboard.utils.rendering.TextAlignment
 import net.minecraft.network.chat.Component
 
 data class ScoreboardLine(
     val display: Component,
-    val alignment: Alignment = DEFAULT_ALIGNMENT,
+    val alignment: TextAlignment = DEFAULT_ALIGNMENT,
 ) {
 
     fun toAlignedText(): AlignedText = display to alignment
 
     companion object {
-        private val DEFAULT_ALIGNMENT get() = Alignment.START//displayConfig.textAlignment
+        private val DEFAULT_ALIGNMENT get() = TextAlignment.START//displayConfig.textAlignment
 
         fun String.align(): ScoreboardLine = ScoreboardLine(this.toComponent(), DEFAULT_ALIGNMENT)
 
         fun Component.align(): ScoreboardLine = ScoreboardLine(this, DEFAULT_ALIGNMENT)
 
-        infix fun String.align(alignment: Alignment): ScoreboardLine = ScoreboardLine(this.toComponent(), alignment)
+        infix fun String.align(alignment: TextAlignment): ScoreboardLine = ScoreboardLine(this.toComponent(), alignment)
 
-        infix fun Component.align(alignment: Alignment): ScoreboardLine = ScoreboardLine(this, alignment)
+        infix fun Component.align(alignment: TextAlignment): ScoreboardLine = ScoreboardLine(this, alignment)
 
         internal fun getElementsFromAny(element: Any?): List<ScoreboardLine> = when (element) {
             null -> listOf()
