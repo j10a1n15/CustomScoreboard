@@ -4,10 +4,10 @@ import gay.j10a1n15.customscoreboard.utils.NumberUtils.format
 import tech.thatgravyboat.skyblockapi.api.location.SkyblockIsland
 import tech.thatgravyboat.skyblockapi.api.profile.CurrencyAPI
 
-object ScoreboardElementPurse : ScoreboardElement() {
-    override fun getDisplay() = "Purse: §6${CurrencyAPI.purse.format()}"
+object ElementNorthStars : Element() {
+    override fun getDisplay() = "North Stars: §d${CurrencyAPI.northStars.format()}"
 
-    override fun showIsland() = !SkyblockIsland.inAnyIsland(SkyblockIsland.THE_RIFT)
+    override fun showIsland() = SkyblockIsland.inAnyIsland(SkyblockIsland.JERRYS_WORKSHOP)
 
-    override val configLine: String = "Purse"
+    override val configLine = "North Stars"
 }

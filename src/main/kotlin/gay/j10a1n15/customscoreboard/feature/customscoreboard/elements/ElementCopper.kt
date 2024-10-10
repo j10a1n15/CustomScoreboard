@@ -4,7 +4,7 @@ import gay.j10a1n15.customscoreboard.utils.NumberUtils.format
 import tech.thatgravyboat.skyblockapi.api.location.SkyblockIsland
 import tech.thatgravyboat.skyblockapi.api.profile.CurrencyAPI
 
-object ScoreboardElementCopper : ScoreboardElement() {
+object ElementCopper : Element() {
     override fun getDisplay() = "Copper: §c${CurrencyAPI.copper.format()}"
 
     override fun showIsland() = SkyblockIsland.inAnyIsland(SkyblockIsland.GARDEN)

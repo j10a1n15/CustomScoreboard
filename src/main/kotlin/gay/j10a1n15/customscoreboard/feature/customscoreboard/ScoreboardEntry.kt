@@ -2,27 +2,27 @@ package gay.j10a1n15.customscoreboard.feature.customscoreboard
 
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.elements.*
 
-enum class ScoreboardEntry(val element: ScoreboardElement) {
-    TITLE(ScoreboardElementTitle),
-    ISLAND(ScoreboardElementIsland),
-    AREA(ScoreboardElementArea),
+enum class ScoreboardEntry(val element: Element) {
+    TITLE(ElementTitle),
+    ISLAND(ElementIsland),
+    AREA(ElementArea),
 //    DATE(Date),
-TIME(ScoreboardElementTime),
+TIME(ElementTime),
 //    LOBBY_CODE(LobbyCode),
-    PURSE(ScoreboardElementPurse),
-    MOTES(ScoreboardElementMotes),
-    BANK(ScoreboardElementBank),
-    BITS(ScoreboardElementBits),
-    COPPER(ScoreboardElementCopper),
-    GEMS(ScoreboardElementGems),
-    HEAT(ScoreboardElementHeat),
-    COLD(ScoreboardElementCold),
-    NORTH_STARS(ScoreboardElementNorthStars),
+PURSE(ElementPurse),
+    MOTES(ElementMotes),
+    BANK(ElementBank),
+    BITS(ElementBits),
+    COPPER(ElementCopper),
+    GEMS(ElementGems),
+    HEAT(ElementHeat),
+    COLD(ElementCold),
+    NORTH_STARS(ElementNorthStars),
 
 //    OBJECTIVE(Objective),
 //    SLAYER(Slayer),
 //    EVENTS(Events),
-EMPTY(ScoreboardElementEmpty),
+EMPTY(ElementEmpty),
 
 //    PROFILE(Profile),
 //    POWER(Power),
@@ -37,7 +37,7 @@ EMPTY(ScoreboardElementEmpty),
 //    PARTY(Party),
 //    Unknown(Unknown),
 
-    FOOTER(ScoreboardElementFooter),
+    FOOTER(ElementFooter),
     ;
 
     override fun toString() = element.configLine

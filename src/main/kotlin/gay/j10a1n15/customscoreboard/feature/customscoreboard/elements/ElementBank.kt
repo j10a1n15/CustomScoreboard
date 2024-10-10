@@ -5,7 +5,7 @@ import tech.thatgravyboat.skyblockapi.api.location.SkyblockIsland
 import tech.thatgravyboat.skyblockapi.api.profile.CurrencyAPI
 import tech.thatgravyboat.skyblockapi.api.profile.profile.ProfileAPI
 
-object ScoreboardElementBank : ScoreboardElement() {
+object ElementBank : Element() {
     override fun getDisplay() = if (ProfileAPI.coop) {
         "Bank: §6${CurrencyAPI.personalBank.format()}§7/§6${CurrencyAPI.coopBank.format()}"
     } else {

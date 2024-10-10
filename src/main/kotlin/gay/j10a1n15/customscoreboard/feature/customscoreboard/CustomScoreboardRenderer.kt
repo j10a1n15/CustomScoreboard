@@ -58,7 +58,11 @@ object CustomScoreboardRenderer {
         if (display.isEmpty()) return
 
         updatePosition()
+        renderBackground(event)
+        dimensions = event.graphics.drawAlignedTexts(display, position.first, position.second)
+    }
 
+    private fun renderBackground(event: RenderHudEvent) {
         val padding = MainConfig.padding
 
         val x1 = position.first
@@ -68,8 +72,6 @@ object CustomScoreboardRenderer {
         val y2 = y1 + dimensions.first
 
         event.graphics.fill(x1 - padding, y1 - padding, x2 + padding, y2 + padding, BackgroundConfig.color)
-
-        dimensions = event.graphics.drawAlignedTexts(display, x1, y1)
     }
 
     private fun updateIslandCache() {

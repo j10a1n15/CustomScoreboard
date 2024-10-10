@@ -4,7 +4,7 @@ import gay.j10a1n15.customscoreboard.utils.NumberUtils.format
 import tech.thatgravyboat.skyblockapi.api.location.SkyblockIsland
 import tech.thatgravyboat.skyblockapi.api.profile.CurrencyAPI
 
-object ScoreboardElementMotes : ScoreboardElement() {
+object ElementMotes : Element() {
     override fun getDisplay() = "Motes: §d${CurrencyAPI.motes.format()}"
 
     override fun showIsland() = SkyblockIsland.inAnyIsland(SkyblockIsland.THE_RIFT)

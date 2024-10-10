@@ -8,7 +8,7 @@ import tech.thatgravyboat.skyblockapi.api.location.LocationAPI
 import tech.thatgravyboat.skyblockapi.utils.regex.component.ComponentRegex
 import tech.thatgravyboat.skyblockapi.utils.regex.component.anyMatch
 
-object ScoreboardElementTime : ScoreboardElement() {
+object ElementTime : Element() {
     override fun getDisplay() = formattedTime
 
     override val configLine = "Time"

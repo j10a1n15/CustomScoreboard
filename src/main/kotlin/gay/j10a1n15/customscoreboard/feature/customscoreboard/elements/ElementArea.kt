@@ -8,7 +8,7 @@ import tech.thatgravyboat.skyblockapi.api.location.LocationAPI
 import tech.thatgravyboat.skyblockapi.utils.regex.component.ComponentRegex
 import tech.thatgravyboat.skyblockapi.utils.regex.component.anyMatch
 
-object ScoreboardElementArea : ScoreboardElement() {
+object ElementArea : Element() {
     override fun getDisplay() = listOfNotNull(formattedLocation, formattedGardenPlot, formattedVisiting)
 
     override val configLine = "Area"

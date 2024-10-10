@@ -3,7 +3,7 @@ package gay.j10a1n15.customscoreboard.feature.customscoreboard.elements
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.ScoreboardLine
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.ScoreboardLine.Companion.getElementsFromAny
 
-abstract class ScoreboardElement {
+abstract class Element {
     /**
      * Must be specified as one of the following:
      * - `String`
