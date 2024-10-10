@@ -21,7 +21,7 @@ enum class ScoreboardEntry(val element: Element) {
     HEAT(ElementHeat),
     COLD(ElementCold),
     NORTH_STARS(ElementNorthStars),
-    //    SOULFLOW(Soulflow),
+    SOULFLOW(ElementSoulflow),
 
     OBJECTIVE(ElementObjective),
     //    SLAYER(Slayer),
