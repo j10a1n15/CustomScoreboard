@@ -1,29 +1,25 @@
 package gay.j10a1n15.customscoreboard.utils.rendering
 
 import gay.j10a1n15.customscoreboard.utils.rendering.alignment.TextAlignment
-import net.minecraft.client.Minecraft
-import net.minecraft.client.gui.Font
 import net.minecraft.client.gui.GuiGraphics
 import net.minecraft.network.chat.Component
+import tech.thatgravyboat.skyblockapi.helpers.McClient
 
 typealias AlignedText = Pair<Component, TextAlignment>
 
 object RenderUtils {
 
-    private val font: Font
-        get() = Minecraft.getInstance().font
-
     fun GuiGraphics.drawAlignedText(text: Component, x: Int, y: Int, width: Int, alignment: TextAlignment) {
-        val textWidth = font.width(text)
-        drawString(font, text, x + alignment.align(textWidth, width), y, -1)
+        val textWidth = McClient.self.font.width(text)
+        drawString(McClient.self.font, text, x + alignment.align(textWidth, width), y, -1)
     }
 
     fun GuiGraphics.drawAlignedTexts(texts: List<AlignedText>, x: Int, y: Int) {
         var currentY = y
-        val maxWidth = texts.maxOf { font.width(it.first) }
+        val maxWidth = texts.maxOf { McClient.self.font.width(it.first) }
         texts.forEach { text ->
             drawAlignedText(text.first, x, currentY, maxWidth, text.second)
-            currentY += font.lineHeight
+            currentY += McClient.self.font.lineHeight
         }
     }
 
@@ -31,7 +27,7 @@ object RenderUtils {
         var currentY = y
         texts.forEach { text ->
             drawAlignedText(text.first, x, currentY, width, text.second)
-            currentY += font.lineHeight
+            currentY += McClient.self.font.lineHeight
         }
     }
 }
