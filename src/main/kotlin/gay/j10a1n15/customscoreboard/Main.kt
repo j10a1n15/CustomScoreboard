@@ -11,9 +11,9 @@ import net.fabricmc.api.ModInitializer
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandManager
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandRegistrationCallback
 import net.fabricmc.fabric.api.client.command.v2.FabricClientCommandSource
-import net.minecraft.client.Minecraft
 import net.minecraft.commands.CommandBuildContext
 import tech.thatgravyboat.skyblockapi.api.SkyBlockAPI
+import tech.thatgravyboat.skyblockapi.helpers.McClient
 
 object Main : ModInitializer {
 
@@ -36,10 +36,8 @@ object Main : ModInitializer {
     ) {
         dispatcher.register(
             ClientCommandManager.literal("cs").executes { context ->
-                Minecraft.getInstance().tell {
-                    Minecraft.getInstance().let {
-                        it.setScreen(ResourcefulConfigScreen.get(it.screen, configurator, MainConfig::class.java))
-                    }
+                McClient.tell {
+                    McClient.setScreen(ResourcefulConfigScreen.get(null, configurator, MainConfig::class.java))
                 }
                 1
             },
