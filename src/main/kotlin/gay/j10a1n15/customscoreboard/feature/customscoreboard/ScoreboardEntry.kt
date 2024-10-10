@@ -3,13 +3,15 @@ package gay.j10a1n15.customscoreboard.feature.customscoreboard
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.elements.*
 
 enum class ScoreboardEntry(val element: Element) {
+    EMPTY(ElementEmpty),
+
     TITLE(ElementTitle),
-    ISLAND(ElementIsland),
-    AREA(ElementArea),
+    LOBBY(ElementLobby),
     DATE(ElementDate),
     TIME(ElementTime),
+    ISLAND(ElementIsland),
+    AREA(ElementArea),
 
-    //    LOBBY_CODE(LobbyCode),
     PURSE(ElementPurse),
     MOTES(ElementMotes),
     BANK(ElementBank),
@@ -23,7 +25,6 @@ enum class ScoreboardEntry(val element: Element) {
     //    OBJECTIVE(Objective),
     //    SLAYER(Slayer),
     //    EVENTS(Events),
-    EMPTY(ElementEmpty),
 
     //    PROFILE(Profile),
     //    POWER(Power),
