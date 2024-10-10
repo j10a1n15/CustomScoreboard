@@ -1,6 +1,7 @@
 package gay.j10a1n15.customscoreboard.feature.customscoreboard.elements
 
 import tech.thatgravyboat.skyblockapi.api.datetime.DateTimeAPI
+import tech.thatgravyboat.skyblockapi.helpers.McLevel
 
 object ElementTime : Element() {
     override fun getDisplay() = buildString {
@@ -11,6 +12,16 @@ object ElementTime : Element() {
         val period = if (hour >= 12) "pm" else "am"
 
         append(String.format("%02d:%02d%s", hour12, DateTimeAPI.minute, period))
+
+        // TODO: Check thunder in spider island
+        val symbol = when {
+            McLevel.self.isRaining -> "§3☔"
+            McLevel.self.isThundering -> "§e⚡"
+            DateTimeAPI.isDay -> "§e☀"
+            else -> "§8☾"
+        }
+
+        append(" $symbol")
     }
 
     override val configLine = "Time"
