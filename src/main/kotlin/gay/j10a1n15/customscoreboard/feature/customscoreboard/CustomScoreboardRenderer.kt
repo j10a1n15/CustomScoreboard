@@ -67,6 +67,7 @@ object CustomScoreboardRenderer {
     }
 
     private fun renderBackground(event: RenderHudEvent) {
+        if (!BackgroundConfig.enabled) return
         val padding = BackgroundConfig.padding
 
         val x1 = position.first
