@@ -3,6 +3,7 @@ package gay.j10a1n15.customscoreboard.config
 import com.teamresourceful.resourcefulconfig.api.annotations.*
 import com.teamresourceful.resourcefulconfig.api.types.entries.Observable
 import gay.j10a1n15.customscoreboard.config.categories.BackgroundConfig
+import gay.j10a1n15.customscoreboard.config.categories.LinesConfig
 import gay.j10a1n15.customscoreboard.config.objects.TitleOrFooterObject
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.ScoreboardEntry
 import gay.j10a1n15.customscoreboard.utils.NumberFormatType
@@ -12,7 +13,7 @@ import gay.j10a1n15.customscoreboard.utils.rendering.alignment.VerticalAlignment
 @ConfigInfo.Provider(InfoProvider::class)
 @Config(
     value = "customscoreboard/config",
-    categories = [BackgroundConfig::class],
+    categories = [BackgroundConfig::class, LinesConfig::class],
 )
 object MainConfig {
 
@@ -49,7 +50,4 @@ object MainConfig {
     @Comment("", translation = "config.cs.hide_hypixel.desc")
     var hideHypixelScoreboard: Boolean = true
 
-    @ConfigEntry(id = "colored_month", translation = "config.cs.colored_month")
-    @Comment("", translation = "config.cs.colored_month.desc")
-    var coloredMonth: Boolean = true
 }

@@ -5,7 +5,7 @@ import com.teamresourceful.resourcefulconfig.api.annotations.Comment
 import com.teamresourceful.resourcefulconfig.api.annotations.ConfigEntry
 import com.teamresourceful.resourcefulconfig.api.annotations.ConfigOption
 
-@Category("background")
+@Category("Background")
 object BackgroundConfig {
 
     @ConfigEntry(id = "enabled", translation = "config.cs.background.enabled")
