@@ -7,9 +7,7 @@ import tech.thatgravyboat.skyblockapi.api.events.info.ScoreboardUpdateEvent
 import tech.thatgravyboat.skyblockapi.api.location.LocationAPI
 import tech.thatgravyboat.skyblockapi.utils.regex.component.ComponentRegex
 import tech.thatgravyboat.skyblockapi.utils.regex.component.anyMatch
-import tech.thatgravyboat.skyblockapi.utils.text.CommonText
 
-// TODO: Overrides the Area element somehow?
 object ScoreboardElementTime : ScoreboardElement() {
     override fun getDisplay() = formattedTime
 
@@ -18,16 +16,16 @@ object ScoreboardElementTime : ScoreboardElement() {
 
     private val timeRegex = ComponentRegex("\\s*\\d+:\\d+(?:am|pm)(?: (?<symbol>[☀☽⚡☔]))?")
 
-    private var formattedTime: Component = CommonText.EMPTY
+    private var formattedTime: Component? = null
 
     @Subscription
     fun onScoreboardChange(event: ScoreboardUpdateEvent) {
         if (!LocationAPI.isOnSkyblock) return
 
-        if (!timeRegex.anyMatch(event.addedComponents) {
+        if (!timeRegex.anyMatch(event.components) {
                 this.formattedTime = it.component.trim()
             }) {
-            formattedTime = CommonText.EMPTY
+            formattedTime = null
         }
     }
 

@@ -7,11 +7,9 @@ import tech.thatgravyboat.skyblockapi.api.events.info.ScoreboardUpdateEvent
 import tech.thatgravyboat.skyblockapi.api.location.LocationAPI
 import tech.thatgravyboat.skyblockapi.utils.regex.component.ComponentRegex
 import tech.thatgravyboat.skyblockapi.utils.regex.component.anyMatch
-import tech.thatgravyboat.skyblockapi.utils.text.CommonText
 
 object ScoreboardElementArea : ScoreboardElement() {
-    override fun getDisplay() =
-        listOf(formattedLocation, formattedGardenPlot, formattedVisiting).filter { it != CommonText.EMPTY }
+    override fun getDisplay() = listOfNotNull(formattedLocation, formattedGardenPlot, formattedVisiting)
 
     override val configLine = "Area"
 
@@ -20,28 +18,28 @@ object ScoreboardElementArea : ScoreboardElement() {
     private val gardenPlotRegex = ComponentRegex("\\s*Plot -.+")
     private val visitingRegex = ComponentRegex("\\s*✌ \\(\\d+/\\d+\\)")
 
-    private var formattedLocation: Component = CommonText.EMPTY
-    private var formattedGardenPlot: Component = CommonText.EMPTY
-    private var formattedVisiting: Component = CommonText.EMPTY
+    private var formattedLocation: Component? = null
+    private var formattedGardenPlot: Component? = null
+    private var formattedVisiting: Component? = null
 
     @Subscription
     fun onScoreboardChange(event: ScoreboardUpdateEvent) {
         if (!LocationAPI.isOnSkyblock) return
 
-        if (!locationRegex.anyMatch(event.addedComponents) {
+        if (!locationRegex.anyMatch(event.components) {
                 this.formattedLocation = it.component.trim()
             }) {
-            formattedLocation = CommonText.EMPTY
+            formattedLocation = null
         }
-        if (!gardenPlotRegex.anyMatch(event.addedComponents) {
+        if (!gardenPlotRegex.anyMatch(event.components) {
                 this.formattedGardenPlot = it.component
             }) {
-            formattedGardenPlot = CommonText.EMPTY
+            formattedGardenPlot = null
         }
-        if (!visitingRegex.anyMatch(event.addedComponents) {
+        if (!visitingRegex.anyMatch(event.components) {
                 this.formattedVisiting = it.component.trim()
             }) {
-            formattedVisiting = CommonText.EMPTY
+            formattedVisiting = null
         }
     }
 }
