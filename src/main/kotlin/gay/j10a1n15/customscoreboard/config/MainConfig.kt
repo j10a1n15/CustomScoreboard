@@ -48,4 +48,8 @@ object MainConfig {
     @ConfigEntry(id = "hide_hypixel", translation = "config.cs.hide_hypixel")
     @Comment("", translation = "config.cs.hide_hypixel.desc")
     var hideHypixelScoreboard: Boolean = true
+
+    @ConfigEntry(id = "colored_month", translation = "config.cs.colored_month")
+    @Comment("", translation = "config.cs.colored_month.desc")
+    var coloredMonth: Boolean = true
 }

@@ -34,4 +34,13 @@ object TextUtils {
         return Text.join(*siblings.toTypedArray())
     }
 
+    // https://stackoverflow.com/a/74231671/15031174
+    fun Int.ordinal() = "$this" + when {
+        (this % 100 in 11..13) -> "th"
+        (this % 10) == 1 -> "st"
+        (this % 10) == 2 -> "nd"
+        (this % 10) == 3 -> "rd"
+        else -> "th"
+    }
+
 }
