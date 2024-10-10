@@ -4,7 +4,7 @@ import gay.j10a1n15.customscoreboard.utils.TextUtils.trim
 import net.minecraft.network.chat.Component
 import tech.thatgravyboat.skyblockapi.api.events.base.Subscription
 import tech.thatgravyboat.skyblockapi.api.events.info.ScoreboardUpdateEvent
-import tech.thatgravyboat.skyblockapi.api.location.LocationAPI
+import tech.thatgravyboat.skyblockapi.utils.regex.RegexUtils.anyMatch
 import tech.thatgravyboat.skyblockapi.utils.regex.component.ComponentRegex
 import tech.thatgravyboat.skyblockapi.utils.regex.component.anyMatch
 
@@ -14,9 +14,12 @@ object ElementArea : Element() {
     override val configLine = "Area"
 
 
-    private val locationRegex = ComponentRegex("\\s*[⏣ф] .+")
-    private val gardenPlotRegex = ComponentRegex("\\s*Plot -.+")
-    private val visitingRegex = ComponentRegex("\\s*✌ \\(\\d+/\\d+\\)")
+    private val locationComponentRegex = ComponentRegex("\\s*[⏣ф] .+")
+    private val gardenPlotComponentRegex = ComponentRegex("\\s*Plot -.+")
+    private val visitingComponentRegex = ComponentRegex("\\s*✌ \\(\\d+/\\d+\\)")
+
+    private val gardenPlotRegex = gardenPlotComponentRegex.regex()
+    private val visitingRegex = visitingComponentRegex.regex()
 
     private var formattedLocation: Component? = null
     private var formattedGardenPlot: Component? = null
@@ -24,21 +27,20 @@ object ElementArea : Element() {
 
     @Subscription
     fun onScoreboardChange(event: ScoreboardUpdateEvent) {
-        if (!LocationAPI.isOnSkyblock) return
-
-        if (!locationRegex.anyMatch(event.components) {
-                this.formattedLocation = it.component.trim()
-            }) {
-            formattedLocation = null
+        locationComponentRegex.anyMatch(event.addedComponents) {
+            this.formattedLocation = it.component.trim()
         }
-        if (!gardenPlotRegex.anyMatch(event.components) {
-                this.formattedGardenPlot = it.component
-            }) {
+        val addedGardenPlot = gardenPlotComponentRegex.anyMatch(event.addedComponents) {
+            this.formattedGardenPlot = it.component
+        }
+        val addedVisiting = visitingComponentRegex.anyMatch(event.addedComponents) {
+            this.formattedVisiting = it.component.trim()
+        }
+
+        if (!addedGardenPlot && formattedGardenPlot != null && gardenPlotRegex.anyMatch(event.removed)) {
             formattedGardenPlot = null
         }
-        if (!visitingRegex.anyMatch(event.components) {
-                this.formattedVisiting = it.component.trim()
-            }) {
+        if (!addedVisiting && formattedVisiting != null && visitingRegex.anyMatch(event.removed)) {
             formattedVisiting = null
         }
     }

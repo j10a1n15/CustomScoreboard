@@ -1,32 +1,17 @@
 package gay.j10a1n15.customscoreboard.feature.customscoreboard.elements
 
-import gay.j10a1n15.customscoreboard.utils.TextUtils.trim
-import net.minecraft.network.chat.Component
-import tech.thatgravyboat.skyblockapi.api.events.base.Subscription
-import tech.thatgravyboat.skyblockapi.api.events.info.ScoreboardUpdateEvent
-import tech.thatgravyboat.skyblockapi.api.location.LocationAPI
-import tech.thatgravyboat.skyblockapi.utils.regex.component.ComponentRegex
-import tech.thatgravyboat.skyblockapi.utils.regex.component.anyMatch
+import tech.thatgravyboat.skyblockapi.api.datetime.DateTimeAPI
 
 object ElementTime : Element() {
-    override fun getDisplay() = formattedTime
+    override fun getDisplay() = buildString {
+        append("§7")
 
-    override val configLine = "Time"
+        val hour = DateTimeAPI.hour
+        val hour12 = if (hour % 12 == 0) 12 else hour % 12
+        val period = if (hour >= 12) "pm" else "am"
 
-
-    private val timeRegex = ComponentRegex("\\s*\\d+:\\d+(?:am|pm)(?: (?<symbol>[☀☽⚡☔]))?")
-
-    private var formattedTime: Component? = null
-
-    @Subscription
-    fun onScoreboardChange(event: ScoreboardUpdateEvent) {
-        if (!LocationAPI.isOnSkyblock) return
-
-        if (!timeRegex.anyMatch(event.components) {
-                this.formattedTime = it.component.trim()
-            }) {
-            formattedTime = null
-        }
+        append(String.format("%02d:%02d%s", hour12, DateTimeAPI.minute, period))
     }
 
+    override val configLine = "Time"
 }
