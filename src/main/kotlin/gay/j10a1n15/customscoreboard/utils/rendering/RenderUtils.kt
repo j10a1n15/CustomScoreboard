@@ -1,5 +1,6 @@
 package gay.j10a1n15.customscoreboard.utils.rendering
 
+import gay.j10a1n15.customscoreboard.utils.rendering.alignment.TextAlignment
 import net.minecraft.client.Minecraft
 import net.minecraft.client.gui.Font
 import net.minecraft.client.gui.GuiGraphics

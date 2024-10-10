@@ -6,8 +6,8 @@ import gay.j10a1n15.customscoreboard.config.categories.BackgroundConfig
 import gay.j10a1n15.customscoreboard.config.objects.TitleOrFooterObject
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.ScoreboardEntry
 import gay.j10a1n15.customscoreboard.utils.NumberFormatType
-import gay.j10a1n15.customscoreboard.utils.rendering.HorizontalAlignment
-import gay.j10a1n15.customscoreboard.utils.rendering.VerticalAlignment
+import gay.j10a1n15.customscoreboard.utils.rendering.alignment.HorizontalAlignment
+import gay.j10a1n15.customscoreboard.utils.rendering.alignment.VerticalAlignment
 
 @ConfigInfo.Provider(InfoProvider::class)
 @Config(

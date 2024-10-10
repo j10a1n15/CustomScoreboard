@@ -1,4 +1,4 @@
-package gay.j10a1n15.customscoreboard.utils.rendering
+package gay.j10a1n15.customscoreboard.utils.rendering.alignment
 
 enum class TextAlignment {
     START,

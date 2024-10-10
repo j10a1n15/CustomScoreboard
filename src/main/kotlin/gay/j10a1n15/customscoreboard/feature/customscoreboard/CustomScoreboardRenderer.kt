@@ -3,9 +3,9 @@ package gay.j10a1n15.customscoreboard.feature.customscoreboard
 import gay.j10a1n15.customscoreboard.config.MainConfig
 import gay.j10a1n15.customscoreboard.config.categories.BackgroundConfig
 import gay.j10a1n15.customscoreboard.utils.rendering.AlignedText
-import gay.j10a1n15.customscoreboard.utils.rendering.HorizontalAlignment
 import gay.j10a1n15.customscoreboard.utils.rendering.RenderUtils.drawAlignedTexts
-import gay.j10a1n15.customscoreboard.utils.rendering.VerticalAlignment
+import gay.j10a1n15.customscoreboard.utils.rendering.alignment.HorizontalAlignment
+import gay.j10a1n15.customscoreboard.utils.rendering.alignment.VerticalAlignment
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents
 import tech.thatgravyboat.skyblockapi.api.events.base.Subscription
 import tech.thatgravyboat.skyblockapi.api.events.location.IslandChangeEvent

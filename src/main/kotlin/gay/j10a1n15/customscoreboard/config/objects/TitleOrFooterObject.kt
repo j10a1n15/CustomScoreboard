@@ -3,7 +3,7 @@ package gay.j10a1n15.customscoreboard.config.objects
 import com.teamresourceful.resourcefulconfig.api.annotations.Comment
 import com.teamresourceful.resourcefulconfig.api.annotations.ConfigEntry
 import com.teamresourceful.resourcefulconfig.api.annotations.ConfigObject
-import gay.j10a1n15.customscoreboard.utils.rendering.TextAlignment
+import gay.j10a1n15.customscoreboard.utils.rendering.alignment.TextAlignment
 
 @ConfigObject
 data class TitleOrFooterObject(
