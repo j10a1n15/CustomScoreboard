@@ -1,6 +1,7 @@
 package gay.j10a1n15.customscoreboard.feature.customscoreboard
 
 import gay.j10a1n15.customscoreboard.config.MainConfig
+import gay.j10a1n15.customscoreboard.config.categories.BackgroundConfig
 import gay.j10a1n15.customscoreboard.utils.rendering.AlignedText
 import gay.j10a1n15.customscoreboard.utils.rendering.HorizontalAlignment
 import gay.j10a1n15.customscoreboard.utils.rendering.RenderUtils.drawAlignedTexts
@@ -58,7 +59,17 @@ object CustomScoreboardRenderer {
 
         updatePosition()
 
-        dimensions = event.graphics.drawAlignedTexts(display, position.first, position.second)
+        val padding = MainConfig.padding
+
+        val x1 = position.first
+        val y1 = position.second
+
+        val x2 = x1 + dimensions.second
+        val y2 = y1 + dimensions.first
+
+        event.graphics.fill(x1 - padding, y1 - padding, x2 + padding * 2, y2 + padding * 2, BackgroundConfig.color)
+
+        dimensions = event.graphics.drawAlignedTexts(display, x1, y1)
     }
 
     private fun updateIslandCache() {

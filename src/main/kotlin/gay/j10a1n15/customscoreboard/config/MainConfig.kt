@@ -2,6 +2,7 @@ package gay.j10a1n15.customscoreboard.config
 
 import com.teamresourceful.resourcefulconfig.api.annotations.*
 import com.teamresourceful.resourcefulconfig.api.types.entries.Observable
+import gay.j10a1n15.customscoreboard.config.categories.BackgroundConfig
 import gay.j10a1n15.customscoreboard.config.objects.TitleOrFooterObject
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.ScoreboardEntry
 import gay.j10a1n15.customscoreboard.utils.NumberFormatType
@@ -11,7 +12,7 @@ import gay.j10a1n15.customscoreboard.utils.rendering.VerticalAlignment
 @ConfigInfo.Provider(InfoProvider::class)
 @Config(
     value = "customscoreboard/config",
-    categories = [],
+    categories = [BackgroundConfig::class],
 )
 object MainConfig {
 

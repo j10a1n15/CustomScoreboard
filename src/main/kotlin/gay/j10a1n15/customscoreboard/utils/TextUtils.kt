@@ -1,7 +1,6 @@
 package gay.j10a1n15.customscoreboard.utils
 
 import net.minecraft.network.chat.Component
-import tech.thatgravyboat.skyblockapi.utils.text.CommonText
 import tech.thatgravyboat.skyblockapi.utils.text.Text
 
 private val colorCodesStart = Regex("^(?<start>(§.| )*)(?!§.| )")
@@ -34,7 +33,5 @@ object TextUtils {
 
         return Text.join(*siblings.toTypedArray())
     }
-
-    fun Component.isEmpty() = this == CommonText.EMPTY
 
 }
