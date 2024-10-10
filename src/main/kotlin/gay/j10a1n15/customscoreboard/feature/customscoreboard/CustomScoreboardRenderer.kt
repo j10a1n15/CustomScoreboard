@@ -37,17 +37,21 @@ object CustomScoreboardRenderer {
 
     private fun updatePosition() {
         with(BackgroundConfig) {
+            val width = display?.let { it.maxOf { McClient.self.font.width(it.first) } } ?: 0
+            val height = display?.let { it.size * McClient.self.font.lineHeight } ?: 0
+
             val newX = when (MainConfig.horizontalAlignment) {
                 HorizontalAlignment.LEFT -> padding
-                HorizontalAlignment.CENTER -> (screenWidth - dimensions.second) / 2
-                HorizontalAlignment.RIGHT -> screenWidth - dimensions.second - padding
+                HorizontalAlignment.CENTER -> (screenWidth - width) / 2
+                HorizontalAlignment.RIGHT -> screenWidth - width - padding
             }
             val newY = when (MainConfig.verticalAlignment) {
                 VerticalAlignment.TOP -> padding
-                VerticalAlignment.CENTER -> (screenHeight - dimensions.first) / 2
-                VerticalAlignment.BOTTOM -> screenHeight - dimensions.first - padding
+                VerticalAlignment.CENTER -> (screenHeight - height) / 2
+                VerticalAlignment.BOTTOM -> screenHeight - height - padding
             }
             position = newX to newY
+            dimensions = width to height
         }
     }
 
@@ -59,7 +63,7 @@ object CustomScoreboardRenderer {
 
         updatePosition()
         renderBackground(event)
-        dimensions = event.graphics.drawAlignedTexts(display, position.first, position.second)
+        event.graphics.drawAlignedTexts(display, position.first, position.second)
     }
 
     private fun renderBackground(event: RenderHudEvent) {
@@ -68,8 +72,8 @@ object CustomScoreboardRenderer {
         val x1 = position.first
         val y1 = position.second
 
-        val x2 = x1 + dimensions.second
-        val y2 = y1 + dimensions.first
+        val x2 = x1 + dimensions.first
+        val y2 = y1 + dimensions.second
 
         event.graphics.fill(x1 - padding, y1 - padding, x2 + padding, y2 + padding, BackgroundConfig.color)
     }
