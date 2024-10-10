@@ -50,4 +50,8 @@ object MainConfig {
     @Comment("", translation = "config.cs.hide_hypixel.desc")
     var hideHypixelScoreboard: Boolean = true
 
+    @ConfigEntry(id = "text_shadow", translation = "config.cs.text_shadow")
+    @Comment("", translation = "config.cs.text_shadow.desc")
+    var textShadow: Boolean = true
+
 }

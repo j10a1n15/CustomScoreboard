@@ -63,7 +63,7 @@ object CustomScoreboardRenderer {
 
         updatePosition()
         renderBackground(event)
-        event.graphics.drawAlignedTexts(display, position.first, position.second)
+        event.graphics.drawAlignedTexts(display, position.first, position.second, MainConfig.textShadow)
     }
 
     private fun renderBackground(event: RenderHudEvent) {
