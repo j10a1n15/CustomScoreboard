@@ -5,8 +5,8 @@ import gay.j10a1n15.customscoreboard.feature.customscoreboard.ScoreboardLine.Com
 
 object ElementTitle : Element() {
     override fun getDisplay() = MainConfig.title.let {
-        if (it.useCustomText) it.text align it.alignment else "§6§lSKYBLOCK" align it.alignment
+        if (it.useCustomText) it.text align it.alignment else "§e§lSKYBLOCK" align it.alignment
     }
 
-    override val configLine: String = "§6§lSKYBLOCK"
+    override val configLine: String = "§e§lSKYBLOCK"
 }
