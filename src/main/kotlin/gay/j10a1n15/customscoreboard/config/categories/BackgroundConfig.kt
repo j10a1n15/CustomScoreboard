@@ -23,4 +23,10 @@ object BackgroundConfig {
     @ConfigOption.Slider
     var padding: Int = 5
 
+    @ConfigEntry(id = "margin", translation = "config.cs.background.margin")
+    @Comment("", translation = "config.cs.background.margin.desc")
+    @ConfigOption.Range(min = 0.0, max = 20.0)
+    @ConfigOption.Slider
+    var margin: Int = 0
+
 }

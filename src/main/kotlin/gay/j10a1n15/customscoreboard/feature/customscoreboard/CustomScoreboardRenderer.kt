@@ -41,14 +41,14 @@ object CustomScoreboardRenderer {
             val height = display?.let { it.size * McClient.self.font.lineHeight } ?: 0
 
             val newX = when (MainConfig.horizontalAlignment) {
-                HorizontalAlignment.LEFT -> padding
+                HorizontalAlignment.LEFT -> padding + margin
                 HorizontalAlignment.CENTER -> (screenWidth - width) / 2
-                HorizontalAlignment.RIGHT -> screenWidth - width - padding
+                HorizontalAlignment.RIGHT -> screenWidth - width - padding - margin
             }
             val newY = when (MainConfig.verticalAlignment) {
-                VerticalAlignment.TOP -> padding
+                VerticalAlignment.TOP -> padding + margin
                 VerticalAlignment.CENTER -> (screenHeight - height) / 2
-                VerticalAlignment.BOTTOM -> screenHeight - height - padding
+                VerticalAlignment.BOTTOM -> screenHeight - height - padding - margin
             }
             position = newX to newY
             dimensions = width to height
