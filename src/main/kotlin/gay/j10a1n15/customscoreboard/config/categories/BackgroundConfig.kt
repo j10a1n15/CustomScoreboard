@@ -17,4 +17,10 @@ object BackgroundConfig {
     @ConfigOption.Color(alpha = true)
     var color: Int = 0x80000000.toInt()
 
+    @ConfigEntry(id = "padding", translation = "config.cs.background.padding")
+    @Comment("", translation = "config.cs.background.padding.desc")
+    @ConfigOption.Range(min = 0.0, max = 20.0)
+    @ConfigOption.Slider
+    var padding: Int = 5
+
 }

@@ -36,13 +36,13 @@ object CustomScoreboardRenderer {
     }
 
     private fun updatePosition() {
-        with(MainConfig) {
-            val newX = when (horizontalAlignment) {
+        with(BackgroundConfig) {
+            val newX = when (MainConfig.horizontalAlignment) {
                 HorizontalAlignment.LEFT -> padding
                 HorizontalAlignment.CENTER -> (screenWidth - dimensions.second) / 2
                 HorizontalAlignment.RIGHT -> screenWidth - dimensions.second - padding
             }
-            val newY = when (verticalAlignment) {
+            val newY = when (MainConfig.verticalAlignment) {
                 VerticalAlignment.TOP -> padding
                 VerticalAlignment.CENTER -> (screenHeight - dimensions.first) / 2
                 VerticalAlignment.BOTTOM -> screenHeight - dimensions.first - padding
@@ -63,7 +63,7 @@ object CustomScoreboardRenderer {
     }
 
     private fun renderBackground(event: RenderHudEvent) {
-        val padding = MainConfig.padding
+        val padding = BackgroundConfig.padding
 
         val x1 = position.first
         val y1 = position.second

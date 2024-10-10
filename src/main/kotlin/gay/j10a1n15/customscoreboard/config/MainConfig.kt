@@ -37,12 +37,6 @@ object MainConfig {
     @Comment("", translation = "config.cs.number_format.desc")
     var numberFormat: NumberFormatType = NumberFormatType.LONG
 
-    @ConfigEntry(id = "padding", translation = "config.cs.padding")
-    @Comment("", translation = "config.cs.padding.desc")
-    @ConfigOption.Range(min = 0.0, max = 20.0)
-    @ConfigOption.Slider
-    var padding: Int = 5
-
     @ConfigEntry(id = "vertical_alignment", translation = "config.cs.vertical_alignment")
     @Comment("", translation = "config.cs.vertical_alignment.desc")
     var verticalAlignment: VerticalAlignment = VerticalAlignment.CENTER

@@ -9,10 +9,22 @@
     "config.cs.footer_options.desc": "Edit the footer of the scoreboard.",
     "config.cs.number_format": "Number Format",
     "config.cs.number_format.desc": "Choose the format of the numbers in the scoreboard.",
+    "config.cs.vertical_alignment": "Vertical Alignment",
+    "config.cs.vertical_alignment.desc": "Choose the vertical alignment of the scoreboard.",
+    "config.cs.horizontal_alignment": "Horizontal Alignment",
+    "config.cs.horizontal_alignment.desc": "Choose the horizontal alignment of the scoreboard.",
+    "config.cs.hide_hypixel": "Hide Hypixel Scoreboard",
+    "config.cs.hide_hypixel.desc": "Enable or disable the Hypixel scoreboard.",
     "config.cs.title_footer.alignment": "Alignment",
     "config.cs.title_footer.alignment.desc": "Choose the alignment of this element.",
     "config.cs.title_footer.use_custom_text": "Use Custom Text",
     "config.cs.title_footer.use_custom_text.desc": "Enable or disable custom text for this element.",
     "config.cs.title_footer.custom_text": "Custom Text",
-    "config.cs.title_footer.custom_text.desc": "Edit the custom text for this element."
+    "config.cs.title_footer.custom_text.desc": "Edit the custom text for this element.",
+    "config.cs.background.enabled": "Toggle Background",
+    "config.cs.background.enabled.desc": "Enable or disable the background of the scoreboard.",
+    "config.cs.background.color": "Background Color",
+    "config.cs.background.color.desc": "Choose the color of the background.",
+    "config.cs.background.padding": "Padding",
+    "config.cs.background.padding.desc": "Choose the padding of the background."
 }
