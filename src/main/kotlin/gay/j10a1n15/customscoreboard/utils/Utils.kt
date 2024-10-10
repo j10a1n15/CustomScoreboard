@@ -18,5 +18,5 @@ object Utils {
         SkyBlockSeason.LATE_WINTER to "§9",
     )
 
-    fun SkyBlockSeason.getColoredName(): String = seasonColors[this] + this.name
+    fun SkyBlockSeason.getColoredName(): String = seasonColors[this] + this.toString()
 }

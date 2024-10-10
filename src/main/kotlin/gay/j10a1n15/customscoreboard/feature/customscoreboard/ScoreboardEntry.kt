@@ -21,8 +21,9 @@ enum class ScoreboardEntry(val element: Element) {
     HEAT(ElementHeat),
     COLD(ElementCold),
     NORTH_STARS(ElementNorthStars),
+    //    SOULFLOW(Soulflow),
 
-    //    OBJECTIVE(Objective),
+    OBJECTIVE(ElementObjective),
     //    SLAYER(Slayer),
     //    EVENTS(Events),
 
@@ -31,7 +32,6 @@ enum class ScoreboardEntry(val element: Element) {
     //    TUNING(Tuning),
     //    COOKIE(Cookie),
     //    CHUNKED_STATS(ChunkedStats),
-    //    SOULFLOW(Soulflow),
     //    PLAYER_AMOUNT(PlayerAmount),
     //    QUIVER(Quiver),
     //    POWDER(Powder),

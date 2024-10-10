@@ -34,6 +34,8 @@ object TextUtils {
         return Text.join(*siblings.toTypedArray())
     }
 
+    fun Component.isBlank() = this.string.isBlank()
+
     // https://stackoverflow.com/a/74231671/15031174
     fun Int.ordinal() = "$this" + when {
         (this % 100 in 11..13) -> "th"
