@@ -18,7 +18,7 @@ object ElementTime : Element() {
             McLevel.self.isRaining -> "§3☔"
             McLevel.self.isThundering -> "§e⚡"
             DateTimeAPI.isDay -> "§e☀"
-            else -> "§b☾"
+            else -> "§b☽"
         }
 
         append(" $symbol")
