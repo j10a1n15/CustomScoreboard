@@ -3,7 +3,7 @@ package gay.j10a1n15.customscoreboard.feature.customscoreboard
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.elements.*
 
 enum class ScoreboardEntry(val element: Element) {
-    EMPTY(ElementEmpty),
+    SEPARATOR(ElementSeparator),
 
     TITLE(ElementTitle),
     LOBBY(ElementLobby),
