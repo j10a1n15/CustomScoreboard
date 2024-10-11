@@ -19,5 +19,16 @@ object LinesConfig {
     @Comment("", translation = "config.cs.lines.profile_name.desc")
     var showProfileName = false
 
+    @ConfigEntry(id = "mayor_time", translation = "config.cs.lines.mayor_time")
+    @Comment("", translation = "config.cs.lines.mayor_time.desc")
+    var showMayorTime = true
+
+    @ConfigEntry(id = "mayor_perks", translation = "config.cs.lines.mayor_perks")
+    @Comment("", translation = "config.cs.lines.mayor_perks.desc")
+    var showMayorPerks = true
+
+    @ConfigEntry(id = "mayor_minister", translation = "config.cs.lines.mayor_minister")
+    @Comment("", translation = "config.cs.lines.mayor_minister.desc")
+    var showMinister = true
 
 }

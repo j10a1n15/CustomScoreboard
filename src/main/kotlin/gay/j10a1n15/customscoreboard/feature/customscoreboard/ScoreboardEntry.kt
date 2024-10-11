@@ -25,6 +25,7 @@ enum class ScoreboardEntry(val element: Element) {
     SOULFLOW(ElementSoulflow),
 
     OBJECTIVE(ElementObjective),
+
     //    SLAYER(Slayer),
     //    EVENTS(Events),
     //    POWER(Power),
@@ -32,7 +33,7 @@ enum class ScoreboardEntry(val element: Element) {
     //    CHUNKED_STATS(ChunkedStats),
     //    QUIVER(Quiver),
     //    POWDER(Powder),
-    //    MAYOR(Mayor),
+    MAYOR(ElementMayor),
     //    PARTY(Party),
     //    Unknown(Unknown),
 

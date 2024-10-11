@@ -15,7 +15,7 @@ object BackgroundConfig {
     @ConfigEntry(id = "color", translation = "config.cs.background.color")
     @Comment("", translation = "config.cs.background.color.desc")
     @ConfigOption.Color(alpha = true)
-    var color: Int = 0x90000000.toInt()
+    var color: Int = 0xA0000000.toInt()
 
     @ConfigEntry(id = "padding", translation = "config.cs.background.padding")
     @Comment("", translation = "config.cs.background.padding.desc")
