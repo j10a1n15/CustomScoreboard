@@ -13,8 +13,6 @@ import tech.thatgravyboat.skyblockapi.utils.regex.component.anyMatch
 object EventBroodmother : Event() {
     override fun getDisplay() = stateString
 
-    override fun showWhen() = stateString != null
-
     override fun showIsland() = SkyBlockIsland.inAnyIsland(SkyBlockIsland.SPIDERS_DEN)
 
     override val configLine = "Broodmother"
