@@ -6,6 +6,7 @@ import gay.j10a1n15.customscoreboard.config.categories.BackgroundConfig
 import gay.j10a1n15.customscoreboard.config.categories.LinesConfig
 import gay.j10a1n15.customscoreboard.config.objects.TitleOrFooterObject
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.ScoreboardEntry
+import gay.j10a1n15.customscoreboard.feature.customscoreboard.ScoreboardEventEntry
 import gay.j10a1n15.customscoreboard.utils.NumberFormatType
 import gay.j10a1n15.customscoreboard.utils.rendering.alignment.HorizontalAlignment
 import gay.j10a1n15.customscoreboard.utils.rendering.alignment.VerticalAlignment
@@ -25,6 +26,11 @@ object MainConfig {
     @ConfigOption.Draggable(value = ["EMPTY"])
     @Comment("", translation = "config.cs.appearance.desc")
     val appearance: Observable<Array<ScoreboardEntry>> = Observable.of(ScoreboardEntry.entries.toTypedArray())
+
+    @ConfigEntry(id = "events", translation = "config.cs.events")
+    @ConfigOption.Draggable
+    @Comment("", translation = "config.cs.events.desc")
+    val events: Observable<Array<ScoreboardEventEntry>> = Observable.of(ScoreboardEventEntry.entries.toTypedArray())
 
     @ConfigEntry(id = "title_options", translation = "config.cs.title_options")
     @Comment("", translation = "config.cs.title_options.desc")

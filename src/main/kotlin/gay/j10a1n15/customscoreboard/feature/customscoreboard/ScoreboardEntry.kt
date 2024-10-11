@@ -26,7 +26,7 @@ enum class ScoreboardEntry(val element: Element) {
 
     OBJECTIVE(ElementObjective),
     SLAYER(ElementSlayer),
-    //    EVENTS(Events),
+    EVENTS(ElementEvents),
     //    POWER(Power),
     //    COOKIE(Cookie),
     //    CHUNKED_STATS(ChunkedStats),

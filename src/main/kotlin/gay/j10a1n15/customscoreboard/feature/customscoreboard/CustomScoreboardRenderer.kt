@@ -20,6 +20,8 @@ object CustomScoreboardRenderer {
 
     private var display: List<AlignedText>? = null
     private var currentIslandElements = emptyList<ScoreboardEntry>()
+    var currentIslandEvents = emptyList<ScoreboardEventEntry>()
+        private set
 
     private var position: Pair<Int, Int> = 0 to 0
     private var dimensions: Pair<Int, Int> = 0 to 0
@@ -81,6 +83,7 @@ object CustomScoreboardRenderer {
 
     private fun updateIslandCache() {
         currentIslandElements = MainConfig.appearance.get().filter { it.element.showIsland() }
+        currentIslandEvents = MainConfig.events.get().filter { it.event.showIsland() }
     }
 
     private fun updateDisplay() {
