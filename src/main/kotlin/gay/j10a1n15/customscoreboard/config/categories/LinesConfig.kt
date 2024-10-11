@@ -31,4 +31,8 @@ object LinesConfig {
     @Comment("", translation = "config.cs.lines.mayor_minister.desc")
     var showMinister = true
 
+    @ConfigEntry(id = "all_events", translation = "config.cs.lines.all_events")
+    @Comment("", translation = "config.cs.lines.all_events.desc")
+    var showAllActiveEvents = true
+
 }
