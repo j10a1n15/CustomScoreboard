@@ -15,6 +15,8 @@ object ElementProfile : Element() {
         }
     }
 
+    override fun showWhen() = ProfileAPI.profileType != ProfileType.UNKNOWN
+
     override val configLine = "Profile"
 
 

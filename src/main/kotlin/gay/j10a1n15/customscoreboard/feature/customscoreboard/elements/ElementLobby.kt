@@ -11,6 +11,8 @@ object ElementLobby : Element() {
 
     override fun getDisplay() = "§7" + LocalDate.now().format(formatter) + " §8$lobbyCode"
 
+    override fun showWhen() = lobbyCode != null
+
     override val configLine = "Lobby"
 
     @Subscription
