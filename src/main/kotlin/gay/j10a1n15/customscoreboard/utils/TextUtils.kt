@@ -73,4 +73,8 @@ object TextUtils {
         }.ifEmpty { "0 seconds" }
     }
 
+    fun Regex.anyMatch(input: List<String>): Boolean {
+        return input.any { this.matches(it) }
+    }
+
 }

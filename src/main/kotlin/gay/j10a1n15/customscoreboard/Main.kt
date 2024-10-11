@@ -11,6 +11,7 @@ import gay.j10a1n15.customscoreboard.feature.customscoreboard.elements.ElementOb
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.elements.ElementSlayer
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.elements.ElementTime
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventBroodmother
+import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventEssence
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventVoting
 import net.fabricmc.api.ModInitializer
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandManager
@@ -38,6 +39,7 @@ object Main : ModInitializer {
         SkyBlockAPI.eventBus.register(ElementSlayer)
         SkyBlockAPI.eventBus.register(EventVoting)
         SkyBlockAPI.eventBus.register(EventBroodmother)
+        SkyBlockAPI.eventBus.register(EventEssence)
     }
 
     private fun onRegisterCommands(
