@@ -35,7 +35,10 @@ object CustomScoreboardRenderer {
 
         MainConfig.appearance.addListener { old, new ->
             updateIslandCache()
-            updateDisplay()
+        }
+
+        MainConfig.events.addListener { old, new ->
+            updateIslandCache()
         }
     }
 

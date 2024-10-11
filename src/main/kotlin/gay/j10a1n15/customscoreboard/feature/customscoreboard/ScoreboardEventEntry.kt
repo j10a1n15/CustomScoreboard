@@ -3,6 +3,7 @@ package gay.j10a1n15.customscoreboard.feature.customscoreboard
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.Event
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventBroodmother
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventEssence
+import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventFlightDuration
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventRedstone
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventVoting
 
@@ -18,7 +19,7 @@ enum class ScoreboardEventEntry(val event: Event) {
 //     JACOB_MEDALS(ScoreboardEventJacobMedals),
 //     TRAPPER(ScoreboardEventTrapper),
 //     GARDEN(ScoreboardEventGarden),
-//     FLIGHT_DURATION(ScoreboardEventFlightDuration),
+    FLIGHT_DURATION(EventFlightDuration),
 //     WINTER(ScoreboardEventWinter),
 //     NEW_YEAR(ScoreboardEventNewYear),
 //     SPOOKY(ScoreboardEventSpooky),
