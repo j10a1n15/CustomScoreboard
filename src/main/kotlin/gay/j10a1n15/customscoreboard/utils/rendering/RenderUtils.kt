@@ -5,31 +5,23 @@ import earth.terrarium.olympus.client.shader.builtin.RoundedRectShader
 import gay.j10a1n15.customscoreboard.utils.rendering.alignment.TextAlignment
 import net.minecraft.client.gui.GuiGraphics
 import net.minecraft.network.chat.Component
-import tech.thatgravyboat.skyblockapi.helpers.McClient
+import tech.thatgravyboat.skyblockapi.helpers.McFont
 
 typealias AlignedText = Pair<Component, TextAlignment>
 
 object RenderUtils {
 
     fun GuiGraphics.drawAlignedText(text: Component, x: Int, y: Int, width: Int, alignment: TextAlignment, shadow: Boolean = true) {
-        val textWidth = McClient.self.font.width(text)
-        drawString(McClient.self.font, text, x + alignment.align(textWidth, width), y, -1, shadow)
+        val textWidth = McFont.width(text)
+        drawString(McFont.self, text, x + alignment.align(textWidth, width), y, -1, shadow)
     }
 
     fun GuiGraphics.drawAlignedTexts(texts: List<AlignedText>, x: Int, y: Int, shadow: Boolean = true) {
         var currentY = y
-        val maxWidth = texts.maxOf { McClient.self.font.width(it.first) }
+        val maxWidth = texts.maxOf { McFont.width(it.first) }
         texts.forEach { text ->
             drawAlignedText(text.first, x, currentY, maxWidth, text.second, shadow)
-            currentY += McClient.self.font.lineHeight
-        }
-    }
-
-    fun GuiGraphics.drawAlignedTexts(texts: List<AlignedText>, x: Int, y: Int, width: Int) {
-        var currentY = y
-        texts.forEach { text ->
-            drawAlignedText(text.first, x, currentY, width, text.second)
-            currentY += McClient.self.font.lineHeight
+            currentY += McFont.self.lineHeight
         }
     }
 
