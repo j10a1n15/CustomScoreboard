@@ -1,6 +1,7 @@
 package gay.j10a1n15.customscoreboard.feature.customscoreboard
 
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.Event
+import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventBroodmother
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventVoting
 
 enum class ScoreboardEventEntry(val event: Event) {
@@ -19,7 +20,7 @@ enum class ScoreboardEventEntry(val event: Event) {
 //     WINTER(ScoreboardEventWinter),
 //     NEW_YEAR(ScoreboardEventNewYear),
 //     SPOOKY(ScoreboardEventSpooky),
-//     BROODMOTHER(ScoreboardEventBroodmother),
+BROODMOTHER(EventBroodmother),
 //     MINING_EVENTS(ScoreboardEventMining),
 //     DAMAGE(ScoreboardEventDamage),
 //     MAGMA_BOSS(ScoreboardEventMagmaBoss),
