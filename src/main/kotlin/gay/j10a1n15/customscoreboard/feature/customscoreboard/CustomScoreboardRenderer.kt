@@ -106,7 +106,7 @@ object CustomScoreboardRenderer {
         updateIslandCache()
     }
 
-    private fun isEnabled() = LocationAPI.isOnSkyblock && MainConfig.enabled
+    private fun isEnabled() = LocationAPI.isOnSkyBlock && MainConfig.enabled
     private fun hideHypixelScoreboard() = isEnabled() && MainConfig.hideHypixelScoreboard
 
 }
