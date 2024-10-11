@@ -13,10 +13,10 @@ object ElementMayor : Element() {
     override fun getDisplay() = buildList {
         val mayor = ElectionAPI.currentMayor ?: return@buildList
         val instant = timeUntilNextMayor().formatReadableTime(DurationUnit.DAYS, 2)
-        val time = if (LinesConfig.showMayorTime) "§7(§e$instant§7)"
+        val time = if (LinesConfig.showMayorTime) " §7(§e$instant§7)"
         else ""
 
-        add("${candidateColor[mayor] ?: "§f"}${mayor.candidateName}$time")
+        add("${candidateColor[mayor]}${mayor.candidateName}$time")
 
         if (LinesConfig.showMayorPerks) {
             for (perk in mayor.activePerks) {
@@ -27,7 +27,7 @@ object ElementMayor : Element() {
         if (LinesConfig.showMinister) {
             val minister = ElectionAPI.currentMinister ?: return@buildList
 
-            add("§7Minister: §e${minister.candidateName}")
+            add("${candidateColor[minister]}${minister.candidateName}")
 
             if (LinesConfig.showMayorPerks) {
                 for (perk in minister.activePerks) {
