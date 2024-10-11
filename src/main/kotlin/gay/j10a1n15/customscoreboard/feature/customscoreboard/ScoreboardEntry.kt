@@ -25,8 +25,7 @@ enum class ScoreboardEntry(val element: Element) {
     SOULFLOW(ElementSoulflow),
 
     OBJECTIVE(ElementObjective),
-
-    //    SLAYER(Slayer),
+    SLAYER(ElementSlayer),
     //    EVENTS(Events),
     //    POWER(Power),
     //    COOKIE(Cookie),
