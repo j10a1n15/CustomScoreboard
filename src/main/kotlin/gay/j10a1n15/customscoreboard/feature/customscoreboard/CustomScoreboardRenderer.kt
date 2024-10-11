@@ -15,6 +15,7 @@ import tech.thatgravyboat.skyblockapi.api.events.render.RenderHudElementEvent
 import tech.thatgravyboat.skyblockapi.api.events.render.RenderHudEvent
 import tech.thatgravyboat.skyblockapi.api.location.LocationAPI
 import tech.thatgravyboat.skyblockapi.helpers.McClient
+import tech.thatgravyboat.skyblockapi.helpers.McFont
 
 object CustomScoreboardRenderer {
 
@@ -40,8 +41,8 @@ object CustomScoreboardRenderer {
 
     private fun updatePosition() {
         with(BackgroundConfig) {
-            val width = display?.let { it.maxOf { McClient.self.font.width(it.first) } } ?: 0
-            val height = display?.let { it.size * McClient.self.font.lineHeight } ?: 0
+            val width = display?.let { it.maxOf { McFont.width(it.first) } } ?: 0
+            val height = display?.let { it.size * McFont.self.lineHeight } ?: 0
 
             val newX = when (MainConfig.horizontalAlignment) {
                 HorizontalAlignment.LEFT -> padding + margin

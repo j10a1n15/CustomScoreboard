@@ -3,12 +3,13 @@ package gay.j10a1n15.customscoreboard.feature.customscoreboard
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.Event
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventBroodmother
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventEssence
+import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventRedstone
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventVoting
 
 enum class ScoreboardEventEntry(val event: Event) {
     VOTING(EventVoting),
 
-//     SERVER_CLOSE(ScoreboardEventServerClose),
+    //     SERVER_CLOSE(ScoreboardEventServerClose),
 //     DUNGEONS(ScoreboardEventDungeons),
 //     KUUDRA(ScoreboardEventKuudra),
 //     DOJO(ScoreboardEventDojo),
@@ -21,16 +22,17 @@ enum class ScoreboardEventEntry(val event: Event) {
 //     WINTER(ScoreboardEventWinter),
 //     NEW_YEAR(ScoreboardEventNewYear),
 //     SPOOKY(ScoreboardEventSpooky),
-BROODMOTHER(EventBroodmother),
+    BROODMOTHER(EventBroodmother),
 
-//     MINING_EVENTS(ScoreboardEventMining),
+    //     MINING_EVENTS(ScoreboardEventMining),
 //     DAMAGE(ScoreboardEventDamage),
 //     MAGMA_BOSS(ScoreboardEventMagmaBoss),
 //     CARNIVAL(ScoreboardEventCarnival),
 //     RIFT(ScoreboardEventRift),
-ESSENCE(EventEssence),
-//     QUEUE(ScoreboardEventQueue),
-//     REDSTONE(ScoreboardEventRedstone),
+    ESSENCE(EventEssence),
+
+    //     QUEUE(ScoreboardEventQueue),
+    REDSTONE(EventRedstone),
 
 
 //     ACTIVE_TABLIST_EVENTS(ScoreboardEventActiveTablist),
