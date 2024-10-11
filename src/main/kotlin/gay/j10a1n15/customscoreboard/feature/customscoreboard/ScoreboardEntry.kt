@@ -11,6 +11,7 @@ enum class ScoreboardEntry(val element: Element) {
     TIME(ElementTime),
     ISLAND(ElementIsland),
     AREA(ElementArea),
+    PROFILE(ElementProfile),
 
     PURSE(ElementPurse),
     MOTES(ElementMotes),
@@ -26,13 +27,9 @@ enum class ScoreboardEntry(val element: Element) {
     OBJECTIVE(ElementObjective),
     //    SLAYER(Slayer),
     //    EVENTS(Events),
-
-    //    PROFILE(Profile),
     //    POWER(Power),
-    //    TUNING(Tuning),
     //    COOKIE(Cookie),
     //    CHUNKED_STATS(ChunkedStats),
-    //    PLAYER_AMOUNT(PlayerAmount),
     //    QUIVER(Quiver),
     //    POWDER(Powder),
     //    MAYOR(Mayor),

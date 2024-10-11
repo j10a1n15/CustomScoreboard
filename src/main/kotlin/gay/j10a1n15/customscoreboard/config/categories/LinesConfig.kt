@@ -15,5 +15,9 @@ object LinesConfig {
     @Comment("", translation = "config.cs.lines.colored_month.desc")
     var coloredMonth = true
 
+    @ConfigEntry(id = "profile_name", translation = "config.cs.lines.profile_name")
+    @Comment("", translation = "config.cs.lines.profile_name.desc")
+    var showProfileName = false
+
 
 }
