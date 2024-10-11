@@ -16,19 +16,27 @@ repositories {
 dependencies {
     minecraft("com.mojang:minecraft:1.21.1")
     mappings(loom.officialMojangMappings())
-
     modImplementation(libs.fabricLoader)
     modImplementation(libs.fabricApi)
     modImplementation(libs.fabricKt)
 
-    modImplementation(libs.devauth)
-
+    modImplementation(libs.hypixelapi)
+    modImplementation(libs.skyblockapi)
     modImplementation(libs.resourcefulconfig)
     modImplementation(libs.resourcefulconfigkt)
-    include(libs.resourcefulconfigkt)
+    modImplementation(libs.resourcefullib)
+    modImplementation(libs.resourcefullibkt)
+    modImplementation(libs.olympus)
 
-    modImplementation("maven.modrinth:hypixel-mod-api:1.0.1+build.1+mc1.21")
-    modImplementation("tech.thatgravyboat:skyblock-api-1.21.1:1.0.0-beta.47")
+    include(libs.hypixelapi)
+    include(libs.skyblockapi)
+    include(libs.resourcefulconfig)
+    include(libs.resourcefulconfigkt)
+    include(libs.resourcefullib)
+    include(libs.resourcefullibkt)
+    include(libs.olympus)
+
+    modRuntimeOnly(libs.devauth)
 }
 
 loom {

@@ -4,6 +4,7 @@ import gay.j10a1n15.customscoreboard.config.MainConfig
 import gay.j10a1n15.customscoreboard.config.categories.BackgroundConfig
 import gay.j10a1n15.customscoreboard.utils.rendering.AlignedText
 import gay.j10a1n15.customscoreboard.utils.rendering.RenderUtils.drawAlignedTexts
+import gay.j10a1n15.customscoreboard.utils.rendering.RenderUtils.fillRect
 import gay.j10a1n15.customscoreboard.utils.rendering.alignment.HorizontalAlignment
 import gay.j10a1n15.customscoreboard.utils.rendering.alignment.VerticalAlignment
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents
@@ -70,13 +71,12 @@ object CustomScoreboardRenderer {
         if (!BackgroundConfig.enabled) return
         val padding = BackgroundConfig.padding
 
-        val x1 = position.first
-        val y1 = position.second
-
-        val x2 = x1 + dimensions.first
-        val y2 = y1 + dimensions.second
-
-        event.graphics.fill(x1 - padding, y1 - padding, x2 + padding, y2 + padding, BackgroundConfig.color)
+        event.graphics.fillRect(
+            position.first - padding, position.second - padding,
+            dimensions.first + padding * 2, dimensions.second + padding * 2,
+            BackgroundConfig.color,
+            radius = BackgroundConfig.radius,
+        )
     }
 
     private fun updateIslandCache() {

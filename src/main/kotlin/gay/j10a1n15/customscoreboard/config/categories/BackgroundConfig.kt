@@ -15,7 +15,7 @@ object BackgroundConfig {
     @ConfigEntry(id = "color", translation = "config.cs.background.color")
     @Comment("", translation = "config.cs.background.color.desc")
     @ConfigOption.Color(alpha = true)
-    var color: Int = 0x80000000.toInt()
+    var color: Int = 0x90000000.toInt()
 
     @ConfigEntry(id = "padding", translation = "config.cs.background.padding")
     @Comment("", translation = "config.cs.background.padding.desc")
@@ -28,5 +28,12 @@ object BackgroundConfig {
     @ConfigOption.Range(min = 0.0, max = 20.0)
     @ConfigOption.Slider
     var margin: Int = 0
+
+    @ConfigEntry(id = "radius", translation = "config.cs.background.radius")
+    @Comment("", translation = "config.cs.background.radius.desc")
+    @ConfigOption.Range(min = 0.0, max = 20.0)
+    @ConfigOption.Slider
+    var radius: Int = 5
+
 
 }
