@@ -1,7 +1,7 @@
 package gay.j10a1n15.customscoreboard.feature.customscoreboard.elements
 
 import gay.j10a1n15.customscoreboard.config.categories.LinesConfig
-import gay.j10a1n15.customscoreboard.utils.TextUtils.formatReadableTime
+import gay.j10a1n15.customscoreboard.utils.Utils.formatReadableTime
 import tech.thatgravyboat.skyblockapi.api.area.hub.ElectionAPI
 import tech.thatgravyboat.skyblockapi.api.data.Candidate
 import tech.thatgravyboat.skyblockapi.api.datetime.SkyBlockInstant
