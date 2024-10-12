@@ -1,6 +1,8 @@
 package gay.j10a1n15.customscoreboard.utils
 
+import net.minecraft.network.chat.Component
 import tech.thatgravyboat.skyblockapi.api.datetime.SkyBlockSeason
+import tech.thatgravyboat.skyblockapi.utils.text.TextProperties.stripped
 import kotlin.time.Duration
 import kotlin.time.DurationUnit
 
@@ -22,9 +24,10 @@ object Utils {
 
     fun SkyBlockSeason.getColoredName(): String = seasonColors[this] + this.toString()
 
-    fun <T> List<T>.nextAfter(element: T): T? {
-        val index = indexOf(element)
-        return if (index == -1 || index == size - 1) null else get(index + 1)
+    fun <T> Collection<T>.nextAfter(element: T, skip: Int = 1): T? {
+        val index = indexOfFirst { if (it is Component) it.stripped == element else it == element }
+        if (index == -1 || index + skip >= size) return null
+        return elementAt(index + skip)
     }
 
     // https://stackoverflow.com/a/74231671/15031174
