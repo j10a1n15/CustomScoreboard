@@ -25,7 +25,7 @@ object Utils {
     fun SkyBlockSeason.getColoredName(): String = seasonColors[this] + this.toString()
 
     fun <T> Collection<T>.nextAfter(element: T, skip: Int = 1): T? {
-        val index = indexOfFirst { if (it is Component) it.stripped == element else it == element }
+        val index = indexOfFirst { if (it is Component && element is String) it.stripped == element else it == element }
         if (index == -1 || index + skip >= size) return null
         return elementAt(index + skip)
     }
