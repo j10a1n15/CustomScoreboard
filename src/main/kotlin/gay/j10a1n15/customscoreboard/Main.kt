@@ -14,6 +14,7 @@ import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventBroodm
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventEssence
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventFlightDuration
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventRedstone
+import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventServerRestart
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventVoting
 import net.fabricmc.api.ModInitializer
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandManager
@@ -44,6 +45,7 @@ object Main : ModInitializer {
         SkyBlockAPI.eventBus.register(EventEssence)
         SkyBlockAPI.eventBus.register(EventRedstone)
         SkyBlockAPI.eventBus.register(EventFlightDuration)
+        SkyBlockAPI.eventBus.register(EventServerRestart)
     }
 
     private fun onRegisterCommands(

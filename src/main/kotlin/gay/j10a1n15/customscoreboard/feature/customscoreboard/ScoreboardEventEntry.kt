@@ -7,12 +7,12 @@ import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventFlight
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventJacobMedals
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventJacobsContest
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventRedstone
+import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventServerRestart
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventVoting
 
 enum class ScoreboardEventEntry(val event: Event) {
     VOTING(EventVoting),
-
-    //     SERVER_CLOSE(ScoreboardEventServerClose),
+    SERVER_RESTART(EventServerRestart),
 //     DUNGEONS(ScoreboardEventDungeons),
 //     KUUDRA(ScoreboardEventKuudra),
 //     DOJO(ScoreboardEventDojo),
