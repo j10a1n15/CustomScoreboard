@@ -4,6 +4,7 @@ import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.Event
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventBroodmother
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventEssence
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventFlightDuration
+import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventJacobMedals
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventRedstone
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventVoting
 
@@ -16,7 +17,7 @@ enum class ScoreboardEventEntry(val event: Event) {
 //     DOJO(ScoreboardEventDojo),
 //     DARK_AUCTION(ScoreboardEventDarkAuction),
 //     JACOB_CONTEST(ScoreboardEventJacobContest),
-//     JACOB_MEDALS(ScoreboardEventJacobMedals),
+    JACOB_MEDALS(EventJacobMedals),
 //     TRAPPER(ScoreboardEventTrapper),
 //     GARDEN(ScoreboardEventGarden),
     FLIGHT_DURATION(EventFlightDuration),
