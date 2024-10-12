@@ -7,6 +7,7 @@ import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventEssenc
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventFlightDuration
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventJacobMedals
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventJacobsContest
+import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventNewYear
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventRedstone
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventServerRestart
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventVoting
@@ -27,8 +28,9 @@ enum class ScoreboardEventEntry(val event: Event) {
     FLIGHT_DURATION(EventFlightDuration),
 
     //     WINTER(ScoreboardEventWinter),
-//     NEW_YEAR(ScoreboardEventNewYear),
-//     SPOOKY(ScoreboardEventSpooky),
+    NEW_YEAR(EventNewYear),
+
+    //     SPOOKY(ScoreboardEventSpooky),
     BROODMOTHER(EventBroodmother),
 
     //     MINING_EVENTS(ScoreboardEventMining),

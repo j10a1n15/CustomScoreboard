@@ -14,6 +14,7 @@ import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventBroodm
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventDarkAuction
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventEssence
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventFlightDuration
+import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventNewYear
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventRedstone
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventServerRestart
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventVoting
@@ -48,6 +49,7 @@ object Main : ModInitializer {
         SkyBlockAPI.eventBus.register(EventFlightDuration)
         SkyBlockAPI.eventBus.register(EventServerRestart)
         SkyBlockAPI.eventBus.register(EventDarkAuction)
+        SkyBlockAPI.eventBus.register(EventNewYear)
     }
 
     private fun onRegisterCommands(
