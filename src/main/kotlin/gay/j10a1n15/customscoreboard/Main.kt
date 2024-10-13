@@ -25,6 +25,7 @@ import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventMining
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventNewYear
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventQueue
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventRedstone
+import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventRift
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventServerRestart
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventSpooky
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventTrapper
@@ -74,6 +75,7 @@ object Main : ModInitializer {
         SkyBlockAPI.eventBus.register(EventMining)
         SkyBlockAPI.eventBus.register(EventKuudra)
         SkyBlockAPI.eventBus.register(EventDungeons)
+        SkyBlockAPI.eventBus.register(EventRift)
     }
 
     private fun onRegisterCommands(

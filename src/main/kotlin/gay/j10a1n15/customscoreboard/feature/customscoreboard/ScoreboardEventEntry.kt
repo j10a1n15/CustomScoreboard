@@ -19,6 +19,7 @@ import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventMining
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventNewYear
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventQueue
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventRedstone
+import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventRift
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventServerRestart
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventSpooky
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventTrapper
@@ -46,8 +47,7 @@ enum class ScoreboardEventEntry(val event: Event) : TooltipProvider {
     DAMAGE(EventDamage),
     MAGMA_BOSS(EventMagmaBoss),
     CARNIVAL(EventCarnival),
-
-    //     RIFT(ScoreboardEventRift),
+    RIFT(EventRift),
     ESSENCE(EventEssence),
     QUEUE(EventQueue),
     REDSTONE(EventRedstone),
