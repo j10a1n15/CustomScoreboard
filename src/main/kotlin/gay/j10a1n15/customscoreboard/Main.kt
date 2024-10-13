@@ -15,6 +15,7 @@ import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventCarniv
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventDamage
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventDarkAuction
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventDojo
+import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventDungeons
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventEssence
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventFlightDuration
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventGarden
@@ -72,6 +73,7 @@ object Main : ModInitializer {
         SkyBlockAPI.eventBus.register(EventQueue)
         SkyBlockAPI.eventBus.register(EventMining)
         SkyBlockAPI.eventBus.register(EventKuudra)
+        SkyBlockAPI.eventBus.register(EventDungeons)
     }
 
     private fun onRegisterCommands(

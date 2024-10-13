@@ -7,6 +7,7 @@ import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventCarniv
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventDamage
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventDarkAuction
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventDojo
+import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventDungeons
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventEssence
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventFlightDuration
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventGarden
@@ -28,8 +29,7 @@ import gay.j10a1n15.customscoreboard.utils.TextUtils.toComponent
 enum class ScoreboardEventEntry(val event: Event) : TooltipProvider {
     VOTING(EventVoting),
     SERVER_RESTART(EventServerRestart),
-
-    //     DUNGEONS(ScoreboardEventDungeons),
+    DUNGEONS(EventDungeons),
     KUUDRA(EventKuudra),
     DOJO(EventDojo),
     DARK_AUCTION(EventDarkAuction),
