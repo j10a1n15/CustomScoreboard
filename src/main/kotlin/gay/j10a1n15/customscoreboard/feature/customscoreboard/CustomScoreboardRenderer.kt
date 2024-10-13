@@ -31,7 +31,7 @@ object CustomScoreboardRenderer {
     private val screenHeight get() = McClient.window.guiScaledHeight
 
     init {
-        ClientTickEvents.START_CLIENT_TICK.register { updateDisplay() }
+        ClientTickEvents.START_CLIENT_TICK.register { if (isEnabled()) updateDisplay() }
 
         MainConfig.appearance.addListener { old, new ->
             updateIslandCache()
