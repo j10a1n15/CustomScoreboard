@@ -14,6 +14,7 @@ import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventRedsto
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventServerRestart
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventTrapper
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventVoting
+import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventWinter
 
 enum class ScoreboardEventEntry(val event: Event) {
     VOTING(EventVoting),
@@ -30,7 +31,7 @@ enum class ScoreboardEventEntry(val event: Event) {
     GARDEN(EventGarden),
     FLIGHT_DURATION(EventFlightDuration),
 
-    //     WINTER(ScoreboardEventWinter),
+    WINTER(EventWinter),
     NEW_YEAR(EventNewYear),
 
     //     SPOOKY(ScoreboardEventSpooky),

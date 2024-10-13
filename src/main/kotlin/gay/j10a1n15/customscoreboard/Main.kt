@@ -21,6 +21,7 @@ import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventRedsto
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventServerRestart
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventTrapper
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventVoting
+import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventWinter
 import net.fabricmc.api.ModInitializer
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandManager
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandRegistrationCallback
@@ -56,6 +57,7 @@ object Main : ModInitializer {
         SkyBlockAPI.eventBus.register(EventGarden)
         SkyBlockAPI.eventBus.register(EventTrapper)
         SkyBlockAPI.eventBus.register(EventDojo)
+        SkyBlockAPI.eventBus.register(EventWinter)
     }
 
     private fun onRegisterCommands(
