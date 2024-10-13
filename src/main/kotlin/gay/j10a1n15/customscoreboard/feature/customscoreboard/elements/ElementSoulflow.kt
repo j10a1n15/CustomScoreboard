@@ -10,4 +10,5 @@ object ElementSoulflow : Element() {
     override fun showIsland() = !SkyBlockIsland.inAnyIsland(SkyBlockIsland.THE_RIFT)
 
     override val configLine = "Soulflow"
+    override val configLineHover = listOf("Requires the Soulflow option enabled in the Profile category in /tablist.")
 }

@@ -9,4 +9,11 @@ object ElementEvents : Element() {
         else currentIslandEvents.firstNotNullOfOrNull { it.event.getLines().takeIf { !it.isEmpty() } }
 
     override val configLine = "Events"
+    override val configLineHover = listOf(
+        "Please don't remove this element.",
+        "It's used to display all kind of not-that-important information.",
+        "See the events draggable list below.",
+        "",
+        "If I see a support question saying \"Why do I not have Dungeon lines\" and you removed this, I will cry.",
+    )
 }

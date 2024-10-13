@@ -15,4 +15,5 @@ object ElementBank : Element() {
     override fun showIsland() = !SkyBlockIsland.inAnyIsland(SkyBlockIsland.THE_RIFT)
 
     override val configLine = "Bank"
+    override val configLineHover = listOf("Cannot be accurate enough,", "so it uses whats in the tablist")
 }
