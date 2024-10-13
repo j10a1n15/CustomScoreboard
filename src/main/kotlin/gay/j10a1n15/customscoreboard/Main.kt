@@ -19,6 +19,7 @@ import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventEssenc
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventFlightDuration
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventGarden
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventMagmaBoss
+import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventMining
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventNewYear
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventQueue
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventRedstone
@@ -68,6 +69,7 @@ object Main : ModInitializer {
         SkyBlockAPI.eventBus.register(EventSpooky)
         SkyBlockAPI.eventBus.register(EventDamage)
         SkyBlockAPI.eventBus.register(EventQueue)
+        SkyBlockAPI.eventBus.register(EventMining)
     }
 
     private fun onRegisterCommands(
