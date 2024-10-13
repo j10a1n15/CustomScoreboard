@@ -5,6 +5,7 @@ import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventBroodm
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventDarkAuction
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventEssence
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventFlightDuration
+import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventGarden
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventJacobMedals
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventJacobsContest
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventNewYear
@@ -24,7 +25,7 @@ enum class ScoreboardEventEntry(val event: Event) {
     JACOB_MEDALS(EventJacobMedals),
 
     //     TRAPPER(ScoreboardEventTrapper),
-//     GARDEN(ScoreboardEventGarden),
+    GARDEN(EventGarden),
     FLIGHT_DURATION(EventFlightDuration),
 
     //     WINTER(ScoreboardEventWinter),
