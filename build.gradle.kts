@@ -4,6 +4,7 @@ plugins {
     java
     kotlin("jvm") version "2.0.0"
     id("fabric-loom") version "1.7.1"
+    id("net.kyori.blossom") version "1.3.2"
 }
 
 repositories {
@@ -45,6 +46,10 @@ loom {
             property("devauth.configDir", rootProject.file(".devauth").absolutePath)
         }
     }
+}
+
+blossom {
+    replaceToken("@MOD_VERSION@", project.version)
 }
 
 tasks {

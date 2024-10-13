@@ -41,7 +41,7 @@ import tech.thatgravyboat.skyblockapi.helpers.McClient
 
 object Main : ModInitializer {
 
-    const val VERSION = "0.1"
+    const val VERSION = "@MOD_VERSION@"
 
     val configurator = Configurator("customscoreboard")
 
