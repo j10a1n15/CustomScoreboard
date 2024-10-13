@@ -13,12 +13,15 @@ object ElementTime : Element() {
 
         append(String.format("%02d:%02d%s", hour12, DateTimeAPI.minute, period))
 
-        // TODO: Check thunder in spider island
-        val symbol = when {
-            McLevel.self.isRaining -> "§3☔"
-            McLevel.self.isThundering -> "§e⚡"
-            DateTimeAPI.isDay -> "§e☀"
-            else -> "§b☽"
+        val symbol = if (McLevel.hasLevel) {
+            when {
+                McLevel.self.isRaining -> "§3☔"
+                McLevel.self.isThundering -> "§e⚡"
+                DateTimeAPI.isDay -> "§e☀"
+                else -> "§b☽"
+            }
+        } else {
+            "§c⚠"
         }
 
         append(" $symbol")
