@@ -1,8 +1,10 @@
 package gay.j10a1n15.customscoreboard.feature.customscoreboard
 
+import com.teamresourceful.resourcefulconfig.api.types.info.TooltipProvider
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.elements.*
+import gay.j10a1n15.customscoreboard.utils.TextUtils.toComponent
 
-enum class ScoreboardEntry(val element: Element) {
+enum class ScoreboardEntry(val element: Element) : TooltipProvider {
     SEPARATOR(ElementSeparator),
 
     TITLE(ElementTitle),
@@ -38,6 +40,8 @@ enum class ScoreboardEntry(val element: Element) {
 
     FOOTER(ElementFooter),
     ;
+
+    override fun getTooltip() = element.configLineHover.joinToString("\n").toComponent()
 
     override fun toString() = element.configLine
 

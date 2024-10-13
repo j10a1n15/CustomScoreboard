@@ -16,6 +16,11 @@ object EventVoting : Event() {
 
     override val configLine = "Voting"
 
+    override val configLineHover = listOf(
+        "Shows the current voting event.",
+        "Only visible in the election room.",
+    )
+
 
     private val titleRegex = "Year \\d+ Votes".toRegex()
     private val subtitleRegex = "Waiting for|your vote\\.\\.\\.".toRegex()

@@ -17,6 +17,7 @@ abstract class Element {
     protected abstract fun getDisplay(): Any?
     open fun showWhen(): Boolean = true
     abstract val configLine: String
+    open val configLineHover = listOf<String>()
 
     open fun showIsland(): Boolean = true
 

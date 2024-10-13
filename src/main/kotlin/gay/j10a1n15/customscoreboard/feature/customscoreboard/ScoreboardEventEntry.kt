@@ -1,5 +1,6 @@
 package gay.j10a1n15.customscoreboard.feature.customscoreboard
 
+import com.teamresourceful.resourcefulconfig.api.types.info.TooltipProvider
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.Event
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventBroodmother
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventCarnival
@@ -17,8 +18,9 @@ import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventServer
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventTrapper
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventVoting
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventWinter
+import gay.j10a1n15.customscoreboard.utils.TextUtils.toComponent
 
-enum class ScoreboardEventEntry(val event: Event) {
+enum class ScoreboardEventEntry(val event: Event) : TooltipProvider {
     VOTING(EventVoting),
     SERVER_RESTART(EventServerRestart),
 
@@ -54,6 +56,8 @@ enum class ScoreboardEventEntry(val event: Event) {
 //     ACTIVE_TABLIST_EVENTS(ScoreboardEventActiveTablist),
 //     STARTING_SOON_TABLIST_EVENTS(ScoreboardEventStartingSoonTablist),
     ;
+
+    override fun getTooltip() = event.configLineHover.joinToString("\n").toComponent()
 
     override fun toString() = event.configLine
 }
