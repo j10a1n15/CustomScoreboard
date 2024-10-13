@@ -12,6 +12,7 @@ import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventFlight
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventGarden
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventJacobMedals
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventJacobsContest
+import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventKuudra
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventMagmaBoss
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventMining
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventNewYear
@@ -29,7 +30,7 @@ enum class ScoreboardEventEntry(val event: Event) : TooltipProvider {
     SERVER_RESTART(EventServerRestart),
 
     //     DUNGEONS(ScoreboardEventDungeons),
-//     KUUDRA(ScoreboardEventKuudra),
+    KUUDRA(EventKuudra),
     DOJO(EventDojo),
     DARK_AUCTION(EventDarkAuction),
     JACOB_CONTEST(EventJacobsContest),
@@ -41,7 +42,6 @@ enum class ScoreboardEventEntry(val event: Event) : TooltipProvider {
     NEW_YEAR(EventNewYear),
     SPOOKY(EventSpooky),
     BROODMOTHER(EventBroodmother),
-
     MINING_EVENTS(EventMining),
     DAMAGE(EventDamage),
     MAGMA_BOSS(EventMagmaBoss),
