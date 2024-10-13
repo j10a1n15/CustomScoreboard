@@ -25,7 +25,7 @@ object MainConfig {
     @ConfigEntry(id = "appearance", translation = "config.cs.appearance")
     @ConfigOption.Draggable(value = ["SEPARATOR"])
     @Comment("", translation = "config.cs.appearance.desc")
-    val appearance: Observable<Array<ScoreboardEntry>> = Observable.of(ScoreboardEntry.entries.toTypedArray())
+    val appearance: Observable<Array<ScoreboardEntry>> = Observable.of(ScoreboardEntry.default)
 
     @ConfigEntry(id = "events", translation = "config.cs.events")
     @ConfigOption.Draggable

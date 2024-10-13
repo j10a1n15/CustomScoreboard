@@ -40,4 +40,34 @@ enum class ScoreboardEntry(val element: Element) {
     ;
 
     override fun toString() = element.configLine
+
+    companion object {
+        val default = arrayOf(
+            TITLE,
+            LOBBY,
+            SEPARATOR,
+            DATE,
+            TIME,
+            ISLAND,
+            AREA,
+            PROFILE,
+            SEPARATOR,
+            PURSE,
+            MOTES,
+            BANK,
+            BITS,
+            COPPER,
+            GEMS,
+            HEAT,
+            COLD,
+            NORTH_STARS,
+            SOULFLOW,
+            SEPARATOR,
+            OBJECTIVE,
+            SLAYER,
+            EVENTS,
+            MAYOR,
+            FOOTER,
+        )
+    }
 }
