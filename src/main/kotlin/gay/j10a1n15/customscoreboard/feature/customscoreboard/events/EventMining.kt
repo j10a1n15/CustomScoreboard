@@ -1,6 +1,7 @@
 package gay.j10a1n15.customscoreboard.feature.customscoreboard.events
 
-import net.minecraft.network.chat.Component
+import gay.j10a1n15.customscoreboard.feature.customscoreboard.ScoreboardLine.Companion.align
+import gay.j10a1n15.customscoreboard.utils.rendering.alignment.TextAlignment
 import tech.thatgravyboat.skyblockapi.api.events.base.Subscription
 import tech.thatgravyboat.skyblockapi.api.events.info.ScoreboardUpdateEvent
 import tech.thatgravyboat.skyblockapi.api.location.SkyBlockIsland
@@ -15,11 +16,9 @@ object EventMining : Event() {
     override val configLine = "Mining"
 
 
-    private var formattedLines = mutableListOf<Component>()
+    private var formattedLines = mutableListOf<Any>()
 
     private val powderRegex = ComponentRegex("᠅ (?:Gemstone|Mithril|Glacite)(?: Powder)?.*")
-    private val compassRegex = ComponentRegex("Wind Compass")
-    private val compassArrowRegex = ComponentRegex("\\s*[⋖⋗≈]+\\s*[⋖⋗≈]*\\s*")
     private val eventRegex = ComponentRegex("Event: .*")
     private val eventZoneRegex = ComponentRegex("Zone: .*")
     private val raffleUselessRegex = ComponentRegex("Find tickets on the|ground and bring them|to the raffle box")
@@ -35,11 +34,13 @@ object EventMining : Event() {
     private val mineshaftNotStartedRegex = ComponentRegex("Not started.*")
     private val mineshaftFortunateFreezingRegex = ComponentRegex("Event Bonus: \\+\\d+☘")
     private val fossilDustRegex = ComponentRegex("Fossil Dust: [\\d.,]+")
+    private val compassRegex = ComponentRegex("Wind Compass")
+    private val compassArrowRegex = ComponentRegex("\\s*[⋖⋗≈]+\\s*[⋖⋗≈]*\\s*")
 
     private val patterns = listOf(
-        powderRegex, compassRegex, compassArrowRegex, eventRegex, eventZoneRegex, raffleUselessRegex, raffleTicketsRegex,
-        rafflePoolRegex, donUseless, donRemaining, donYourMithril, nearbyPlayers, goblinUseless, goblinRemaining,
-        goblinYourKills, mineshaftNotStartedRegex, mineshaftFortunateFreezingRegex, fossilDustRegex,
+        powderRegex, eventRegex, eventZoneRegex, raffleUselessRegex, raffleTicketsRegex, rafflePoolRegex, donUseless,
+        donRemaining, donYourMithril, nearbyPlayers, goblinUseless, goblinRemaining, goblinYourKills, mineshaftNotStartedRegex,
+        mineshaftFortunateFreezingRegex, fossilDustRegex, compassRegex,
     )
 
 
@@ -51,5 +52,8 @@ object EventMining : Event() {
                 patterns.any { it.matches(component) }
             },
         )
+        event.components.firstOrNull { compassArrowRegex.matches(it) }?.let {
+            formattedLines.add(it align TextAlignment.CENTER)
+        }
     }
 }
