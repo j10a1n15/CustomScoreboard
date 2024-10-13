@@ -4,6 +4,8 @@
     "config.cs.enabled.desc": "Enable or disable the custom scoreboard",
     "config.cs.appearance": "Appearance",
     "config.cs.appearance.desc": "Edit this list to change the order of appearance of the scoreboard.",
+    "config.cs.events": "Events Priority",
+    "config.cs.events.desc": "Edit this list to change the order of appearance of the events.",
     "config.cs.title_options": "Title Options",
     "config.cs.title_options.desc": "Edit the title of the scoreboard.",
     "config.cs.footer_options": "Footer Options",
@@ -34,11 +36,22 @@
     "config.cs.background.padding.desc": "Choose the padding of the background.",
     "config.cs.background.margin": "Margin",
     "config.cs.background.margin.desc": "Choose the margin between the scoreboard and the screen border.",
+    "config.cs.background.radius": "Radius",
+    "config.cs.background.radius.desc": "Choose the radius of the rounded corner of the background.",
     "_comment": "Line Config",
     "config.cs.lines.bits_available": "Bits Available",
     "config.cs.lines.bits_available.desc": "Show your available bits on the scoreboard.",
     "config.cs.lines.colored_month": "Colored Month",
     "config.cs.lines.colored_month.desc": "Show the month in color on the scoreboard.",
     "config.cs.lines.profile_name": "Profile Name",
-    "config.cs.lines.profile_name.desc": "Show your profile name on the scoreboard."
+    "config.cs.lines.profile_name.desc": "Show your profile name on the scoreboard.",
+    "config.cs.lines.mayor_time": "Mayor Time till Election",
+    "config.cs.lines.mayor_time.desc": "Show the time till the next mayor election on the scoreboard.",
+    "config.cs.lines.mayor_perks": "Mayor Perks",
+    "config.cs.lines.mayor_perks.desc": "Show the perks of the mayor on the scoreboard.",
+    "config.cs.lines.mayor_minister": "Show Minister",
+    "config.cs.lines.mayor_minister.desc": "Show the minister on the scoreboard.",
+    "config.cs.lines.all_events": "All Events",
+    "config.cs.lines.all_events.desc": "Show all events instead of the first one. Uses the \"Events Priority\" list."
+
 }
