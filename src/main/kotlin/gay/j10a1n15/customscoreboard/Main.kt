@@ -17,6 +17,7 @@ import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventDojo
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventEssence
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventFlightDuration
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventGarden
+import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventMagmaBoss
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventNewYear
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventRedstone
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventServerRestart
@@ -60,6 +61,7 @@ object Main : ModInitializer {
         SkyBlockAPI.eventBus.register(EventDojo)
         SkyBlockAPI.eventBus.register(EventWinter)
         SkyBlockAPI.eventBus.register(EventCarnival)
+        SkyBlockAPI.eventBus.register(EventMagmaBoss)
     }
 
     private fun onRegisterCommands(

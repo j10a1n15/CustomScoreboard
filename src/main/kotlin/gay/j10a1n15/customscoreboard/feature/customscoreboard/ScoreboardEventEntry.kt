@@ -10,6 +10,7 @@ import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventFlight
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventGarden
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventJacobMedals
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventJacobsContest
+import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventMagmaBoss
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventNewYear
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventRedstone
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventServerRestart
@@ -40,9 +41,10 @@ enum class ScoreboardEventEntry(val event: Event) {
 
     //     MINING_EVENTS(ScoreboardEventMining),
 //     DAMAGE(ScoreboardEventDamage),
-//     MAGMA_BOSS(ScoreboardEventMagmaBoss),
+    MAGMA_BOSS(EventMagmaBoss),
     CARNIVAL(EventCarnival),
-//     RIFT(ScoreboardEventRift),
+
+    //     RIFT(ScoreboardEventRift),
     ESSENCE(EventEssence),
 
     //     QUEUE(ScoreboardEventQueue),
