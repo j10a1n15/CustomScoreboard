@@ -9,9 +9,9 @@ import tech.thatgravyboat.skyblockapi.utils.regex.component.ComponentRegex
 object EventDamage : Event() {
     override fun getDisplay() = formattedLines
 
-    override fun showIsland() = SkyBlockIsland.inAnyIsland(SkyBlockIsland.JERRYS_WORKSHOP)
+    override fun showIsland() = SkyBlockIsland.inAnyIsland(SkyBlockIsland.THE_END)
 
-    override val configLine = "Winter"
+    override val configLine = "Damage"
 
 
     private var formattedLines = mutableListOf<Component>()
