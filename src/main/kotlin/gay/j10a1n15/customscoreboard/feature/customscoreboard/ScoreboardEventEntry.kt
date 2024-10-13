@@ -4,6 +4,7 @@ import com.teamresourceful.resourcefulconfig.api.types.info.TooltipProvider
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.Event
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventBroodmother
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventCarnival
+import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventDamage
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventDarkAuction
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventDojo
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventEssence
@@ -40,7 +41,7 @@ enum class ScoreboardEventEntry(val event: Event) : TooltipProvider {
     BROODMOTHER(EventBroodmother),
 
     //     MINING_EVENTS(ScoreboardEventMining),
-//     DAMAGE(ScoreboardEventDamage),
+    DAMAGE(EventDamage),
     MAGMA_BOSS(EventMagmaBoss),
     CARNIVAL(EventCarnival),
 
