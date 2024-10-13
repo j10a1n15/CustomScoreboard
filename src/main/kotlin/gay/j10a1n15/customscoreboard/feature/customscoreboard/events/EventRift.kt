@@ -7,7 +7,7 @@ import tech.thatgravyboat.skyblockapi.api.location.SkyBlockIsland
 import tech.thatgravyboat.skyblockapi.utils.regex.component.ComponentRegex
 
 object EventRift : Event() {
-    override fun getDisplay() = ""
+    override fun getDisplay() = formattedLines
 
     override fun showIsland() = SkyBlockIsland.inAnyIsland(SkyBlockIsland.THE_RIFT)
 
