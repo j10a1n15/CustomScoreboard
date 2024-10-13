@@ -2,6 +2,7 @@ package gay.j10a1n15.customscoreboard.feature.customscoreboard
 
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.Event
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventBroodmother
+import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventCarnival
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventDarkAuction
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventDojo
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventEssence
@@ -40,7 +41,7 @@ enum class ScoreboardEventEntry(val event: Event) {
     //     MINING_EVENTS(ScoreboardEventMining),
 //     DAMAGE(ScoreboardEventDamage),
 //     MAGMA_BOSS(ScoreboardEventMagmaBoss),
-//     CARNIVAL(ScoreboardEventCarnival),
+    CARNIVAL(EventCarnival),
 //     RIFT(ScoreboardEventRift),
     ESSENCE(EventEssence),
 

@@ -11,6 +11,7 @@ import gay.j10a1n15.customscoreboard.feature.customscoreboard.elements.ElementOb
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.elements.ElementSlayer
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.elements.ElementTime
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventBroodmother
+import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventCarnival
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventDarkAuction
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventDojo
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventEssence
@@ -58,6 +59,7 @@ object Main : ModInitializer {
         SkyBlockAPI.eventBus.register(EventTrapper)
         SkyBlockAPI.eventBus.register(EventDojo)
         SkyBlockAPI.eventBus.register(EventWinter)
+        SkyBlockAPI.eventBus.register(EventCarnival)
     }
 
     private fun onRegisterCommands(
