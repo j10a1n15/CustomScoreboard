@@ -30,8 +30,19 @@ object CustomScoreboardRenderer {
     private val screenWidth get() = McClient.window.guiScaledWidth
     private val screenHeight get() = McClient.window.guiScaledHeight
 
+    private var tickCounter = 0
+
     init {
-        ClientTickEvents.START_CLIENT_TICK.register { if (isEnabled()) updateDisplay() }
+        ClientTickEvents.START_CLIENT_TICK.register {
+            tickCounter++
+
+            if (tickCounter >= 10) {
+                if (isEnabled()) {
+                    updateDisplay()
+                }
+                tickCounter = 0
+            }
+        }
 
         MainConfig.appearance.addListener { old, new ->
             updateIslandCache()
