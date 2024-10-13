@@ -11,6 +11,7 @@ import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventJacobs
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventNewYear
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventRedstone
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventServerRestart
+import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventTrapper
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventVoting
 
 enum class ScoreboardEventEntry(val event: Event) {
@@ -24,7 +25,7 @@ enum class ScoreboardEventEntry(val event: Event) {
     JACOB_CONTEST(EventJacobsContest),
     JACOB_MEDALS(EventJacobMedals),
 
-    //     TRAPPER(ScoreboardEventTrapper),
+    TRAPPER(EventTrapper),
     GARDEN(EventGarden),
     FLIGHT_DURATION(EventFlightDuration),
 
