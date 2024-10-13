@@ -52,6 +52,7 @@
     "config.cs.lines.mayor_minister": "Show Minister",
     "config.cs.lines.mayor_minister.desc": "Show the minister on the scoreboard.",
     "config.cs.lines.all_events": "All Events",
-    "config.cs.lines.all_events.desc": "Show all events instead of the first one. Uses the \"Events Priority\" list."
-
+    "config.cs.lines.all_events.desc": "Show all events instead of the first one. Uses the \"Events Priority\" list.",
+    "config.cs.lines.hypixel_title": "Use Hypixel Title",
+    "config.cs.lines.hypixel_title.desc": "Use Hypixel's Scoreboard Title. §cWill override the Custom Title if enabled."
 }

@@ -35,4 +35,8 @@ object LinesConfig {
     @Comment("", translation = "config.cs.lines.all_events.desc")
     var showAllActiveEvents = true
 
+    @ConfigEntry(id = "hypixel_title", translation = "config.cs.lines.hypixel_title")
+    @Comment("", translation = "config.cs.lines.hypixel_title.desc")
+    var useHypixelTitle = true
+
 }
