@@ -21,6 +21,7 @@ import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventMagmaB
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventNewYear
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventRedstone
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventServerRestart
+import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventSpooky
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventTrapper
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventVoting
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventWinter
@@ -62,6 +63,7 @@ object Main : ModInitializer {
         SkyBlockAPI.eventBus.register(EventWinter)
         SkyBlockAPI.eventBus.register(EventCarnival)
         SkyBlockAPI.eventBus.register(EventMagmaBoss)
+        SkyBlockAPI.eventBus.register(EventSpooky)
     }
 
     private fun onRegisterCommands(

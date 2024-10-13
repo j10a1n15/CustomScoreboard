@@ -15,6 +15,7 @@ import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventMagmaB
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventNewYear
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventRedstone
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventServerRestart
+import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventSpooky
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventTrapper
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventVoting
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventWinter
@@ -30,15 +31,12 @@ enum class ScoreboardEventEntry(val event: Event) : TooltipProvider {
     DARK_AUCTION(EventDarkAuction),
     JACOB_CONTEST(EventJacobsContest),
     JACOB_MEDALS(EventJacobMedals),
-
     TRAPPER(EventTrapper),
     GARDEN(EventGarden),
     FLIGHT_DURATION(EventFlightDuration),
-
     WINTER(EventWinter),
     NEW_YEAR(EventNewYear),
-
-    //     SPOOKY(ScoreboardEventSpooky),
+    SPOOKY(EventSpooky),
     BROODMOTHER(EventBroodmother),
 
     //     MINING_EVENTS(ScoreboardEventMining),
