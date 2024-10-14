@@ -1,9 +1,12 @@
 package gay.j10a1n15.customscoreboard.feature.customscoreboard.events
 
+import gay.j10a1n15.customscoreboard.utils.TextUtils.toComponent
 import net.minecraft.network.chat.Component
+import tech.thatgravyboat.skyblockapi.api.area.rift.RiftAPI
 import tech.thatgravyboat.skyblockapi.api.events.base.Subscription
 import tech.thatgravyboat.skyblockapi.api.events.info.ScoreboardUpdateEvent
 import tech.thatgravyboat.skyblockapi.api.location.SkyBlockIsland
+import tech.thatgravyboat.skyblockapi.utils.regex.RegexUtils.anyMatch
 import tech.thatgravyboat.skyblockapi.utils.regex.component.ComponentRegex
 
 object EventRift : Event() {
@@ -24,6 +27,7 @@ object EventRift : Event() {
 
     private val patterns = listOf(hotdogContestRegex, aveikxRegex, cluesRegex, barryProtestRegex, protestorsHandledRegex)
 
+    private val effigiesRegex = "Effigies: ⧯.*".toRegex()
 
     @Subscription
     fun onScoreboardUpdate(event: ScoreboardUpdateEvent) {
@@ -33,5 +37,19 @@ object EventRift : Event() {
                 patterns.any { it.matches(component) }
             },
         )
+
+        if (effigiesRegex.anyMatch(event.new)) {
+            formattedLines.add(
+                buildString {
+                    append("Effigies: ")
+                    RiftAPI.effieges.map { effigy ->
+                        append("§")
+                        if (effigy.enabled) "c"
+                        else "7"
+                        append("⧯")
+                    }
+                }.toComponent(),
+            )
+        }
     }
 }
