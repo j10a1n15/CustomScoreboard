@@ -38,6 +38,7 @@ object EventRift : Event() {
             },
         )
 
+        // todo: use sbapi
         if (effigiesRegex.anyMatch(event.new)) {
             formattedLines.add(
                 buildString {
