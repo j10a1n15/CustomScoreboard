@@ -40,17 +40,18 @@ object EventRift : Event() {
 
         // todo: use sbapi
         if (effigiesRegex.anyMatch(event.new)) {
-            formattedLines.add(
-                buildString {
-                    append("Effigies: ")
-                    RiftAPI.effieges.map { effigy ->
-                        append("§")
+            val string = buildString {
+                append("Effigies: ")
+                RiftAPI.effieges.map { effigy ->
+                    append("§")
+                    append(
                         if (effigy.enabled) "c"
-                        else "7"
-                        append("⧯")
-                    }
-                }.toComponent(),
-            )
+                        else "7",
+                    )
+                    append("⧯")
+                }
+            }
+            formattedLines.add(string.toComponent())
         }
     }
 }
