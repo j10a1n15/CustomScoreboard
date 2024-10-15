@@ -1,6 +1,5 @@
 package gay.j10a1n15.customscoreboard
 
-import com.mojang.brigadier.CommandDispatcher
 import com.teamresourceful.resourcefulconfig.api.client.ResourcefulConfigScreen
 import com.teamresourceful.resourcefulconfig.api.loader.Configurator
 import gay.j10a1n15.customscoreboard.config.MainConfig
@@ -32,11 +31,10 @@ import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventTrappe
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventVoting
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventWinter
 import net.fabricmc.api.ModInitializer
-import net.fabricmc.fabric.api.client.command.v2.ClientCommandManager
-import net.fabricmc.fabric.api.client.command.v2.ClientCommandRegistrationCallback
-import net.fabricmc.fabric.api.client.command.v2.FabricClientCommandSource
-import net.minecraft.commands.CommandBuildContext
 import tech.thatgravyboat.skyblockapi.api.SkyBlockAPI
+import tech.thatgravyboat.skyblockapi.api.events.base.Subscription
+import tech.thatgravyboat.skyblockapi.api.events.misc.LiteralCommandBuilder
+import tech.thatgravyboat.skyblockapi.api.events.misc.RegisterCommandsEvent
 import tech.thatgravyboat.skyblockapi.helpers.McClient
 
 object Main : ModInitializer {
@@ -47,8 +45,8 @@ object Main : ModInitializer {
 
     override fun onInitialize() {
         configurator.register(MainConfig::class.java)
-        ClientCommandRegistrationCallback.EVENT.register(::onRegisterCommands)
 
+        SkyBlockAPI.eventBus.register(this)
         SkyBlockAPI.eventBus.register(CustomScoreboardRenderer)
         SkyBlockAPI.eventBus.register(ElementArea)
         SkyBlockAPI.eventBus.register(ElementTime)
@@ -78,17 +76,18 @@ object Main : ModInitializer {
         SkyBlockAPI.eventBus.register(EventRift)
     }
 
-    private fun onRegisterCommands(
-        dispatcher: CommandDispatcher<FabricClientCommandSource>,
-        buildContext: CommandBuildContext,
-    ) {
-        dispatcher.register(
-            ClientCommandManager.literal("cs").executes { context ->
+    @Subscription
+    fun onRegisterCommands(event: RegisterCommandsEvent) {
+        val builder: (LiteralCommandBuilder.() -> Unit) = {
+            callback {
                 McClient.tell {
                     McClient.setScreen(ResourcefulConfigScreen.get(null, configurator, MainConfig::class.java))
                 }
-                1
-            },
-        )
+            }
+        }
+
+        event.register("customscoreboard") { builder() }
+        event.register("csb") { builder() }
+        event.register("cs") { builder() }
     }
 }
