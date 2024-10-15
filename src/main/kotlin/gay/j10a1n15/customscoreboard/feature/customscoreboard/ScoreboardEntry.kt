@@ -33,7 +33,7 @@ enum class ScoreboardEntry(val element: Element) : TooltipProvider {
     //    COOKIE(Cookie),
     //    CHUNKED_STATS(ChunkedStats),
     //    QUIVER(Quiver),
-    //    POWDER(Powder),
+    POWDER(ElementPowder),
     MAYOR(ElementMayor),
     //    PARTY(Party),
     //    Unknown(Unknown),
