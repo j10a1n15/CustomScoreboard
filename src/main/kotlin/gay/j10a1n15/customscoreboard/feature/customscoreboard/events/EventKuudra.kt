@@ -12,6 +12,7 @@ object EventKuudra : Event() {
     //override fun showIsland() = SkyBlockIsland.inAnyIsland(SkyBlockIsland.KUUDRA)
 
     override val configLine = "Kuudra"
+    override val configLineHover = listOf("These have not been tested as I don't play Kuudra.", "Please report any issues.")
 
 
     private var formattedLines = mutableListOf<Component>()
