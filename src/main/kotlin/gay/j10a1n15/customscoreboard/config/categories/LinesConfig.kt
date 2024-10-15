@@ -39,4 +39,8 @@ object LinesConfig {
     @Comment("", translation = "config.cs.lines.hypixel_title.desc")
     var useHypixelTitle = true
 
+    @ConfigEntry(id = "party_everywhere", translation = "config.cs.lines.party_everywhere")
+    @Comment("", translation = "config.cs.lines.party_everywhere.desc")
+    var showPartyEverywhere = true
+
 }

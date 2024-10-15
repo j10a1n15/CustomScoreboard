@@ -54,5 +54,7 @@
     "config.cs.lines.all_events": "All Events",
     "config.cs.lines.all_events.desc": "Show all events instead of the first one. Uses the \"Events Priority\" list.",
     "config.cs.lines.hypixel_title": "Use Hypixel Title",
-    "config.cs.lines.hypixel_title.desc": "Use Hypixel's Scoreboard Title. §cWill override the Custom Title if enabled."
+    "config.cs.lines.hypixel_title.desc": "Use Hypixel's Scoreboard Title. §cWill override the Custom Title if enabled.",
+    "config.cs.lines.party_everywhere": "Party Everywhere",
+    "config.cs.lines.party_everywhere.desc": "Show the party on every Island instead of just Glacite Tunnels, Dungeon Hub and Crimson Isle."
 }

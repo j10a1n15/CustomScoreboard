@@ -29,13 +29,14 @@ enum class ScoreboardEntry(val element: Element) : TooltipProvider {
     OBJECTIVE(ElementObjective),
     SLAYER(ElementSlayer),
     EVENTS(ElementEvents),
+
     //    POWER(Power),
     //    COOKIE(Cookie),
     //    CHUNKED_STATS(ChunkedStats),
     //    QUIVER(Quiver),
     POWDER(ElementPowder),
     MAYOR(ElementMayor),
-    //    PARTY(Party),
+    PARTY(ElementParty),
     //    Unknown(Unknown),
 
     FOOTER(ElementFooter),
@@ -70,7 +71,9 @@ enum class ScoreboardEntry(val element: Element) : TooltipProvider {
             OBJECTIVE,
             SLAYER,
             EVENTS,
+            POWDER,
             MAYOR,
+            PARTY,
             FOOTER,
         )
     }
