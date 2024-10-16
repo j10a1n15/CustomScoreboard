@@ -3,14 +3,15 @@ package gay.j10a1n15.customscoreboard.feature.customscoreboard.events
 import net.minecraft.network.chat.Component
 import tech.thatgravyboat.skyblockapi.api.events.base.Subscription
 import tech.thatgravyboat.skyblockapi.api.events.info.ScoreboardUpdateEvent
+import tech.thatgravyboat.skyblockapi.api.location.SkyBlockArea
+import tech.thatgravyboat.skyblockapi.api.location.SkyBlockAreas
 import tech.thatgravyboat.skyblockapi.api.location.SkyBlockIsland
 import tech.thatgravyboat.skyblockapi.utils.regex.component.ComponentRegex
 
 object EventMagmaBoss : Event() {
     override fun getDisplay() = formattedLines
 
-    // todo: sbapi
-    //override fun showWhen() = SkyBlockArea.inAnyArea(SkyBlockAreas.MAGMA_CHAMBER)
+    override fun showWhen() = SkyBlockArea.inAnyArea(SkyBlockAreas.MAGMA_CHAMBER)
 
     override fun showIsland() = SkyBlockIsland.inAnyIsland(SkyBlockIsland.CRIMSON_ISLE)
 

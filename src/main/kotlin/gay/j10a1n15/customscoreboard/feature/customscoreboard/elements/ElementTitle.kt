@@ -7,10 +7,10 @@ import tech.thatgravyboat.skyblockapi.helpers.McClient
 
 object ElementTitle : Element() {
     override fun getDisplay() = when {
-        LinesConfig.useHypixelTitle -> McClient.scoreboardTitle
-        MainConfig.title.useCustomText -> MainConfig.title.text
-        else -> "§e§lSkyBlock"
-    }?.align(MainConfig.title.alignment)
+        LinesConfig.useHypixelTitle -> McClient.scoreboardTitle?.align(MainConfig.title.alignment)
+        MainConfig.title.useCustomText -> MainConfig.title.text align MainConfig.title.alignment
+        else -> "§e§lSkyBlock" align MainConfig.title.alignment
+    }
 
     override val configLine: String = "§e§lSkyBlock"
 }

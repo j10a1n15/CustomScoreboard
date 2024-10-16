@@ -5,8 +5,9 @@ import net.minecraft.network.chat.Component
 import tech.thatgravyboat.skyblockapi.api.area.rift.RiftAPI
 import tech.thatgravyboat.skyblockapi.api.events.base.Subscription
 import tech.thatgravyboat.skyblockapi.api.events.info.ScoreboardUpdateEvent
+import tech.thatgravyboat.skyblockapi.api.location.SkyBlockArea
+import tech.thatgravyboat.skyblockapi.api.location.SkyBlockAreas
 import tech.thatgravyboat.skyblockapi.api.location.SkyBlockIsland
-import tech.thatgravyboat.skyblockapi.utils.regex.RegexUtils.anyMatch
 import tech.thatgravyboat.skyblockapi.utils.regex.component.ComponentRegex
 
 object EventRift : Event() {
@@ -27,8 +28,6 @@ object EventRift : Event() {
 
     private val patterns = listOf(hotdogContestRegex, aveikxRegex, cluesRegex, barryProtestRegex, protestorsHandledRegex)
 
-    private val effigiesRegex = "Effigies: ⧯.*".toRegex()
-
     @Subscription
     fun onScoreboardUpdate(event: ScoreboardUpdateEvent) {
         formattedLines.clear()
@@ -38,8 +37,14 @@ object EventRift : Event() {
             },
         )
 
-        // todo: use sbapi
-        if (effigiesRegex.anyMatch(event.new)) {
+        if (
+            SkyBlockArea.inAnyArea(
+                SkyBlockAreas.STILLGORE_CHATEAU,
+                SkyBlockAreas.OUBLIETTE,
+                SkyBlockAreas.PHOTON_PATHWAY,
+                SkyBlockAreas.FAIRYLOSOPHER_TOWER,
+            )
+        ) {
             val string = buildString {
                 append("Effigies: ")
                 RiftAPI.effieges.map { effigy ->

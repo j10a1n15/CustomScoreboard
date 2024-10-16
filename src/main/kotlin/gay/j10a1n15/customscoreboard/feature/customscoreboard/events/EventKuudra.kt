@@ -3,13 +3,13 @@ package gay.j10a1n15.customscoreboard.feature.customscoreboard.events
 import net.minecraft.network.chat.Component
 import tech.thatgravyboat.skyblockapi.api.events.base.Subscription
 import tech.thatgravyboat.skyblockapi.api.events.info.ScoreboardUpdateEvent
+import tech.thatgravyboat.skyblockapi.api.location.SkyBlockIsland
 import tech.thatgravyboat.skyblockapi.utils.regex.component.ComponentRegex
 
 object EventKuudra : Event() {
     override fun getDisplay() = formattedLines
 
-    // todo sbapi
-    //override fun showIsland() = SkyBlockIsland.inAnyIsland(SkyBlockIsland.KUUDRA)
+    override fun showIsland() = SkyBlockIsland.inAnyIsland(SkyBlockIsland.KUUDRA)
 
     override val configLine = "Kuudra"
     override val configLineHover = listOf("These have not been tested as I don't play Kuudra.", "Please report any issues.")

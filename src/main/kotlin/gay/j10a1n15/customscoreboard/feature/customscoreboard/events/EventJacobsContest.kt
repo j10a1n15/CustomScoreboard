@@ -6,7 +6,6 @@ import tech.thatgravyboat.skyblockapi.api.events.info.ScoreboardUpdateEvent
 import tech.thatgravyboat.skyblockapi.utils.regex.RegexUtils.anyMatch
 
 object EventJacobsContest : Event() {
-    // TODO: use scoreboard update event
     override fun getDisplay() = formattedLines
 
     override val configLine = "Jacob's Contest"

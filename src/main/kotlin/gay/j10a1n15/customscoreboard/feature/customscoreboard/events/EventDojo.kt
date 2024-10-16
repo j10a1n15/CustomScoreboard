@@ -3,6 +3,8 @@ package gay.j10a1n15.customscoreboard.feature.customscoreboard.events
 import net.minecraft.network.chat.Component
 import tech.thatgravyboat.skyblockapi.api.events.base.Subscription
 import tech.thatgravyboat.skyblockapi.api.events.info.ScoreboardUpdateEvent
+import tech.thatgravyboat.skyblockapi.api.location.SkyBlockArea
+import tech.thatgravyboat.skyblockapi.api.location.SkyBlockAreas
 import tech.thatgravyboat.skyblockapi.api.location.SkyBlockIsland
 import tech.thatgravyboat.skyblockapi.utils.regex.component.ComponentRegex
 
@@ -11,8 +13,7 @@ object EventDojo : Event() {
 
     override fun showIsland() = SkyBlockIsland.inAnyIsland(SkyBlockIsland.CRIMSON_ISLE)
 
-    // TODO: sbapi
-    //override fun showWhen() = SkyBlockArea.inAnyArea(SkyBlockAreas.DOJO_ARENA)
+    override fun showWhen() = SkyBlockArea.inAnyArea(SkyBlockAreas.DOJO_ARENA)
 
     override val configLine = "Dojo"
 
