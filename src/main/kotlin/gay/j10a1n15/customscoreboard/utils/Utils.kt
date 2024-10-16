@@ -1,7 +1,9 @@
 package gay.j10a1n15.customscoreboard.utils
 
+import gay.j10a1n15.customscoreboard.utils.TextUtils.toComponent
 import net.minecraft.network.chat.Component
 import tech.thatgravyboat.skyblockapi.api.datetime.SkyBlockSeason
+import tech.thatgravyboat.skyblockapi.helpers.McPlayer
 import tech.thatgravyboat.skyblockapi.utils.text.TextProperties.stripped
 import kotlin.time.Duration
 import kotlin.time.DurationUnit
@@ -63,5 +65,9 @@ object Utils {
         return filteredUnits.joinToString(", ") { (unit, value) ->
             "$value${unitNames[unit]}"
         }.ifEmpty { "0 seconds" }
+    }
+
+    fun chat(text: String) {
+        McPlayer.self?.sendSystemMessage(text.toComponent())
     }
 }

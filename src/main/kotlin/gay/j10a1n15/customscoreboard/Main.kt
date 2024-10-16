@@ -30,6 +30,7 @@ import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventSpooky
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventTrapper
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventVoting
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventWinter
+import gay.j10a1n15.customscoreboard.feature.updatechecker.UpdateChecker
 import net.fabricmc.api.ModInitializer
 import tech.thatgravyboat.skyblockapi.api.SkyBlockAPI
 import tech.thatgravyboat.skyblockapi.api.events.base.Subscription
@@ -48,6 +49,7 @@ object Main : ModInitializer {
 
         SkyBlockAPI.eventBus.register(this)
         SkyBlockAPI.eventBus.register(CustomScoreboardRenderer)
+        SkyBlockAPI.eventBus.register(UpdateChecker)
         SkyBlockAPI.eventBus.register(ElementArea)
         SkyBlockAPI.eventBus.register(ElementTime)
         SkyBlockAPI.eventBus.register(ElementLobby)
