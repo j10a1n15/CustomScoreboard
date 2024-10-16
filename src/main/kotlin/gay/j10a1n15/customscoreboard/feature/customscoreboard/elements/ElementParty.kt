@@ -7,7 +7,7 @@ import tech.thatgravyboat.skyblockapi.api.profile.party.PartyAPI
 
 object ElementParty : Element() {
     override fun getDisplay() = buildList {
-        add("§6Party: ${PartyAPI.size}")
+        add("§1Party: ${PartyAPI.size}")
         PartyAPI.members.forEach {
             add("§7- §f${it.name}")
         }

@@ -6,7 +6,7 @@ import tech.thatgravyboat.skyblockapi.api.location.SkyBlockIsland
 
 object ElementPowder : Element() {
     override fun getDisplay() = buildList {
-        add("§6Powder")
+        add("§1Powder")
         // todo: option for full powder
         add(" §7- §fMithril: §2${PowderAPI.mithril.format()}")
         add(" §7- §fGemstone: §d${PowderAPI.gemstone.format()}")
