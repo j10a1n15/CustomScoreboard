@@ -1,12 +1,10 @@
 package gay.j10a1n15.customscoreboard.feature.updatechecker
 
 import gay.j10a1n15.customscoreboard.Main
-import gay.j10a1n15.customscoreboard.utils.Utils
+import gay.j10a1n15.customscoreboard.utils.ChatUtils
 import kotlinx.coroutines.runBlocking
-import net.fabricmc.fabric.api.networking.v1.PacketSender
-import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents
-import net.minecraft.server.MinecraftServer
-import net.minecraft.server.network.ServerGamePacketListenerImpl
+import tech.thatgravyboat.skyblockapi.api.events.base.Subscription
+import tech.thatgravyboat.skyblockapi.api.events.profile.ProfileChangeEvent
 import tech.thatgravyboat.skyblockapi.utils.http.Http
 
 const val SLUG = "skyblock-custom-scoreboard"
@@ -26,8 +24,6 @@ object UpdateChecker {
         runBlocking {
             check()
         }
-
-        ServerPlayConnectionEvents.JOIN.register(UpdateChecker::onServerJoin)
     }
 
     @JvmStatic
@@ -44,9 +40,14 @@ object UpdateChecker {
         isOutdated = latest?.let { it.version_number > Main.VERSION } == true
     }
 
-    fun onServerJoin(handler: ServerGamePacketListenerImpl, sender: PacketSender, server: MinecraftServer) {
+    // TODO: replace with hypixel join
+    @Subscription
+    fun onProfile(event: ProfileChangeEvent) {
         if (isOutdated) {
-            Utils.chat("§eA new version of Custom Scoreboard is available! §7(§e${Main.VERSION}§7 -> §e${latest?.version_number}§7)")
+            ChatUtils.link(
+                "§eA new version of Custom Scoreboard is available! §7(§e${Main.VERSION}§7 -> §e${latest?.version_number}§7). §eClick here to open Modrinth!",
+                "https://modrinth.com/mod/skyblock-custom-scoreboard",
+            )
         }
     }
 
