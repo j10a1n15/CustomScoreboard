@@ -1,8 +1,10 @@
 <h1 align="center">Custom Scoreboards</h1>
 
-<a href="https://modrinth.com/mod/skyblock-custom-scoreboard" target="_blank">
+<p align="center">
+  <a href="https://modrinth.com/mod/skyblock-custom-scoreboard" target="_blank">
     <img alt="Lines" src="https://img.shields.io/modrinth/dt/skyblock-custom-scoreboard?color=%23007EA7&label=Modrinth Downloads&style=for-the-badge" />
   </a>
+</p>
 
 Custom Scoreboard is a mod for modern Minecraft and Hypixel SkyBlock, inspired by [SkyHanni](https://modrinth.com/mod/skyhanni).
 This mod lets you fully customize your scoreboard, making it easier to focus on the information that matters most while you're running a
