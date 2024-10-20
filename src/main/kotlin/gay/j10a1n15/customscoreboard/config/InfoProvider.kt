@@ -18,10 +18,20 @@ class InfoProvider : ResourcefulConfigInfo {
 
     override fun links(): Array<ResourcefulConfigLink> = arrayOf(
         ResourcefulConfigLink.create(
+            "https://discord.gg/pUBzTq9akF",
+            "discord",
+            TranslatableValue("Discord"),
+        ),
+        ResourcefulConfigLink.create(
+            "https://modrinth.com/mod/skyblock-custom-scoreboard",
+            "modrinth",
+            TranslatableValue("Modrinth"),
+        ),
+        ResourcefulConfigLink.create(
             "https://github.com/j10a1n15/CustomScoreboard",
-            "github",
-            TranslatableValue("GitHub")
-        )
+            "code",
+            TranslatableValue("GitHub"),
+        ),
     )
 
     override fun isHidden(): Boolean = false
