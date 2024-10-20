@@ -17,15 +17,17 @@ object EventCarnival : Event() {
     private var formattedLines = mutableListOf<Component>()
 
     private val timeRegex = ComponentRegex("Carnival [\\d:,.]+")
-    private val taskRegex = ComponentRegex("Catch a Fish|Fruit Digging|Zombie Shootout")
     private val tokensRegex = ComponentRegex("Carnival Tokens: [\\d,.]+")
+    private val taskRegex = ComponentRegex("Catch a Fish|Fruit Digging|Zombie Shootout")
+    private val timeLeftRegex = ComponentRegex("Time Left: [\\w:,.\\s]+")
     private val fruitsRegex = ComponentRegex("Fruits: \\d+/\\d+")
     private val scoreRegex = ComponentRegex("Score: \\d+.*")
     private val catchStreakRegex = ComponentRegex("Catch Streak: \\d+")
     private val accuracyRegex = ComponentRegex("Accuracy: [\\d.,]+%")
     private val killsRegex = ComponentRegex("Kills: \\d+")
 
-    private val patterns = listOf(timeRegex, taskRegex, tokensRegex, fruitsRegex, scoreRegex, catchStreakRegex, accuracyRegex, killsRegex)
+    private val patterns =
+        listOf(timeRegex, tokensRegex, taskRegex, timeLeftRegex, fruitsRegex, scoreRegex, catchStreakRegex, accuracyRegex, killsRegex)
 
 
     @Subscription
