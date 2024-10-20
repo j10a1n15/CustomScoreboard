@@ -18,6 +18,7 @@ import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventDungeo
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventEssence
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventFlightDuration
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventGarden
+import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventJacobsContest
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventKuudra
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventMagmaBoss
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventMining
@@ -40,7 +41,7 @@ import tech.thatgravyboat.skyblockapi.helpers.McClient
 
 object Main : ModInitializer {
 
-    const val VERSION = "0.0.0"
+    const val VERSION = "@MOD_VERSION@"
 
     val configurator = Configurator("customscoreboard")
 
@@ -76,6 +77,7 @@ object Main : ModInitializer {
         SkyBlockAPI.eventBus.register(EventKuudra)
         SkyBlockAPI.eventBus.register(EventDungeons)
         SkyBlockAPI.eventBus.register(EventRift)
+        SkyBlockAPI.eventBus.register(EventJacobsContest)
     }
 
     @Subscription
