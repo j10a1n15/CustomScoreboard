@@ -4,8 +4,10 @@ import gay.j10a1n15.customscoreboard.Main
 import gay.j10a1n15.customscoreboard.config.MainConfig
 import gay.j10a1n15.customscoreboard.utils.ChatUtils
 import kotlinx.coroutines.runBlocking
-import tech.thatgravyboat.skyblockapi.api.events.base.Subscription
-import tech.thatgravyboat.skyblockapi.api.events.profile.ProfileChangeEvent
+import net.fabricmc.fabric.api.client.networking.v1.ClientPlayConnectionEvents
+import net.fabricmc.fabric.api.networking.v1.PacketSender
+import net.minecraft.client.Minecraft
+import net.minecraft.client.multiplayer.ClientPacketListener
 import tech.thatgravyboat.skyblockapi.utils.http.Http
 
 const val SLUG = "skyblock-custom-scoreboard"
@@ -25,6 +27,8 @@ object UpdateChecker {
         runBlocking {
             check()
         }
+
+        ClientPlayConnectionEvents.JOIN.register(::onServerJoin)
     }
 
     @JvmStatic
@@ -41,9 +45,7 @@ object UpdateChecker {
         isOutdated = latest?.let { it.version_number > Main.VERSION } == true
     }
 
-    // TODO: replace with hypixel join
-    @Subscription
-    fun onProfile(event: ProfileChangeEvent) {
+    fun onServerJoin(handler: ClientPacketListener, sender: PacketSender, client: Minecraft) {
         if (MainConfig.updateNotification && isOutdated) {
             ChatUtils.link(
                 "§eA new version of Custom Scoreboard is available! §7(§e${Main.VERSION}§7 -> §e${latest?.version_number}§7). §eClick here to open Modrinth!",
