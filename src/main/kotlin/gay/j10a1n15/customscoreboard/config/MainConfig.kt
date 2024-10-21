@@ -60,4 +60,8 @@ object MainConfig {
     @Comment("", translation = "config.cs.text_shadow.desc")
     var textShadow: Boolean = true
 
+    @ConfigEntry(id = "update_notification", translation = "config.cs.update_notification")
+    @Comment("", translation = "config.cs.update_notification.desc")
+    var updateNotification: Boolean = true
+
 }

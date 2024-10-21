@@ -1,6 +1,7 @@
 package gay.j10a1n15.customscoreboard.feature.updatechecker
 
 import gay.j10a1n15.customscoreboard.Main
+import gay.j10a1n15.customscoreboard.config.MainConfig
 import gay.j10a1n15.customscoreboard.utils.ChatUtils
 import kotlinx.coroutines.runBlocking
 import tech.thatgravyboat.skyblockapi.api.events.base.Subscription
@@ -43,7 +44,7 @@ object UpdateChecker {
     // TODO: replace with hypixel join
     @Subscription
     fun onProfile(event: ProfileChangeEvent) {
-        if (isOutdated) {
+        if (MainConfig.updateNotification && isOutdated) {
             ChatUtils.link(
                 "§eA new version of Custom Scoreboard is available! §7(§e${Main.VERSION}§7 -> §e${latest?.version_number}§7). §eClick here to open Modrinth!",
                 "https://modrinth.com/mod/skyblock-custom-scoreboard",

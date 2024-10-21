@@ -20,6 +20,8 @@
     "config.cs.hide_hypixel.desc": "Enable or disable the Hypixel scoreboard.",
     "config.cs.text_shadow": "Text Shadow",
     "config.cs.text_shadow.desc": "Enable or disable the text shadow on the scoreboard.",
+    "config.cs.update_notification": "Update Notification",
+    "config.cs.update_notification.desc": "Enable the update notification.",
     "_comment": "Title or Footer Config",
     "config.cs.title_footer.alignment": "Alignment",
     "config.cs.title_footer.alignment.desc": "Choose the alignment of this element.",
