@@ -4,7 +4,7 @@ import com.teamresourceful.resourcefulconfig.api.annotations.Category
 import com.teamresourceful.resourcefulconfig.api.annotations.Comment
 import com.teamresourceful.resourcefulconfig.api.annotations.ConfigEntry
 
-@Category("Lines")
+@Category("Line Modification")
 object LinesConfig {
 
     @ConfigEntry(id = "bits_available", translation = "config.cs.lines.bits_available")
