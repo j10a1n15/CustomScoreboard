@@ -8,22 +8,27 @@ import tech.thatgravyboat.skyblockapi.api.profile.party.PartyAPI
 object ElementParty : Element() {
     override fun getDisplay() = buildList {
         add("§9Party: ${PartyAPI.size}")
-        PartyAPI.members.forEach {
-            add("§7- §f${it.name}")
+        if (LinesConfig.showPartyLeader) {
+            PartyAPI.leader?.let {
+                add("§7- §f${it.name} §e♚")
+            }
         }
+
+        PartyAPI.members
+            .take(LinesConfig.maxPartyMembers)
+            .filter { LinesConfig.showPartyLeader && it != PartyAPI.leader }
+            .forEach {
+                add("§7- §f${it.name}")
+            }
     }
 
-    override fun showWhen() = PartyAPI.size > 0 && if (SkyBlockIsland.THE_CATACOMBS.inIsland()) {
-        true
-    } else {
-        if (LinesConfig.showPartyEverywhere) {
-            true
-        } else {
-            SkyBlockIsland.inAnyIsland(
-                SkyBlockIsland.DUNGEON_HUB,
-                SkyBlockIsland.CRIMSON_ISLE,
-            ) || GlaciteAPI.inGlaciteTunnels()
-        }
+    override fun showWhen() = PartyAPI.size > 0 && when {
+        SkyBlockIsland.THE_CATACOMBS.inIsland() -> false
+        LinesConfig.showPartyEverywhere -> true
+        else -> SkyBlockIsland.inAnyIsland(
+            SkyBlockIsland.DUNGEON_HUB,
+            SkyBlockIsland.CRIMSON_ISLE,
+        ) || GlaciteAPI.inGlaciteTunnels()
     }
 
     override val configLine = "Party"

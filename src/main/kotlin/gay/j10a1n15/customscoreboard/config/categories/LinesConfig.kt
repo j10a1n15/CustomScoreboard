@@ -3,6 +3,7 @@ package gay.j10a1n15.customscoreboard.config.categories
 import com.teamresourceful.resourcefulconfig.api.annotations.Category
 import com.teamresourceful.resourcefulconfig.api.annotations.Comment
 import com.teamresourceful.resourcefulconfig.api.annotations.ConfigEntry
+import com.teamresourceful.resourcefulconfig.api.annotations.ConfigOption
 
 @Category("Line Modification")
 object LinesConfig {
@@ -42,5 +43,15 @@ object LinesConfig {
     @ConfigEntry(id = "party_everywhere", translation = "config.cs.lines.party_everywhere")
     @Comment("", translation = "config.cs.lines.party_everywhere.desc")
     var showPartyEverywhere = true
+
+    @ConfigEntry(id = "max_party", translation = "config.cs.lines.max_party")
+    @Comment("", translation = "config.cs.lines.max_party.desc")
+    @ConfigOption.Range(min = 1.0, max = 10.0)
+    @ConfigOption.Slider
+    var maxPartyMembers = 5
+
+    @ConfigEntry(id = "party_leader", translation = "config.cs.lines.party_leader")
+    @Comment("", translation = "config.cs.lines.party_leader.desc")
+    var showPartyLeader = true
 
 }
