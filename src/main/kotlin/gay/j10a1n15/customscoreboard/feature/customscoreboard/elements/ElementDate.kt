@@ -9,5 +9,7 @@ object ElementDate : Element() {
     override fun getDisplay() =
         DateTimeAPI.season?.run { if (LinesConfig.coloredMonth) getColoredName() else toString() } + " " + DateTimeAPI.day.ordinal()
 
+    override fun showWhen() = DateTimeAPI.season != null
+
     override val configLine = "Date"
 }
