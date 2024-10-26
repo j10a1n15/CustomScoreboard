@@ -124,6 +124,23 @@ object CustomScoreboardRenderer {
         updateIslandCache()
     }
 
+    fun formatNumberDisplayDisplay(text: String, number: String, color: String) = when (MainConfig.numberDisplayFormat) {
+        NumberDisplayFormat.TEXT_COLOR_NUMBER -> "§f$text: $color$number"
+        NumberDisplayFormat.COLOR_TEXT_NUMBER -> "$color$text: $number"
+        NumberDisplayFormat.COLOR_NUMBER_TEXT -> "$color$number $text"
+        NumberDisplayFormat.COLOR_NUMBER_RESET_TEXT -> "$color$number §f$text"
+    }
+
+    enum class NumberDisplayFormat(val config: String) {
+        TEXT_COLOR_NUMBER("§fPurse: §6123"),
+        COLOR_TEXT_NUMBER("§6Purse: 123"),
+        COLOR_NUMBER_TEXT("§6123 Purse"),
+        COLOR_NUMBER_RESET_TEXT("§6123 §fPurse"),
+        ;
+
+        override fun toString() = config
+    }
+
     private fun isEnabled() = LocationAPI.isOnSkyBlock && MainConfig.enabled
     private fun hideHypixelScoreboard() = isEnabled() && MainConfig.hideHypixelScoreboard
 

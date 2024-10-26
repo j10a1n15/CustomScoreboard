@@ -5,6 +5,7 @@ import com.teamresourceful.resourcefulconfig.api.types.entries.Observable
 import gay.j10a1n15.customscoreboard.config.categories.BackgroundConfig
 import gay.j10a1n15.customscoreboard.config.categories.LinesConfig
 import gay.j10a1n15.customscoreboard.config.objects.TitleOrFooterObject
+import gay.j10a1n15.customscoreboard.feature.customscoreboard.CustomScoreboardRenderer
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.ScoreboardEntry
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.ScoreboardEventEntry
 import gay.j10a1n15.customscoreboard.utils.NumberFormatType
@@ -39,6 +40,10 @@ object MainConfig {
     @ConfigEntry(id = "footer_options", translation = "config.cs.footer_options")
     @Comment("", translation = "config.cs.footer_options.desc")
     val footer: TitleOrFooterObject = TitleOrFooterObject()
+
+    @ConfigEntry(id = "number_display_format", translation = "config.cs.number_display_format")
+    @Comment("", translation = "config.cs.number_display_format.desc")
+    var numberDisplayFormat: CustomScoreboardRenderer.NumberDisplayFormat = CustomScoreboardRenderer.NumberDisplayFormat.TEXT_COLOR_NUMBER
 
     @ConfigEntry(id = "number_format", translation = "config.cs.number_format")
     @Comment("", translation = "config.cs.number_format.desc")

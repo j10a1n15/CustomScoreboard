@@ -12,6 +12,8 @@
     "config.cs.footer_options.desc": "Edit the footer of the scoreboard.",
     "config.cs.number_format": "Number Format",
     "config.cs.number_format.desc": "Choose the format of the numbers in the scoreboard.",
+    "config.cs.number_display_format": "Number Display Format",
+    "config.cs.number_display_format.desc": "Choose the format numbers with their prefix are displayed in the scoreboard.",
     "config.cs.vertical_alignment": "Vertical Alignment",
     "config.cs.vertical_alignment.desc": "Choose the vertical alignment of the scoreboard.",
     "config.cs.horizontal_alignment": "Horizontal Alignment",
