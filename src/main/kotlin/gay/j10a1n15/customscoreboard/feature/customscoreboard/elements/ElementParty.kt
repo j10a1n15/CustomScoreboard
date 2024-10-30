@@ -7,14 +7,15 @@ import tech.thatgravyboat.skyblockapi.api.profile.party.PartyAPI
 
 object ElementParty : Element() {
     override fun getDisplay() = buildList {
-        add("§9Party: ${PartyAPI.size}")
+        val list = PartyAPI.members.distinctBy { it.name }
+        add("§9Party: ${list.size}")
         if (LinesConfig.showPartyLeader) {
             PartyAPI.leader?.let {
                 add("§7- §f${it.name} §e♚")
             }
         }
 
-        PartyAPI.members
+        list
             .take(LinesConfig.maxPartyMembers)
             .filter { LinesConfig.showPartyLeader && it != PartyAPI.leader }
             .forEach {
