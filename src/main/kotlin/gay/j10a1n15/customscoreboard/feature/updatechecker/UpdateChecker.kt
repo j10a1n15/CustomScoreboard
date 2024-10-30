@@ -5,7 +5,6 @@ import gay.j10a1n15.customscoreboard.config.MainConfig
 import gay.j10a1n15.customscoreboard.utils.ChatUtils
 import kotlinx.coroutines.runBlocking
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayConnectionEvents
-import net.fabricmc.fabric.api.networking.v1.PacketSender
 import net.minecraft.client.Minecraft
 import net.minecraft.client.multiplayer.ClientPacketListener
 import tech.thatgravyboat.skyblockapi.utils.http.Http
@@ -28,7 +27,7 @@ object UpdateChecker {
             check()
         }
 
-        ClientPlayConnectionEvents.JOIN.register(::onServerJoin)
+        ClientPlayConnectionEvents.INIT.register(::onServerJoin)
     }
 
     @JvmStatic
@@ -45,12 +44,15 @@ object UpdateChecker {
         isOutdated = latest?.let { it.version_number > Main.VERSION } == true
     }
 
-    fun onServerJoin(handler: ClientPacketListener, sender: PacketSender, client: Minecraft) {
+    fun onServerJoin(handler: ClientPacketListener, client: Minecraft) {
         if (MainConfig.updateNotification && isOutdated) {
-            ChatUtils.link(
-                "§eA new version of Custom Scoreboard is available! §7(§e${Main.VERSION}§7 -> §e${latest?.version_number}§7). §eClick here to open Modrinth!",
+            Thread {
+                Thread.sleep(5000)
+                ChatUtils.link(
+                    "§eA new version of Custom Scoreboard is available! §7(§e${Main.VERSION}§7 -> §e${latest?.version_number}§7)\n§eClick here to open Modrinth!",
                 "https://modrinth.com/mod/skyblock-custom-scoreboard",
-            )
+                )
+            }.start()
         }
     }
 
