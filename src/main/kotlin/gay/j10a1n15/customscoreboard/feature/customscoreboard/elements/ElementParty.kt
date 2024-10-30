@@ -8,7 +8,7 @@ import tech.thatgravyboat.skyblockapi.api.profile.party.PartyAPI
 object ElementParty : Element() {
     override fun getDisplay() = buildList {
         val list = PartyAPI.members.distinctBy { it.name }
-        add("§9Party: ${list.size}")
+        add("§9Party (${list.size})")
         if (LinesConfig.showPartyLeader) {
             PartyAPI.leader?.let {
                 add("§7- §f${it.name} §e♚")
