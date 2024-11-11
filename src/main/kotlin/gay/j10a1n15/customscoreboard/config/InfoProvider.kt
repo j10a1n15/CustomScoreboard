@@ -18,7 +18,7 @@ class InfoProvider : ResourcefulConfigInfo {
 
     override fun links(): Array<ResourcefulConfigLink> = arrayOf(
         ResourcefulConfigLink.create(
-            "https://discord.gg/pUBzTq9akF",
+            "https://discord.gg/FsRc2GUwZR",
             "discord",
             TranslatableValue("Discord"),
         ),
