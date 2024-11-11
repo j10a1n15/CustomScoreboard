@@ -8,10 +8,10 @@ import tech.thatgravyboat.skyblockapi.utils.text.Text
 object ChatUtils {
 
     fun chat(text: String) {
-        McPlayer.self?.sendSystemMessage(text.toComponent())
+        McPlayer.self?.displayClientMessage(text.toComponent(), true)
     }
 
     fun link(text: String, link: String) {
-        McPlayer.self?.sendSystemMessage(Text.of(text) { this.url = link })
+        McPlayer.self?.displayClientMessage(Text.of(text) { this.url = link }, true)
     }
 }

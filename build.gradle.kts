@@ -3,7 +3,7 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 plugins {
     java
     kotlin("jvm") version "2.0.0"
-    id("fabric-loom") version "1.7.1"
+    id("fabric-loom") version "1.8-SNAPSHOT"
     id("net.kyori.blossom") version "1.3.2"
 }
 
@@ -15,7 +15,7 @@ repositories {
 }
 
 dependencies {
-    minecraft("com.mojang:minecraft:1.21.1")
+    minecraft("com.mojang:minecraft:1.21.3")
     mappings(loom.officialMojangMappings())
     modImplementation(libs.fabricLoader)
     modImplementation(libs.fabricApi)
@@ -75,10 +75,4 @@ tasks {
 
 java {
     withSourcesJar()
-}
-
-idea {
-    module {
-        excludeDirs.add(file("run"))
-    }
 }
