@@ -25,8 +25,8 @@ dependencies {
     modImplementation(libs.skyblockapi)
     modImplementation(libs.resourcefulconfig)
     modImplementation(libs.resourcefulconfigkt) {
-				transitive = false
-		}
+			isTransitive = false
+	}
     modImplementation(libs.resourcefullib)
     modImplementation(libs.resourcefullibkt)
     modImplementation(libs.olympus)
