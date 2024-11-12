@@ -24,7 +24,9 @@ dependencies {
     modImplementation(libs.hypixelapi)
     modImplementation(libs.skyblockapi)
     modImplementation(libs.resourcefulconfig)
-    modImplementation(libs.resourcefulconfigkt)
+    modImplementation(libs.resourcefulconfigkt) {
+				transitive = false
+		}
     modImplementation(libs.resourcefullib)
     modImplementation(libs.resourcefullibkt)
     modImplementation(libs.olympus)
