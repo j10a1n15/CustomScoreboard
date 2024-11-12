@@ -11,7 +11,7 @@ loom = "1.8-SNAPSHOT"
 skyblockapi = "1.0.0-beta.53"
 hypixelapi = "1.0.1+build.1+mc1.21"
 resourcefulConfig = "3.3.0"
-resourcefulConfigKt = "3.0.8-beta.1"
+resourcefulConfigKt = "3.3.0"
 olympus = "1.1.0"
 resourcefulLib = "3.3.0"
 resourcefulLibKt = "2.0.2"
@@ -21,7 +21,7 @@ devauth = "1.2.1"
 
 [libraries]
 resourcefulconfig = { module = "com.teamresourceful.resourcefulconfig:resourcefulconfig-fabric-1.21.3", version.ref = "resourcefulConfig" }
-resourcefulconfigkt = { module = "com.teamresourceful.resourcefulconfigkt:resourcefulconfigkt-fabric-1.21", version.ref = "resourcefulConfigKt" }
+resourcefulconfigkt = { module = "com.teamresourceful.resourcefulconfigkt:resourcefulconfigkt-fabric-1.21.3", version.ref = "resourcefulConfigKt" }
 skyblockapi = { module = "tech.thatgravyboat:skyblock-api-1.21.3", version.ref = "skyblockapi" }
 hypixelapi = { module = "maven.modrinth:hypixel-mod-api", version.ref = "hypixelapi" }
 olympus = { module = "earth.terrarium.olympus:olympus-fabric-1.21.3", version.ref = "olympus" }
