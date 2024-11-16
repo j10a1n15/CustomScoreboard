@@ -26,6 +26,6 @@
         "fabric": "*",
         "minecraft": "1.21.1",
         "hypixel-mod-api": ">=1.0.1",
-        "fabric-language-kotlin": ">1.12.3"
+        "fabric-language-kotlin": ">=1.12.3"
     }
 }
