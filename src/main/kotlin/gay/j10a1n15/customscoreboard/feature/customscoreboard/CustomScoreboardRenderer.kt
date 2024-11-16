@@ -2,6 +2,8 @@ package gay.j10a1n15.customscoreboard.feature.customscoreboard
 
 import gay.j10a1n15.customscoreboard.config.MainConfig
 import gay.j10a1n15.customscoreboard.config.categories.BackgroundConfig
+import gay.j10a1n15.customscoreboard.config.categories.LinesConfig
+import gay.j10a1n15.customscoreboard.utils.TextUtils.isBlank
 import gay.j10a1n15.customscoreboard.utils.rendering.AlignedText
 import gay.j10a1n15.customscoreboard.utils.rendering.RenderUtils.drawAlignedTexts
 import gay.j10a1n15.customscoreboard.utils.rendering.RenderUtils.fillRect
@@ -103,7 +105,7 @@ object CustomScoreboardRenderer {
 
     private fun updateDisplay() {
         if (!isEnabled()) return
-        display = createDisplay()
+        display = createDisplay().hideLeadingAndTrailingSeparators().condenseConsecutiveSeparators()
     }
 
     private fun createDisplay() = buildList {
@@ -111,6 +113,24 @@ object CustomScoreboardRenderer {
             addAll(element.element.getLines().map { it.toAlignedText() })
         }
     }
+
+    private fun List<AlignedText>.hideLeadingAndTrailingSeparators() =
+        if (LinesConfig.hideSeparatorsAtStartEnd) this.dropLastWhile { it.first.isBlank() }.dropWhile { it.first.isBlank() } else this
+
+    private fun List<AlignedText>.condenseConsecutiveSeparators() =
+        if (!LinesConfig.condenseConsecutiveSeparators) this
+        else
+            fold(mutableListOf<AlignedText>() to false) { (acc, lastWasSeparator), line ->
+                if (line.first.isBlank()) {
+                    if (!lastWasSeparator) {
+                        acc.add(line)
+                    }
+                    acc to true
+                } else {
+                    acc.add(line)
+                    acc to false
+                }
+            }.first
 
     @Subscription
     fun onRenderHudElement(event: RenderHudElementEvent) {

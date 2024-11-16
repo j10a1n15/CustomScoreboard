@@ -64,5 +64,9 @@
     "config.cs.lines.max_party": "Max Party Size",
     "config.cs.lines.max_party.desc": "Show the max party size on the scoreboard.",
     "config.cs.lines.party_leader": "Show Party Leader",
-    "config.cs.lines.party_leader.desc": "Show the party leader on the scoreboard."
+    "config.cs.lines.party_leader.desc": "Show the party leader on the scoreboard.",
+    "config.cs.lines.consecutive_separator": "Condense Consecutive Separator",
+    "config.cs.lines.consecutive_separator.desc": "Condense consecutive Separator into one.",
+    "config.cs.lines.separators_start_end": "Hide Separators at Start and End",
+    "config.cs.lines.separators_start_end.desc": "Hide the separators at the start and end of the scoreboard."
 }

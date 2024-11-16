@@ -8,12 +8,12 @@ import tech.thatgravyboat.skyblockapi.utils.text.TextProperties.stripped
 
 object EventJacobMedals : Event() {
     override fun getDisplay() = buildList {
-        add("§6§lGOLD §fmedals: §6${FarmhouseAPI.goldMedals?.addSeparator()}")
-        add("§lSILVER §fmedals: ${FarmhouseAPI.silverMedals?.addSeparator()}")
-        add("§c§lBRONZE §fmedals: §c${FarmhouseAPI.bronzeMedals?.addSeparator()}")
+        add("§6§lGOLD §fmedals: §6${FarmhouseAPI.goldMedals.addSeparator()}")
+        add("§lSILVER §fmedals: ${FarmhouseAPI.silverMedals.addSeparator()}")
+        add("§c§lBRONZE §fmedals: §c${FarmhouseAPI.bronzeMedals.addSeparator()}")
     }
 
-    override fun showWhen() = FarmhouseAPI.bronzeMedals != null && McClient.scoreboard.any { medalRegex.matches(it.stripped) }
+    override fun showWhen() = McClient.scoreboard.any { medalRegex.matches(it.stripped) }
 
     override fun showIsland() = SkyBlockIsland.inAnyIsland(SkyBlockIsland.HUB, SkyBlockIsland.GARDEN)
 

@@ -54,4 +54,12 @@ object LinesConfig {
     @Comment("", translation = "config.cs.lines.party_leader.desc")
     var showPartyLeader = true
 
+    @ConfigEntry(id = "consecutive_separator", translation = "config.cs.lines.consecutive_separator")
+    @Comment("", translation = "config.cs.lines.consecutive_separator.desc")
+    var condenseConsecutiveSeparators = true
+
+    @ConfigEntry(id = "separators_start_end", translation = "config.cs.lines.separators_start_end")
+    @Comment("", translation = "config.cs.lines.separators_start_end.desc")
+    var hideSeparatorsAtStartEnd = true
+
 }
