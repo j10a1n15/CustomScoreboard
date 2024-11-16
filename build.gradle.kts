@@ -28,7 +28,6 @@ dependencies {
 			isTransitive = false
 	}
     modImplementation(libs.resourcefullib)
-    modImplementation(libs.resourcefullibkt)
     modImplementation(libs.olympus)
 
     include(libs.hypixelapi)
@@ -36,7 +35,6 @@ dependencies {
     include(libs.resourcefulconfig)
     include(libs.resourcefulconfigkt)
     include(libs.resourcefullib)
-    include(libs.resourcefullibkt)
     include(libs.olympus)
 
     modRuntimeOnly(libs.devauth)

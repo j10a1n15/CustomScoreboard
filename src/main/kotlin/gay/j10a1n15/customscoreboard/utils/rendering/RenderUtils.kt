@@ -1,6 +1,6 @@
 package gay.j10a1n15.customscoreboard.utils.rendering
 
-import com.teamresourceful.resourcefullibkt.client.pushPop
+import com.mojang.blaze3d.vertex.PoseStack
 import earth.terrarium.olympus.client.shader.builtin.RoundedRectShader
 import gay.j10a1n15.customscoreboard.utils.rendering.alignment.TextAlignment
 import net.minecraft.client.gui.GuiGraphics
@@ -39,5 +39,15 @@ object RenderUtils {
                 backgroundColor, borderColor, radius.toFloat(), borderSize,
             )
         }
+    }
+
+    inline fun GuiGraphics.pushPop(action: PoseStack.() -> Unit) {
+        this.pose().pushPop(action)
+    }
+
+    inline fun PoseStack.pushPop(action: PoseStack.() -> Unit) {
+        this.pushPose()
+        this.action()
+        this.popPose()
     }
 }

@@ -14,7 +14,6 @@ resourcefulConfig = "3.3.0"
 resourcefulConfigKt = "3.3.0"
 olympus = "1.1.0"
 resourcefulLib = "3.3.0"
-resourcefulLibKt = "2.0.2"
 
 # Dev Dependencies
 devauth = "1.2.1"
@@ -26,7 +25,6 @@ skyblockapi = { module = "tech.thatgravyboat:skyblock-api-1.21.3", version.ref =
 hypixelapi = { module = "maven.modrinth:hypixel-mod-api", version.ref = "hypixelapi" }
 olympus = { module = "earth.terrarium.olympus:olympus-fabric-1.21.3", version.ref = "olympus" }
 resourcefullib = { module = "com.teamresourceful.resourcefullib:resourcefullib-fabric-1.21.3", version.ref = "resourcefulLib" }
-resourcefullibkt = { module = "com.teamresourceful.resourcefullibkt:resourcefullibkt-fabric-1.21", version.ref = "resourcefulLibKt" }
 fabricLoader = { module = "net.fabricmc:fabric-loader", version.ref = "fabricLoader" }
 fabricApi = { module = "net.fabricmc.fabric-api:fabric-api", version.ref = "fabricApi" }
 fabricKt = { module = "net.fabricmc:fabric-language-kotlin", version.ref = "fabricKt" }
