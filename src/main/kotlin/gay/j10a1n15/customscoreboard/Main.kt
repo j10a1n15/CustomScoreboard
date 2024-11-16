@@ -32,6 +32,10 @@ import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventTrappe
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventVoting
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventWinter
 import gay.j10a1n15.customscoreboard.feature.updatechecker.UpdateChecker
+import kotlinx.coroutines.CoroutineName
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.SupervisorJob
 import net.fabricmc.api.ModInitializer
 import tech.thatgravyboat.skyblockapi.api.SkyBlockAPI
 import tech.thatgravyboat.skyblockapi.api.events.base.Subscription
@@ -44,6 +48,11 @@ object Main : ModInitializer {
     const val VERSION = "@MOD_VERSION@"
 
     val configurator = Configurator("customscoreboard")
+
+    private val globalJob: Job = Job(null)
+    val coroutineScope = CoroutineScope(
+        CoroutineName("CustomScoreboard") + SupervisorJob(globalJob),
+    )
 
     override fun onInitialize() {
         configurator.register(MainConfig::class.java)
