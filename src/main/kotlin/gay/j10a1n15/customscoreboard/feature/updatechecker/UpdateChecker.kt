@@ -39,9 +39,9 @@ object UpdateChecker {
             errorFactory = ::RuntimeException,
         ).getOrNull() ?: return
 
-        latest = response.maxByOrNull { it.version_number } ?: return
+        latest = response.filter { GAME_VERSION in it.gameVersions }.maxByOrNull { it.versionNumber } ?: return
 
-        isOutdated = latest?.let { it.version_number > Main.VERSION } == true
+        isOutdated = latest?.let { it.versionNumber > Main.VERSION } == true
     }
 
     fun onServerJoin(handler: ClientPacketListener, client: Minecraft) {
@@ -49,8 +49,8 @@ object UpdateChecker {
             Thread {
                 Thread.sleep(5000)
                 ChatUtils.link(
-                    "§eA new version of Custom Scoreboard is available! §7(§e${Main.VERSION}§7 -> §e${latest?.version_number}§7)\n§eClick here to open Modrinth!",
-                "https://modrinth.com/mod/skyblock-custom-scoreboard",
+                    "§eA new version of Custom Scoreboard is available! §7(§e${Main.VERSION}§7 -> §e${latest?.versionNumber}§7)\n§eClick here to open Modrinth!",
+                    "https://modrinth.com/mod/skyblock-custom-scoreboard",
                 )
             }.start()
         }

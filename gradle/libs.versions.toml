@@ -12,7 +12,7 @@ skyblockapi = "1.0.0-beta.52"
 hypixelapi = "1.0.1+build.1+mc1.21"
 resourcefulConfig = "3.0.8"
 resourcefulConfigKt = "3.0.8-beta.1"
-olympus = "1.0.8"
+olympus = "1.0.13"
 resourcefulLib = "3.0.11"
 
 # Dev Dependencies
