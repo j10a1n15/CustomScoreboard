@@ -4,6 +4,7 @@ import com.teamresourceful.resourcefulconfig.api.annotations.Category
 import com.teamresourceful.resourcefulconfig.api.annotations.Comment
 import com.teamresourceful.resourcefulconfig.api.annotations.ConfigEntry
 import com.teamresourceful.resourcefulconfig.api.annotations.ConfigOption
+import gay.j10a1n15.customscoreboard.feature.customscoreboard.elements.ElementQuiver
 
 @Category("Line Modification")
 object LinesConfig {
@@ -61,5 +62,13 @@ object LinesConfig {
     @ConfigEntry(id = "separators_start_end", translation = "config.cs.lines.separators_start_end")
     @Comment("", translation = "config.cs.lines.separators_start_end.desc")
     var hideSeparatorsAtStartEnd = true
+
+    @ConfigEntry(id = "color_arrow", translation = "config.cs.lines.color_arrow")
+    @Comment("", translation = "config.cs.lines.color_arrow.desc")
+    var colorArrowAmount = true
+
+    @ConfigEntry(id = "arrow_display", translation = "config.cs.lines.arrow_display")
+    @Comment("", translation = "config.cs.lines.arrow_display.desc")
+    var arrowDisplay = ElementQuiver.ArrowDisplay.NUMBER
 
 }
