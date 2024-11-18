@@ -5,11 +5,11 @@ import tech.thatgravyboat.skyblockapi.api.area.mining.GlaciteAPI
 import tech.thatgravyboat.skyblockapi.api.location.SkyBlockIsland
 
 object ElementCold : Element() {
-    override fun getDisplay() = CustomScoreboardRenderer.formatNumberDisplayDisplay("Cold", "${GlaciteAPI.cold}❄", "§b")
+    override fun getDisplay() = CustomScoreboardRenderer.formatNumberDisplayDisplay("Cold", "-${GlaciteAPI.cold}❄", "§b")
 
     override fun showWhen() = GlaciteAPI.inGlaciteTunnels()
 
     override fun showIsland() = SkyBlockIsland.inAnyIsland(SkyBlockIsland.DWARVEN_MINES, SkyBlockIsland.MINESHAFT)
 
-    override val configLine = "cold"
+    override val configLine = "Cold"
 }
