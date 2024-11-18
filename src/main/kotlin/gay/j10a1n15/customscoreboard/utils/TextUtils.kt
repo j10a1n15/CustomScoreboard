@@ -8,6 +8,8 @@ private val colorCodesEnd = Regex("^(?<end>(.§| )*)(?!.§| )")
 
 object TextUtils {
 
+    fun String.uppercaseFirstChar() = split("_", " ").joinToString(" ") { it.lowercase().replaceFirstChar { it.uppercase() } }
+
     fun String.toComponent() = Component.literal(this)
 
     fun String.trimStartIgnoreColor(): String {
