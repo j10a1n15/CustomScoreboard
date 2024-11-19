@@ -33,7 +33,7 @@ object EventMining : Event() {
     private val goblinYourKills = ComponentRegex("Your kills: \\d+ ☠.*")
     private val mineshaftNotStartedRegex = ComponentRegex("Not started.*")
     private val mineshaftFortunateFreezingRegex = ComponentRegex("Event Bonus: \\+\\d+☘")
-    private val fossilDustRegex = ComponentRegex("Fossil Dust: [\\d.,]+")
+    private val fossilDustRegex = ComponentRegex("Fossil Dust: [\\d.,]+.*")
     private val compassRegex = ComponentRegex("Wind Compass")
     private val compassArrowRegex = ComponentRegex("\\s*[⋖⋗≈]+\\s*[⋖⋗≈]*\\s*")
 
