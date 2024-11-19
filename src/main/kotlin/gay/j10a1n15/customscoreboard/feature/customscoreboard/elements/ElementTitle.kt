@@ -14,5 +14,5 @@ object ElementTitle : Element() {
 
     override val configLine: String = "§e§lSkyBlock"
 
-    fun String.formatTitle() = this.replace("&&", "§").split("\\n")
+    fun String.formatTitle() = replace("&&", "§").split("\\n")
 }

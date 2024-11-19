@@ -10,5 +10,5 @@ object ElementFooter : Element() {
 
     override val configLine: String = "§ewww.hypixel.net"
 
-    fun String.formatFooter() = this.replace("&&", "§").split("\\n")
+    fun String.formatFooter() = replace("&&", "§").split("\\n")
 }
