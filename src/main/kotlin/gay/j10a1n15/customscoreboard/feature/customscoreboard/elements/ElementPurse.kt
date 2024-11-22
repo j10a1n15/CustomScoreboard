@@ -14,7 +14,7 @@ object ElementPurse : Element(), NumberTrackingElement {
     override fun getDisplay(): String {
         checkDifference(CurrencyAPI.purse.toLong())
         val line = CurrencyAPI.purse.format() + temporaryChangeDisplay.orEmpty()
-        return CustomScoreboardRenderer.formatNumberDisplayDisplay("Bank", line, numberColor)
+        return CustomScoreboardRenderer.formatNumberDisplayDisplay("Purse", line, numberColor)
     }
 
     override fun showIsland() = !SkyBlockIsland.inAnyIsland(SkyBlockIsland.THE_RIFT)
