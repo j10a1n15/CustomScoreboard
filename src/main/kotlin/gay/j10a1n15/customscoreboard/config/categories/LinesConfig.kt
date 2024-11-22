@@ -74,4 +74,8 @@ object LinesConfig {
     @ConfigEntry(id = "piggy", translation = "config.cs.lines.piggy")
     @Comment("", translation = "config.cs.lines.piggy.desc")
     var showPiggy = false
+
+    @ConfigEntry(id = "pet_max", translation = "config.cs.lines.pet_max")
+    @Comment("", translation = "config.cs.lines.pet_max.desc")
+    var showPetMax = true
 }

@@ -19,6 +19,7 @@ import gay.j10a1n15.customscoreboard.feature.customscoreboard.elements.ElementMo
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.elements.ElementNorthStars
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.elements.ElementObjective
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.elements.ElementParty
+import gay.j10a1n15.customscoreboard.feature.customscoreboard.elements.ElementPet
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.elements.ElementPowder
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.elements.ElementProfile
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.elements.ElementPurse
@@ -63,6 +64,7 @@ enum class ScoreboardEntry(val element: Element) : TooltipProvider {
     POWDER(ElementPowder),
     MAYOR(ElementMayor),
     PARTY(ElementParty),
+    PET(ElementPet),
     //    Unknown(Unknown),
 
     FOOTER(ElementFooter),
@@ -101,6 +103,7 @@ enum class ScoreboardEntry(val element: Element) : TooltipProvider {
             POWDER,
             MAYOR,
             PARTY,
+            PET,
             FOOTER,
         )
     }
