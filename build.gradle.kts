@@ -16,7 +16,11 @@ repositories {
 
 dependencies {
     minecraft("com.mojang:minecraft:1.21.1")
-    mappings(loom.officialMojangMappings())
+    @Suppress("UnstableApiUsage")
+    mappings(loom.layered {
+        officialMojangMappings()
+        parchment("org.parchmentmc.data:parchment-1.21:2024.07.28@zip")
+    })
     modImplementation(libs.fabricLoader)
     modImplementation(libs.fabricApi)
     modImplementation(libs.fabricKt)
