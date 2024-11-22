@@ -7,6 +7,7 @@ import gay.j10a1n15.customscoreboard.feature.customscoreboard.CustomScoreboardRe
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.elements.ElementArea
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.elements.ElementLobby
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.elements.ElementObjective
+import gay.j10a1n15.customscoreboard.feature.customscoreboard.elements.ElementPurse
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.elements.ElementSlayer
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.elements.ElementTime
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.events.EventBroodmother
@@ -87,6 +88,7 @@ object Main : ModInitializer {
         SkyBlockAPI.eventBus.register(EventDungeons)
         SkyBlockAPI.eventBus.register(EventRift)
         SkyBlockAPI.eventBus.register(EventJacobsContest)
+        SkyBlockAPI.eventBus.register(ElementPurse)
     }
 
     @Subscription

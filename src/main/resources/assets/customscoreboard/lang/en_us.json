@@ -72,5 +72,7 @@
     "config.cs.lines.color_arrow": "Colored Arrow",
     "config.cs.lines.color_arrow.desc": "Color the Arrow Line based on the amount of arrows left.",
     "config.cs.lines.arrow_display": "Arrow Display",
-    "config.cs.lines.arrow_display.desc": "Choose the display type of the arrows."
+    "config.cs.lines.arrow_display.desc": "Choose the display type of the arrows.",
+    "config.cs.lines.piggy": "Piggy Bank",
+    "config.cs.lines.piggy.desc": "Use \"Piggy\" instead of \"Purse\" as your Purse prefix when a piggy bank is active."
 }

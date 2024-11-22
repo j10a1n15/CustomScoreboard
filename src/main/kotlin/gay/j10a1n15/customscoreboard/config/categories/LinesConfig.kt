@@ -71,4 +71,7 @@ object LinesConfig {
     @Comment("", translation = "config.cs.lines.arrow_display.desc")
     var arrowDisplay = ElementQuiver.ArrowDisplay.NUMBER
 
+    @ConfigEntry(id = "piggy", translation = "config.cs.lines.piggy")
+    @Comment("", translation = "config.cs.lines.piggy.desc")
+    var showPiggy = false
 }
