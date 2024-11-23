@@ -8,7 +8,7 @@ import tech.thatgravyboat.skyblockapi.api.profile.CurrencyAPI
 import tech.thatgravyboat.skyblockapi.api.profile.profile.ProfileAPI
 
 object ElementBank : Element(), NumberTrackingElement {
-    override var previousAmount: Long = CurrencyAPI.coopBank.toLong()
+    override var previousAmount: Long = -1
     override var temporaryChangeDisplay: String? = null
     override val numberColor = "§6"
 
@@ -19,7 +19,7 @@ object ElementBank : Element(), NumberTrackingElement {
             false -> CurrencyAPI.coopBank.format()
         } + temporaryChangeDisplay.orEmpty()
 
-        return CustomScoreboardRenderer.formatNumberDisplayDisplay("Bank", line, "§6")
+        return CustomScoreboardRenderer.formatNumberDisplayDisplay("Bank", line, numberColor)
     }
 
     override fun showIsland() = !SkyBlockIsland.inAnyIsland(SkyBlockIsland.THE_RIFT)

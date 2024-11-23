@@ -10,7 +10,7 @@ import tech.thatgravyboat.skyblockapi.api.location.SkyBlockIsland
 import tech.thatgravyboat.skyblockapi.api.profile.CurrencyAPI
 
 object ElementPurse : Element(), NumberTrackingElement {
-    override var previousAmount: Long = CurrencyAPI.purse.toLong()
+    override var previousAmount: Long = -1
     override var temporaryChangeDisplay: String? = null
     override val numberColor = "§6"
 
@@ -28,7 +28,7 @@ object ElementPurse : Element(), NumberTrackingElement {
 
     override fun showIsland() = !SkyBlockIsland.inAnyIsland(SkyBlockIsland.THE_RIFT)
 
-    override val configLine: String = "Purse"
+    override val configLine = "Purse"
 
     private val piggyRegex = "Piggy: .*".toRegex()
 

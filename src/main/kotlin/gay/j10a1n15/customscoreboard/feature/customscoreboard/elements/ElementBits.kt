@@ -9,7 +9,7 @@ import tech.thatgravyboat.skyblockapi.api.profile.CurrencyAPI
 import tech.thatgravyboat.skyblockapi.api.profile.community.CommunityCenterAPI
 
 object ElementBits : Element(), NumberTrackingElement {
-    override var previousAmount: Long = CurrencyAPI.bits.toLong()
+    override var previousAmount: Long = -1
     override var temporaryChangeDisplay: String? = null
     override val numberColor = "§b"
 
@@ -19,10 +19,10 @@ object ElementBits : Element(), NumberTrackingElement {
         val line = (bits.format() + if (LinesConfig.showBitsAvailable) "§7/§b${CommunityCenterAPI.bitsAvailable.format()}" else "") +
             temporaryChangeDisplay.orEmpty()
 
-        return CustomScoreboardRenderer.formatNumberDisplayDisplay("Bits", line, "§b")
+        return CustomScoreboardRenderer.formatNumberDisplayDisplay("Bits", line, numberColor)
     }
 
     override fun showIsland() = !SkyBlockIsland.inAnyIsland(SkyBlockIsland.THE_RIFT, SkyBlockIsland.THE_CATACOMBS)
 
-    override val configLine: String = "Bits"
+    override val configLine = "Bits"
 }
