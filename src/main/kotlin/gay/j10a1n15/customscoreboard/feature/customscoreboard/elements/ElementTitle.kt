@@ -12,7 +12,7 @@ object ElementTitle : Element() {
         else -> "§e§lSkyBlock" align MainConfig.title.alignment
     }
 
-    override val configLine: String = "§e§lSkyBlock"
+    override val configLine = "§e§lSkyBlock"
 
     fun String.formatTitle() = replace("&&", "§").split("\\n")
 }

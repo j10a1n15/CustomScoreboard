@@ -7,7 +7,7 @@ import tech.thatgravyboat.skyblockapi.api.location.SkyBlockIsland
 import tech.thatgravyboat.skyblockapi.api.profile.CurrencyAPI
 
 object ElementSoulflow : Element(), NumberTrackingElement {
-    override var previousAmount: Long = CurrencyAPI.soulflow
+    override var previousAmount: Long = -1
     override var temporaryChangeDisplay: String? = null
     override val numberColor = "§3"
 

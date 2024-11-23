@@ -7,7 +7,7 @@ import tech.thatgravyboat.skyblockapi.api.location.SkyBlockIsland
 import tech.thatgravyboat.skyblockapi.api.profile.CurrencyAPI
 
 object ElementNorthStars : Element(), NumberTrackingElement {
-    override var previousAmount = CurrencyAPI.northStars
+    override var previousAmount: Long = -1
     override var temporaryChangeDisplay: String? = null
     override val numberColor = "§d"
 

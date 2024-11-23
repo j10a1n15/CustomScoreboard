@@ -8,7 +8,7 @@ object ElementFooter : Element() {
         if (f.useCustomText) f.text.formatFooter().map { it align f.alignment } else "§ewww.hypixel.net" align f.alignment
     }
 
-    override val configLine: String = "§ewww.hypixel.net"
+    override val configLine = "§ewww.hypixel.net"
 
     fun String.formatFooter() = replace("&&", "§").split("\\n")
 }
