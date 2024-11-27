@@ -35,5 +35,8 @@ object BackgroundConfig {
     @ConfigOption.Slider
     var radius: Int = 5
 
+    @ConfigEntry(id = "textured_background", translation = "config.cs.background_textured_background")
+    @Comment("", translation = "config.cs.background_textured_background.desc")
+    var texturedBackground = false
 
 }

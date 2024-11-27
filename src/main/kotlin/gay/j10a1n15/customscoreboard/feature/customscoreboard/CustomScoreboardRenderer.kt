@@ -10,6 +10,8 @@ import gay.j10a1n15.customscoreboard.utils.rendering.RenderUtils.fillRect
 import gay.j10a1n15.customscoreboard.utils.rendering.alignment.HorizontalAlignment
 import gay.j10a1n15.customscoreboard.utils.rendering.alignment.VerticalAlignment
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents
+import net.minecraft.client.renderer.RenderType
+import net.minecraft.resources.ResourceLocation
 import tech.thatgravyboat.skyblockapi.api.events.base.Subscription
 import tech.thatgravyboat.skyblockapi.api.events.location.IslandChangeEvent
 import tech.thatgravyboat.skyblockapi.api.events.render.HudElement
@@ -33,6 +35,9 @@ object CustomScoreboardRenderer {
     private val screenHeight get() = McClient.window.guiScaledHeight
 
     private var tickCounter = 0
+
+    private val outlineTexture = ResourceLocation.fromNamespaceAndPath("customscoreboard", "outline")
+    private val titleBackgroundTexture = ResourceLocation.fromNamespaceAndPath("customscoreboard", "title")
 
     init {
         ClientTickEvents.START_CLIENT_TICK.register {
@@ -59,16 +64,17 @@ object CustomScoreboardRenderer {
         with(BackgroundConfig) {
             val width = display?.let { it.maxOf { McFont.width(it.first) } } ?: 0
             val height = display?.let { it.size * McFont.self.lineHeight } ?: 0
+            val texturedBackgroundOffset = if (texturedBackground) 10 else 0
 
             val newX = when (MainConfig.horizontalAlignment) {
-                HorizontalAlignment.LEFT -> padding + margin
+                HorizontalAlignment.LEFT -> padding + margin + texturedBackgroundOffset
                 HorizontalAlignment.CENTER -> (screenWidth - width) / 2
-                HorizontalAlignment.RIGHT -> screenWidth - width - padding - margin
+                HorizontalAlignment.RIGHT -> screenWidth - width - padding - margin - texturedBackgroundOffset
             }
             val newY = when (MainConfig.verticalAlignment) {
-                VerticalAlignment.TOP -> padding + margin
+                VerticalAlignment.TOP -> padding + margin + texturedBackgroundOffset
                 VerticalAlignment.CENTER -> (screenHeight - height) / 2
-                VerticalAlignment.BOTTOM -> screenHeight - height - padding - margin
+                VerticalAlignment.BOTTOM -> screenHeight - height - padding - margin - texturedBackgroundOffset
             }
             position = newX to newY
             dimensions = width to height
@@ -88,14 +94,42 @@ object CustomScoreboardRenderer {
 
     private fun renderBackground(event: RenderHudEvent) {
         if (!BackgroundConfig.enabled) return
-        val padding = BackgroundConfig.padding
 
-        event.graphics.fillRect(
-            position.first - padding, position.second - padding,
-            dimensions.first + padding * 2, dimensions.second + padding * 2,
-            BackgroundConfig.color,
-            radius = BackgroundConfig.radius,
-        )
+        if (BackgroundConfig.texturedBackground) {
+            val padding = 15
+            val firstElement = MainConfig.appearance.get().first().element.getLines()
+
+            event.graphics.fillRect(
+                position.first - padding, position.second - padding,
+                dimensions.first + padding * 2, dimensions.second + padding * 2,
+                BackgroundConfig.color,
+                radius = BackgroundConfig.radius,
+            )
+            event.graphics.blitSprite(
+                RenderType::guiTextured,
+                outlineTexture,
+                position.first - padding,
+                position.second - padding,
+                dimensions.first + padding * 2,
+                dimensions.second + padding * 2,
+            )
+            event.graphics.blitSprite(
+                RenderType::guiTextured,
+                titleBackgroundTexture,
+                position.first + dimensions.first / 2,
+                position.second - padding,
+                30,
+                McFont.self.lineHeight * firstElement.size,
+            )
+        } else {
+            val padding = BackgroundConfig.padding
+            event.graphics.fillRect(
+                position.first - padding, position.second - padding,
+                dimensions.first + padding * 2, dimensions.second + padding * 2,
+                BackgroundConfig.color,
+                radius = BackgroundConfig.radius,
+            )
+        }
     }
 
     private fun updateIslandCache() {
@@ -105,7 +139,10 @@ object CustomScoreboardRenderer {
 
     private fun updateDisplay() {
         if (!isEnabled()) return
-        display = createDisplay().hideLeadingAndTrailingSeparators().condenseConsecutiveSeparators()
+        createDisplay().hideLeadingAndTrailingSeparators().condenseConsecutiveSeparators().let {
+            display = if (BackgroundConfig.texturedBackground) it.drop(1) else it
+        }
+
     }
 
     private fun createDisplay() = buildList {
