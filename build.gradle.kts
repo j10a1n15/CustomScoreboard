@@ -3,7 +3,7 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 plugins {
     java
     kotlin("jvm") version "2.0.0"
-    id("fabric-loom") version "1.8-SNAPSHOT"
+    id("fabric-loom") version "1.9-SNAPSHOT"
     id("net.kyori.blossom") version "1.3.2"
 }
 
@@ -15,30 +15,27 @@ repositories {
 }
 
 dependencies {
-    minecraft("com.mojang:minecraft:1.21.3")
-    @Suppress("UnstableApiUsage")
+    minecraft(libs.minecraft)
     mappings(loom.layered {
         officialMojangMappings()
-        parchment("org.parchmentmc.data:parchment-1.21:2024.07.28@zip")
+        parchment("org.parchmentmc.data:parchment-1.21.3:2024.12.07@zip")
     })
-    modImplementation(libs.fabricLoader)
-    modImplementation(libs.fabricApi)
-    modImplementation(libs.fabricKt)
+    modImplementation(libs.loader)
+    modImplementation(libs.fabrickotlin)
+    modImplementation(libs.fabric)
 
     modImplementation(libs.hypixelapi)
     modImplementation(libs.skyblockapi)
-    modImplementation(libs.resourcefulconfig)
-    modImplementation(libs.resourcefulconfigkt) {
-        isTransitive = false
-    }
-    modImplementation(libs.resourcefullib)
+    modImplementation(libs.rconfig)
+    modImplementation(libs.rconfigkt)
+    modImplementation(libs.rlib)
     modImplementation(libs.olympus)
 
     include(libs.hypixelapi)
     include(libs.skyblockapi)
-    include(libs.resourcefulconfig)
-    include(libs.resourcefulconfigkt)
-    include(libs.resourcefullib)
+    include(libs.rconfig)
+    include(libs.rconfigkt)
+    include(libs.rlib)
     include(libs.olympus)
 
     modRuntimeOnly(libs.devauth)
