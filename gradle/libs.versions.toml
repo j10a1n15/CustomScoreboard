@@ -8,7 +8,7 @@ fabricKt = "1.12.3+kotlin.2.0.21"
 loom = "1.8-SNAPSHOT"
 
 # Dependencies
-skyblockapi = "1.0.0-beta.53"
+skyblockapi = "1.0.0-beta.73"
 hypixelapi = "1.0.1+build.1+mc1.21"
 resourcefulConfig = "3.3.0"
 resourcefulConfigKt = "3.3.0"
