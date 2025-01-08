@@ -6,4 +6,5 @@ import com.google.gson.annotations.SerializedName
 data class ModrinthJson(
     @Expose val name: String,
     @Expose @SerializedName("version_number") val versionNumber: String,
+    @Expose @SerializedName("game_versions") val gameVersions: List<String>,
 )
