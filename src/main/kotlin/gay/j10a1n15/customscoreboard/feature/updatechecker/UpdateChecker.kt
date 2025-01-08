@@ -39,7 +39,7 @@ object UpdateChecker {
             errorFactory = ::RuntimeException,
         ).getOrNull() ?: return
 
-        latest = response.maxByOrNull { it.versionNumber } ?: return
+        latest = response.filter { GAME_VERSION in it.gameVersions }.maxByOrNull { it.versionNumber } ?: return
 
         isOutdated = latest?.let { it.versionNumber > Main.VERSION } == true
     }
