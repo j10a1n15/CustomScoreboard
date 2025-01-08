@@ -12,7 +12,7 @@ import tech.thatgravyboat.skyblockapi.utils.http.Http
 const val SLUG = "skyblock-custom-scoreboard"
 const val URL = "https://api.modrinth.com/v2/project/$SLUG/version"
 const val LOADER = "fabric"
-const val GAME_VERSION = "1.21.3"
+const val GAME_VERSION = "1.21.4"
 const val QUERIES = "?loaders=%5B%22$LOADER%22%5D&game_versions=%5B%22$GAME_VERSION%22%5D"
 
 object UpdateChecker {
