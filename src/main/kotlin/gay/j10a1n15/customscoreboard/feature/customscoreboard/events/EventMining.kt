@@ -1,5 +1,6 @@
 package gay.j10a1n15.customscoreboard.feature.customscoreboard.events
 
+import gay.j10a1n15.customscoreboard.config.categories.LinesConfig
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.ScoreboardLine.Companion.align
 import gay.j10a1n15.customscoreboard.utils.rendering.alignment.TextAlignment
 import tech.thatgravyboat.skyblockapi.api.events.base.Subscription
@@ -47,7 +48,7 @@ object EventMining : Event() {
     @Subscription
     fun onScoreboardUpdate(event: ScoreboardUpdateEvent) {
         formattedLines.clear()
-        val patterns = patterns + powderRegex
+        val patterns = powderRegex.takeIf { LinesConfig.showHypixelPowder }?.let { patterns + it } ?: patterns
         formattedLines.addAll(
             event.components.filter { component ->
                 patterns.any { it.matches(component) }
