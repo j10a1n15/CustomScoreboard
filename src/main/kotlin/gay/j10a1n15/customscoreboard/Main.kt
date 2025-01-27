@@ -2,7 +2,9 @@ package gay.j10a1n15.customscoreboard
 
 import com.teamresourceful.resourcefulconfig.api.client.ResourcefulConfigScreen
 import com.teamresourceful.resourcefulconfig.api.loader.Configurator
+import gay.j10a1n15.customscoreboard.config.CustomScoreboardKeybinds
 import gay.j10a1n15.customscoreboard.config.MainConfig
+import gay.j10a1n15.customscoreboard.feature.KeybindManager
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.CustomScoreboardRenderer
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.elements.ElementArea
 import gay.j10a1n15.customscoreboard.feature.customscoreboard.elements.ElementLobby
@@ -89,6 +91,8 @@ object Main : ModInitializer {
         SkyBlockAPI.eventBus.register(EventRift)
         SkyBlockAPI.eventBus.register(EventJacobsContest)
         SkyBlockAPI.eventBus.register(ElementPurse)
+        SkyBlockAPI.eventBus.register(CustomScoreboardKeybinds)
+        SkyBlockAPI.eventBus.register(KeybindManager)
     }
 
     @Subscription

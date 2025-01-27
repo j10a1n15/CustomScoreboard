@@ -1,4 +1,7 @@
 {
+    "config.cs": "Custom Scoreboard",
+    "_comment": "Keybinds",
+    "config.cs.keybind.toggle": "Toggle Custom Scoreboard",
     "_comment": "Main Config",
     "config.cs.enabled": "Main Toggle",
     "config.cs.enabled.desc": "Enable or disable the custom scoreboard",
