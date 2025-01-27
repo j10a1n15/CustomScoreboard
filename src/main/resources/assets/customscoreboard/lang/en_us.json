@@ -79,5 +79,7 @@
     "config.cs.lines.piggy": "Piggy Bank",
     "config.cs.lines.piggy.desc": "Use \"Piggy\" instead of \"Purse\" as your Purse prefix when a piggy bank is active.",
     "config.cs.lines.pet_max": "Show Pet Max Level",
-    "config.cs.lines.pet_max.desc": "Show \"Max\" when the pet is at max level.\nWhen disabled, the level will be hidden."
+    "config.cs.lines.pet_max.desc": "Show \"Max\" when the pet is at max level.\nWhen disabled, the level will be hidden.",
+    "config.cs.lines.hypixel_powder": "Show Hypixel's Powder Line",
+    "config.cs.lines.hypixel_powder.desc": "Show Hypixel's Powder Line on the scoreboard."
 }

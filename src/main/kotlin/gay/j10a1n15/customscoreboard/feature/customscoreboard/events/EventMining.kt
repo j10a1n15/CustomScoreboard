@@ -38,7 +38,7 @@ object EventMining : Event() {
     private val compassArrowRegex = ComponentRegex("\\s*[⋖⋗≈]+\\s*[⋖⋗≈]*\\s*")
 
     private val patterns = listOf(
-        powderRegex, eventRegex, eventZoneRegex, raffleUselessRegex, raffleTicketsRegex, rafflePoolRegex, donUseless,
+        eventRegex, eventZoneRegex, raffleUselessRegex, raffleTicketsRegex, rafflePoolRegex, donUseless,
         donRemaining, donYourMithril, nearbyPlayers, goblinUseless, goblinRemaining, goblinYourKills, mineshaftNotStartedRegex,
         mineshaftFortunateFreezingRegex, fossilDustRegex, compassRegex,
     )
@@ -47,6 +47,7 @@ object EventMining : Event() {
     @Subscription
     fun onScoreboardUpdate(event: ScoreboardUpdateEvent) {
         formattedLines.clear()
+        val patterns = patterns + powderRegex
         formattedLines.addAll(
             event.components.filter { component ->
                 patterns.any { it.matches(component) }

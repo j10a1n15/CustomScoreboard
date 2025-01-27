@@ -78,4 +78,8 @@ object LinesConfig {
     @ConfigEntry(id = "pet_max", translation = "config.cs.lines.pet_max")
     @Comment("", translation = "config.cs.lines.pet_max.desc")
     var showPetMax = true
+
+    @ConfigEntry(id = "hypixel_powder", translation = "config.cs.lines.hypixel_powder")
+    @Comment("", translation = "config.cs.lines.hypixel_powder.desc")
+    var showHypixelPowder = true
 }
