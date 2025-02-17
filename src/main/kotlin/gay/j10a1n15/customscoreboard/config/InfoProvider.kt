@@ -28,7 +28,7 @@ class InfoProvider : ResourcefulConfigInfo {
             TranslatableValue("Modrinth"),
         ),
         ResourcefulConfigLink.create(
-            "https://github.com/j10a1n15/CustomScoreboard",
+            "https://github.com/meowdding/CustomScoreboard",
             "code",
             TranslatableValue("GitHub"),
         ),
