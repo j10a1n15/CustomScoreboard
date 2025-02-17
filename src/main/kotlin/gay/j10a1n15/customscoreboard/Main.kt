@@ -50,15 +50,15 @@ object Main : ModInitializer {
 
     const val VERSION = "@MOD_VERSION@"
 
-    val configurator = Configurator("customscoreboard")
-
     private val globalJob: Job = Job(null)
     val coroutineScope = CoroutineScope(
         CoroutineName("CustomScoreboard") + SupervisorJob(globalJob),
     )
 
+    val configurator = Configurator("customscoreboard")
+
     override fun onInitialize() {
-        configurator.register(MainConfig::class.java)
+        MainConfig.register(configurator)
 
         SkyBlockAPI.eventBus.register(this)
         SkyBlockAPI.eventBus.register(CustomScoreboardRenderer)
@@ -100,7 +100,7 @@ object Main : ModInitializer {
         val builder: (LiteralCommandBuilder.() -> Unit) = {
             callback {
                 McClient.tell {
-                    McClient.setScreen(ResourcefulConfigScreen.get(null, configurator, MainConfig::class.java))
+                    McClient.setScreen(ResourcefulConfigScreen.getFactory("customscoreboard").apply(null))
                 }
             }
         }

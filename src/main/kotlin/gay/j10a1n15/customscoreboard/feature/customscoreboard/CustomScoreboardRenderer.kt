@@ -45,14 +45,6 @@ object CustomScoreboardRenderer {
                 tickCounter = 0
             }
         }
-
-        MainConfig.appearance.addListener { old, new ->
-            updateIslandCache()
-        }
-
-        MainConfig.events.addListener { old, new ->
-            updateIslandCache()
-        }
     }
 
     private fun updatePosition() {
@@ -93,14 +85,14 @@ object CustomScoreboardRenderer {
         event.graphics.fillRect(
             position.first - padding, position.second - padding,
             dimensions.first + padding * 2, dimensions.second + padding * 2,
-            BackgroundConfig.color,
+            BackgroundConfig.backgroundColor,
             radius = BackgroundConfig.radius,
         )
     }
 
-    private fun updateIslandCache() {
-        currentIslandElements = MainConfig.appearance.get().filter { it.element.showIsland() }
-        currentIslandEvents = MainConfig.events.get().filter { it.event.showIsland() }
+    fun updateIslandCache() {
+        currentIslandElements = MainConfig.appearance.filter { it.element.showIsland() }
+        currentIslandEvents = MainConfig.events.filter { it.event.showIsland() }
     }
 
     private fun updateDisplay() {

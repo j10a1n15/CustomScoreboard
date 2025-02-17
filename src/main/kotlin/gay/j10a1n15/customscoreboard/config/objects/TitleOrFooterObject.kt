@@ -1,21 +1,21 @@
 package gay.j10a1n15.customscoreboard.config.objects
 
-import com.teamresourceful.resourcefulconfig.api.annotations.Comment
-import com.teamresourceful.resourcefulconfig.api.annotations.ConfigEntry
-import com.teamresourceful.resourcefulconfig.api.annotations.ConfigObject
+import com.teamresourceful.resourcefulconfigkt.api.ObjectKt
 import gay.j10a1n15.customscoreboard.utils.rendering.alignment.TextAlignment
 
-@ConfigObject
-data class TitleOrFooterObject(
-    @ConfigEntry(id = "alignment", translation = "config.cs.title_footer.alignment")
-    @Comment("", translation = "config.cs.title_footer.alignment.desc")
-    var alignment: TextAlignment = TextAlignment.CENTER,
+class TitleOrFooterObject : ObjectKt() {
+    val alignment by enum(TextAlignment.CENTER) {
+        this.name = Translated("config.cs.title_footer.alignment")
+        this.description = Translated("config.cs.title_footer.alignment.desc")
+    }
 
-    @ConfigEntry(id = "use_custom_text", translation = "config.cs.title_footer.use_custom_text")
-    @Comment("", translation = "config.cs.title_footer.use_custom_text.desc")
-    var useCustomText: Boolean = false,
+    val useCustomText by boolean("use_custom_text", false) {
+        this.name = Translated("config.cs.title_footer.use_custom_text")
+        this.description = Translated("config.cs.title_footer.use_custom_text.desc")
+    }
 
-    @ConfigEntry(id = "custom_text", translation = "config.cs.title_footer.custom_text")
-    @Comment("", translation = "config.cs.title_footer.custom_text.desc")
-    var text: String = "",
-)
+    val text by string("custom_text", "") {
+        this.name = Translated("config.cs.title_footer.custom_text")
+        this.description = Translated("config.cs.title_footer.custom_text.desc")
+    }
+}

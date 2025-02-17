@@ -75,7 +75,7 @@ enum class ScoreboardEntry(val element: Element) : TooltipProvider {
     override fun toString() = element.configLine
 
     companion object {
-        val default = arrayOf(
+        val default = listOf(
             TITLE,
             LOBBY,
             SEPARATOR,

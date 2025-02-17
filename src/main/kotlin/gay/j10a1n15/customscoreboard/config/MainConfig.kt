@@ -1,7 +1,9 @@
 package gay.j10a1n15.customscoreboard.config
 
-import com.teamresourceful.resourcefulconfig.api.annotations.*
-import com.teamresourceful.resourcefulconfig.api.types.entries.Observable
+import com.teamresourceful.resourcefulconfig.api.types.info.ResourcefulConfigLink
+import com.teamresourceful.resourcefulconfig.api.types.options.TranslatableValue
+import com.teamresourceful.resourcefulconfigkt.api.ConfigKt
+import gay.j10a1n15.customscoreboard.Main
 import gay.j10a1n15.customscoreboard.config.categories.BackgroundConfig
 import gay.j10a1n15.customscoreboard.config.categories.LinesConfig
 import gay.j10a1n15.customscoreboard.config.objects.TitleOrFooterObject
@@ -12,61 +14,100 @@ import gay.j10a1n15.customscoreboard.utils.NumberFormatType
 import gay.j10a1n15.customscoreboard.utils.rendering.alignment.HorizontalAlignment
 import gay.j10a1n15.customscoreboard.utils.rendering.alignment.VerticalAlignment
 
-@ConfigInfo.Provider(InfoProvider::class)
-@Config(
-    value = "customscoreboard/config",
-    categories = [BackgroundConfig::class, LinesConfig::class],
-)
-object MainConfig {
+object MainConfig : ConfigKt("customscoreboard/config") {
 
-    @ConfigEntry(id = "enabled", translation = "config.cs.enabled")
-    @Comment("", translation = "config.cs.enabled.desc")
-    var enabled: Boolean = true
+    override val name get() = TranslatableValue("Custom Scoreboard Config")
+    override val description get() = TranslatableValue("by j10a1n15. Version ${Main.VERSION}")
+    override val links: Array<ResourcefulConfigLink>
+        get() = arrayOf(
+            ResourcefulConfigLink.create(
+                "https://discord.gg/FsRc2GUwZR",
+                "discord",
+                TranslatableValue("Discord"),
+            ),
+            ResourcefulConfigLink.create(
+                "https://modrinth.com/mod/skyblock-custom-scoreboard",
+                "modrinth",
+                TranslatableValue("Modrinth"),
+            ),
+            ResourcefulConfigLink.create(
+                "https://github.com/meowdding/CustomScoreboard",
+                "code",
+                TranslatableValue("GitHub"),
+            ),
+        )
 
-    @ConfigEntry(id = "appearance", translation = "config.cs.appearance")
-    @ConfigOption.Draggable(value = ["SEPARATOR"])
-    @Comment("", translation = "config.cs.appearance.desc")
-    val appearance: Observable<Array<ScoreboardEntry>> = Observable.of(ScoreboardEntry.default)
+    init {
+        category(BackgroundConfig)
+        category(LinesConfig)
+    }
 
-    @ConfigEntry(id = "events", translation = "config.cs.events")
-    @ConfigOption.Draggable
-    @Comment("", translation = "config.cs.events.desc")
-    val events: Observable<Array<ScoreboardEventEntry>> = Observable.of(ScoreboardEventEntry.entries.toTypedArray())
+    var enabled by boolean(true) {
+        this.name = Translated("config.cs.enabled")
+        this.description = Translated("config.cs.enabled.desc")
+    }
 
-    @ConfigEntry(id = "title_options", translation = "config.cs.title_options")
-    @Comment("", translation = "config.cs.title_options.desc")
-    val title: TitleOrFooterObject = TitleOrFooterObject()
+    val appearance by observable(
+        draggable(*ScoreboardEntry.default.toTypedArray()) {
+            this.name = Translated("config.cs.appearance")
+            this.description = Translated("config.cs.appearance.desc")
+        },
+    ) { old, new ->
+        CustomScoreboardRenderer.updateIslandCache()
+    }
 
-    @ConfigEntry(id = "footer_options", translation = "config.cs.footer_options")
-    @Comment("", translation = "config.cs.footer_options.desc")
-    val footer: TitleOrFooterObject = TitleOrFooterObject()
+    val events by observable(
+        draggable(*ScoreboardEventEntry.entries.toTypedArray()) {
+            this.name = Translated("config.cs.events")
+            this.description = Translated("config.cs.events.desc")
+        },
+    ) { old, new ->
+        CustomScoreboardRenderer.updateIslandCache()
+    }
 
-    @ConfigEntry(id = "number_display_format", translation = "config.cs.number_display_format")
-    @Comment("", translation = "config.cs.number_display_format.desc")
-    var numberDisplayFormat: CustomScoreboardRenderer.NumberDisplayFormat = CustomScoreboardRenderer.NumberDisplayFormat.TEXT_COLOR_NUMBER
+    val title = obj("title_options", TitleOrFooterObject()) {
+        this.name = Translated("config.cs.title_options")
+        this.description = Translated("config.cs.title_options.desc")
+    }
 
-    @ConfigEntry(id = "number_format", translation = "config.cs.number_format")
-    @Comment("", translation = "config.cs.number_format.desc")
-    var numberFormat: NumberFormatType = NumberFormatType.LONG
+    val footer = obj("footer_options", TitleOrFooterObject()) {
+        this.name = Translated("config.cs.footer_options")
+        this.description = Translated("config.cs.footer_options.desc")
+    }
 
-    @ConfigEntry(id = "vertical_alignment", translation = "config.cs.vertical_alignment")
-    @Comment("", translation = "config.cs.vertical_alignment.desc")
-    var verticalAlignment: VerticalAlignment = VerticalAlignment.CENTER
+    val numberDisplayFormat by enum("number_display_format", CustomScoreboardRenderer.NumberDisplayFormat.TEXT_COLOR_NUMBER) {
+        this.name = Translated("config.cs.number_display_format")
+        this.description = Translated("config.cs.number_display_format.desc")
+    }
 
-    @ConfigEntry(id = "horizontal_alignment", translation = "config.cs.horizontal_alignment")
-    @Comment("", translation = "config.cs.horizontal_alignment.desc")
-    var horizontalAlignment: HorizontalAlignment = HorizontalAlignment.RIGHT
+    val numberFormat by enum("number_format", NumberFormatType.LONG) {
+        this.name = Translated("config.cs.number_format")
+        this.description = Translated("config.cs.number_format.desc")
+    }
 
-    @ConfigEntry(id = "hide_hypixel", translation = "config.cs.hide_hypixel")
-    @Comment("", translation = "config.cs.hide_hypixel.desc")
-    var hideHypixelScoreboard: Boolean = true
+    val verticalAlignment by enum("vertical_alignment", VerticalAlignment.CENTER) {
+        this.name = Translated("config.cs.vertical_alignment")
+        this.description = Translated("config.cs.vertical_alignment.desc")
+    }
 
-    @ConfigEntry(id = "text_shadow", translation = "config.cs.text_shadow")
-    @Comment("", translation = "config.cs.text_shadow.desc")
-    var textShadow: Boolean = true
+    val horizontalAlignment by enum("horizontal_alignment", HorizontalAlignment.RIGHT) {
+        this.name = Translated("config.cs.horizontal_alignment")
+        this.description = Translated("config.cs.horizontal_alignment.desc")
+    }
 
-    @ConfigEntry(id = "update_notification", translation = "config.cs.update_notification")
-    @Comment("", translation = "config.cs.update_notification.desc")
-    var updateNotification: Boolean = true
+    val hideHypixelScoreboard by boolean("hide_hypixel", true) {
+        this.name = Translated("config.cs.hide_hypixel")
+        this.description = Translated("config.cs.hide_hypixel.desc")
+    }
+
+    val textShadow by boolean("text_shadow", true) {
+        this.name = Translated("config.cs.text_shadow")
+        this.description = Translated("config.cs.text_shadow.desc")
+    }
+
+    val updateNotification by boolean("update_notification", true) {
+        this.name = Translated("config.cs.update_notification")
+        this.description = Translated("config.cs.update_notification.desc")
+    }
 
 }
